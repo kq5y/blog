@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { convertArticles, getAllArticles } from "@/lib/article";
+
+export async function getStaticPaths() {
+  const blogs = convertArticles(await getAllArticles("blog", true), "blog");
+  const memos = convertArticles(await getAllArticles("memo", true), "memo");
+  return [...blogs, ...memos];
+}
+
+const { cat, slug } = Astro.params;
+const { title, tags, date, body } = Astro.props;
+---
+
+<Layout title={title}>
+  <main>
+    <p>This is blog.</p>
+  </main>
+</Layout>
