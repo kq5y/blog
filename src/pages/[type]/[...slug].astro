@@ -1,0 +1,32 @@
+---
+import { getAllBlogs } from "@/lib/blog";
+
+export async function getStaticPaths() {
+  const blogs = await getAllBlogs();
+  return blogs.map((blog) => {
+    return {
+      params: {
+        type: "blog",
+        slug: blog.slug,
+      },
+      props: {
+        title: blog.title,
+        tags: blog.tags,
+        date: blog.date,
+        body: blog.body,
+      },
+    };
+  });
+}
+
+const { title, tags, date, body } = Astro.props;
+---
+
+<div>
+  <h1>{title}</h1>
+  <div>{date}</div>
+  <ul>
+    {tags.map((tsg) => <li>{tsg}</li>)}
+  </ul>
+  <div>{body}</div>
+</div>
