@@ -1,4 +1,5 @@
 ---
+import Article from "@/components/Article.astro";
 import Layout from "@/layouts/Layout.astro";
 import { convertArticles, getAllArticles } from "@/lib/article";
 
@@ -8,12 +9,17 @@ export async function getStaticPaths() {
   return [...blogs, ...memos];
 }
 
-const { cat, slug } = Astro.params;
+const { category, slug } = Astro.params;
 const { title, tags, date, body } = Astro.props;
 ---
 
 <Layout title={title}>
-  <main>
-    <p>This is blog.</p>
-  </main>
+  <Article
+    category={category}
+    slug={slug}
+    title={title}
+    tags={tags}
+    date={date}
+    body={body}
+  />
 </Layout>

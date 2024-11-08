@@ -24,11 +24,11 @@ export async function getAllArticles(
     .sort((a, z) => new Date(z.date).getTime() - new Date(a.date).getTime());
 }
 
-export function convertArticles(articles: Article[], cat: string) {
+export function convertArticles(articles: Article[], category: string) {
   return articles.map((article) => {
     return {
       params: {
-        cat: cat,
+        category: category,
         slug: article.slug,
       },
       props: {
