@@ -4,6 +4,7 @@ date: "2022-07-01"
 tags:
   - "test_tag"
   - "test2_tag"
+hidden: true
 ---
 
 https://www.npmjs.com/package/rollup-preserve-directives

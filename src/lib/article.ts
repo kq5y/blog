@@ -26,10 +26,17 @@ export async function getAllArticles(
 
 export function convertArticles(articles: Article[], category: string) {
   return articles.map((article) => {
+    let slug = article.slug;
+    if (!Number.isNaN(Number.parseInt(article.slug))) slug = "_" + slug;
     return {
       params: {
         category: category,
-        slug: article.slug,
+        slug: slug,
+      },
+      props: {
+        title: article.title,
+        tags: article.tags,
+        date: article.date,
       },
     };
   });

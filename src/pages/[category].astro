@@ -1,0 +1,51 @@
+---
+import type { GetStaticPathsOptions } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import { categoryToStr, convertArticles, getAllArticles } from "@/lib/article";
+
+export async function getStaticPaths() {
+  const categories = ["blog", "memo"];
+  return categories.map((category) => {
+    return {
+      params: {
+        category,
+      },
+    };
+  });
+}
+
+const { category } = Astro.params;
+
+const articles = convertArticles(
+  await getAllArticles(category, false),
+  category
+);
+---
+
+<Layout title=`${categoryToStr(category)} - かしわうどん`>
+  <div class="px-8">
+    <h1>{categoryToStr(category)}</h1>
+    <div>
+      {
+        articles.map((article) => (
+          <article>
+            <a href={`/${category}/${article.params.slug}`}>
+              {article.props.title}
+            </a>
+            <div>
+              <div>{article.props.date}</div>
+              <div>
+                <span>{categoryToStr(category)}</span>
+                {article.props.tags.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<style></style>
