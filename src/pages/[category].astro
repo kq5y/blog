@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPathsOptions } from "astro";
 import Layout from "@/layouts/Layout.astro";
 import { categoryToStr, convertArticles, getAllArticles } from "@/lib/article";
 
@@ -23,9 +22,10 @@ const articles = convertArticles(
 ---
 
 <Layout title=`${categoryToStr(category)} - かしわうどん`>
-  <div class="px-8">
+  <div class="px-8 py-2">
     <h1>{categoryToStr(category)}</h1>
     <div>
+      {articles.length === 0 && <p>記事がありません</p>}
       {
         articles.map((article) => (
           <article>
@@ -48,4 +48,8 @@ const articles = convertArticles(
   </div>
 </Layout>
 
-<style></style>
+<style>
+  h1 {
+    @apply text-3xl font-bold;
+  }
+</style>
