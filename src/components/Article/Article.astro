@@ -1,0 +1,99 @@
+---
+import type { RenderResult } from "astro:content";
+import { categoryToStr } from "@/lib/article";
+
+import "./Article.css";
+
+export interface Props {
+  category: string;
+  slug: string;
+  title: string;
+  tags: string[];
+  date: string;
+  body: string;
+  renderer: RenderResult;
+}
+
+const { category, slug, title, tags, date, renderer } = Astro.props;
+---
+
+<article>
+  <div class="articleMeta">
+    <div class="articleSlug">{slug}</div>
+    <h1 class="articleTitle">{title}</h1>
+    <div class="articleDate">{date}</div>
+    <div class="articleTags">
+      <span>{categoryToStr(category)}</span>
+      {tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </div>
+  <div>
+    <nav>
+      <ul>
+        <h2>Table of Contents</h2>
+        {
+          renderer.headings.map((head) => {
+            if (
+              (head.depth == 2 || head.depth == 3) &&
+              head.slug != "footnote-label"
+            ) {
+              return (
+                <li class={`heading${head.depth}`}>
+                  <a href={`#${head.slug}`}>{head.text}</a>
+                </li>
+              );
+            }
+          })
+        }
+      </ul>
+    </nav>
+    <div>
+      <renderer.Content />
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    @apply px-6;
+
+    div.articleMeta {
+      @apply my-4;
+
+      h1.articleTitle {
+        @apply mb-0 border-b-0 text-3xl font-semibold;
+      }
+
+      div.articleSlug,
+      div.articleDate {
+        @apply flex flex-row gap-4 text-sm text-neutral-400;
+      }
+
+      div.articleTags {
+        @apply mt-1 flex flex-row gap-2;
+
+        span {
+          @apply rounded bg-neutral-700 px-1.5 py-0.5 text-xs text-neutral-400;
+        }
+      }
+    }
+
+    nav {
+      h2 {
+        @apply m-0 mt-4 border-b-0;
+      }
+
+      ul {
+        @apply m-0 mb-6 list-none p-0 text-sm lg:sticky lg:top-20 lg:mt-0 lg:w-64;
+
+        li.heading2 {
+          @apply mb-1 mt-0;
+        }
+
+        li.heading3 {
+          @apply mb-1 ml-4 mt-0;
+        }
+      }
+    }
+  }
+</style>

@@ -1,7 +1,9 @@
 ---
 title: "スラグテスト記事"
-tags: ["test3", "test2"]
 date: "2024-11-02"
+tags:
+  - test_tag
+  - test3_tag
 ---
 
 これはスラグテスト記事です。

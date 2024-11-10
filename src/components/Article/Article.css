@@ -1,0 +1,182 @@
+h1 {
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: solid 1px gray;
+}
+
+h2 {
+  padding-bottom: 4px;
+  margin: 16px 0;
+  font-size: 21px;
+  font-weight: bold;
+  border-bottom: solid 1px gray;
+}
+
+h3 {
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p {
+  margin: 6px 0;
+}
+
+a {
+  color: #0af;
+  transition: opacity 0.1s linear;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  margin: 1em 0 1em 1em;
+
+  tr,
+  th,
+  td {
+    border: 1px solid gray;
+    padding: 6px 12px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style-position: inside;
+  list-style: disc;
+  margin: 1em 0 1em 2em;
+
+  ul,
+  ol {
+    margin: 0 0 0 2em;
+  }
+}
+
+ul.contains-task-list {
+  list-style: none;
+  margin-left: 1em;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style-position: inside;
+  list-style: decimal;
+  margin: 1em 0 1em 2em;
+
+  ul,
+  ol {
+    margin: 0 0 0 2em;
+  }
+}
+
+code {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: rgb(25, 25, 25);
+}
+
+pre {
+  margin: 16px 0;
+  padding: 8px;
+  border-radius: 4px;
+  overflow-x: auto;
+
+  code {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+blockquote {
+  margin: 8px 0;
+  padding: 8px;
+  border-left: 4px solid gray;
+  background-color: rgba(25, 25, 25, 0.5);
+}
+
+summary {
+  cursor: pointer;
+}
+
+.rlc-container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 120px;
+  margin: 0 auto 2rem 0;
+
+  color: rgb(230, 230, 230);
+  text-decoration: none;
+
+  border: 1px solid rgb(25, 25, 25);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: stretch;
+}
+
+.rlc-info {
+  overflow: hidden;
+  padding: 0.5rem;
+  flex: 4 1 100px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rlc-title {
+  font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rlc-description {
+  font-size: 0.875rem;
+  color: rgb(230, 230, 230);
+  overflow: hidden;
+  line-height: 1rem;
+  height: 2rem;
+}
+
+.rlc-url-container {
+  display: flex;
+  align-items: center;
+}
+
+.rlc-favicon {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.rlc-url {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.rlc-image-container {
+  position: relative;
+  flex: 1 1 100px;
+}
+
+.rlc-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}

@@ -1,7 +1,9 @@
 ---
 title: "テスト記事"
-tags: ["test1", "test2"]
 date: "2024-11-01"
+tags:
+  - test2_tag
+  - test3_tag
 ---
 
 これはテスト記事です。

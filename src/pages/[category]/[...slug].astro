@@ -1,7 +1,10 @@
 ---
-import Article from "@/components/Article.astro";
+import Article from "@/components/Article/Article.astro";
 import Layout from "@/layouts/Layout.astro";
 import { convertArticles, getAllArticles } from "@/lib/article";
+import { getEntry, type ContentEntryMap } from "astro:content";
+
+import "katex/dist/katex.min.css";
 
 export async function getStaticPaths() {
   const blogs = convertArticles(await getAllArticles("blog", true), "blog");
@@ -10,16 +13,21 @@ export async function getStaticPaths() {
 }
 
 const { category, slug } = Astro.params;
-const { title, tags, date, body } = Astro.props;
+
+const entry = await getEntry(category as keyof ContentEntryMap, slug);
+if (!entry) return Astro.redirect("/404");
+
+const renderer = await entry.render();
 ---
 
-<Layout title={title}>
+<Layout title={entry.data.title}>
   <Article
     category={category}
     slug={slug}
-    title={title}
-    tags={tags}
-    date={date}
-    body={body}
+    title={entry.data.title}
+    tags={entry.data.tags}
+    date={entry.data.date}
+    body={entry.body}
+    renderer={renderer}
   />
 </Layout>

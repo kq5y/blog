@@ -31,12 +31,16 @@ export function convertArticles(articles: Article[], category: string) {
         category: category,
         slug: article.slug,
       },
-      props: {
-        title: article.title,
-        tags: article.tags,
-        date: article.date,
-        body: article.body,
-      },
     };
   });
+}
+
+export function categoryToStr(category: string) {
+  switch (category) {
+    case "blog":
+      return "Blog";
+    case "memo":
+      return "Memo";
+  }
+  return "";
 }
