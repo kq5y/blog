@@ -1,0 +1,292 @@
+---
+import type { RenderResult } from "astro:content";
+import { categoryToStr } from "@/lib/article";
+import Profile from "@/components/Profile.astro";
+
+export interface Props {
+  category: string;
+  slug: string;
+  title: string;
+  tags: string[];
+  date: string;
+  body: string;
+  renderer: RenderResult;
+}
+
+const { category, slug, title, tags, date, renderer } = Astro.props;
+---
+
+<article>
+  <div class="articleMeta">
+    <div class="articleSlug">{slug}</div>
+    <h1 class="articleTitle">{title}</h1>
+    <div class="articleDate">{date}</div>
+    <div class="articleTags">
+      <span>{categoryToStr(category)}</span>
+      {tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </div>
+  <div class="articleMain">
+    <nav>
+      <ul>
+        <h2>Table of Contents</h2>
+        {
+          renderer.headings.map((head) => {
+            if (
+              (head.depth == 2 || head.depth == 3) &&
+              head.slug != "footnote-label"
+            ) {
+              return (
+                <li class={`heading${head.depth}`}>
+                  <a href={`#${head.slug}`}>{head.text}</a>
+                </li>
+              );
+            }
+          })
+        }
+      </ul>
+    </nav>
+    <div class="articleContent">
+      <renderer.Content />
+    </div>
+  </div>
+  <Profile />
+</article>
+
+<style>
+  article {
+    @apply px-8;
+
+    div.articleMeta {
+      @apply my-4;
+
+      h1.articleTitle {
+        @apply mb-0 border-b-0 text-3xl font-bold;
+      }
+
+      div.articleSlug,
+      div.articleDate {
+        @apply flex flex-row gap-4 text-sm text-neutral-400;
+      }
+
+      div.articleTags {
+        @apply mt-1 flex flex-row gap-2;
+
+        span {
+          @apply rounded bg-neutral-700 px-1.5 py-0.5 text-xs text-neutral-400;
+        }
+      }
+    }
+
+    div.articleMain {
+      @apply block lg:flex lg:flex-row-reverse lg:gap-4;
+
+      nav {
+        @apply w-72;
+
+        h2 {
+          @apply m-0 mb-2 mt-4 border-b-0 text-2xl font-bold;
+        }
+
+        ul {
+          @apply m-0 mb-6 list-none p-0 text-sm lg:sticky lg:top-20 lg:mt-0 lg:w-64;
+
+          li.heading2 {
+            @apply mb-1 mt-0;
+          }
+
+          li.heading3 {
+            @apply mb-1 ml-4 mt-0;
+          }
+        }
+      }
+
+      div.articleContent {
+        @apply flex-1;
+
+        h1 {
+          padding-bottom: 4px;
+          margin-bottom: 16px;
+          font-size: 24px;
+          font-weight: bold;
+          border-bottom: solid 1px gray;
+        }
+
+        h2 {
+          padding-bottom: 4px;
+          margin: 16px 0;
+          font-size: 21px;
+          font-weight: bold;
+          border-bottom: solid 1px gray;
+        }
+
+        h3 {
+          margin: 16px 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        p {
+          margin: 6px 0;
+        }
+
+        a {
+          color: #0af;
+          transition: opacity 0.1s linear;
+        }
+
+        a:hover {
+          opacity: 0.5;
+        }
+
+        table {
+          display: block;
+          width: max-content;
+          max-width: 100%;
+          overflow: auto;
+          margin: 1em 0 1em 1em;
+
+          tr,
+          th,
+          td {
+            border: 1px solid gray;
+            padding: 6px 12px;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          list-style-position: inside;
+          list-style: disc;
+          margin: 1em 0 1em 2em;
+
+          ul,
+          ol {
+            margin: 0 0 0 2em;
+          }
+        }
+
+        ul.contains-task-list {
+          list-style: none;
+          margin-left: 1em;
+        }
+
+        ol {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          list-style-position: inside;
+          list-style: decimal;
+          margin: 1em 0 1em 2em;
+
+          ul,
+          ol {
+            margin: 0 0 0 2em;
+          }
+        }
+
+        code {
+          padding: 2px 4px;
+          border-radius: 4px;
+          background-color: rgb(25, 25, 25);
+        }
+
+        pre {
+          margin: 16px 0;
+          padding: 8px;
+          border-radius: 4px;
+          overflow-x: auto;
+
+          code {
+            padding: 0;
+            background-color: transparent;
+          }
+        }
+
+        blockquote {
+          margin: 8px 0;
+          padding: 8px;
+          border-left: 4px solid gray;
+          background-color: rgba(25, 25, 25, 0.5);
+        }
+
+        summary {
+          cursor: pointer;
+        }
+
+        .rlc-container {
+          width: 100%;
+          max-width: 800px;
+          max-height: 120px;
+          margin: 0 auto 2rem 0;
+
+          color: rgb(230, 230, 230);
+          text-decoration: none;
+
+          border: 1px solid rgb(25, 25, 25);
+          border-radius: 0.25rem;
+          display: flex;
+          align-items: stretch;
+        }
+
+        .rlc-info {
+          overflow: hidden;
+          padding: 0.5rem;
+          flex: 4 1 100px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .rlc-title {
+          font-size: 1.25rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .rlc-description {
+          font-size: 0.875rem;
+          color: rgb(230, 230, 230);
+          overflow: hidden;
+          line-height: 1rem;
+          height: 2rem;
+        }
+
+        .rlc-url-container {
+          display: flex;
+          align-items: center;
+        }
+
+        .rlc-favicon {
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+        }
+
+        .rlc-url {
+          font-size: 1rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .rlc-image-container {
+          position: relative;
+          flex: 1 1 100px;
+        }
+
+        .rlc-image {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-bottom-right-radius: 0.25rem;
+          border-top-right-radius: 0.25rem;
+        }
+      }
+    }
+  }
+</style>
