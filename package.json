@@ -14,8 +14,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
+    "@expressive-code/plugin-line-numbers": "^0.38.3",
     "astro": "^4.16.10",
     "katex": "^0.16.11",
+    "rehype-expressive-code": "^0.38.3",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",
     "rehype-raw": "^7.0.0",

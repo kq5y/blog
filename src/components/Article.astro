@@ -106,6 +106,10 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
       div.articleContent {
         @apply flex-1 overflow-auto;
 
+        > div {
+          margin-bottom: 16px;
+        }
+
         h1 {
           padding-bottom: 4px;
           margin-bottom: 16px;
@@ -186,24 +190,6 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           ul,
           ol {
             margin: 0 0 0 2em;
-          }
-        }
-
-        code {
-          padding: 2px 4px;
-          border-radius: 4px;
-          background-color: rgb(25, 25, 25);
-        }
-
-        pre {
-          margin: 16px 0;
-          padding: 8px;
-          border-radius: 4px;
-          overflow-x: auto;
-
-          code {
-            padding: 0;
-            background-color: transparent;
           }
         }
 

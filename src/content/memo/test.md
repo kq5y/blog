@@ -24,6 +24,33 @@ import test
 print("test")
 ```
 
+```c title="report.c" del={2} ins={3-4} {6}
+#include <stdio.h>
+#define SIZE 5
+
+int main(void)
+{
+    int src[SIZE] = {1, 5, 4, 9, 6};
+    int dst[SIZE];
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        *(dst + i) = *(src + SIZE - i - 1);
+    }
+
+    int n;
+    printf("dst=[ ");
+    for (n = 0; n < SIZE; n++)
+    {
+        printf("%d ", dst[n]);
+    }
+    printf("]\n");
+
+    return 0;
+}
+
+```
+
 で*出力*できます。[^1]
 [^1]: 注釈です
 
