@@ -45,11 +45,16 @@ const { title } = Astro.props;
   }
   html {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background: linear-gradient(to bottom right, #230113, #010721);
-    background-size: auto;
-    background-attachment: fixed;
+    background: #010721;
     color: #edeaf6;
     scroll-padding-top: 4rem;
+    height: 100%;
+  }
+  body {
+    background: linear-gradient(to bottom right, #230113, #010721);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    min-height: 100%;
   }
   main {
     @apply mx-auto max-w-6xl;
@@ -59,14 +64,18 @@ const { title } = Astro.props;
     block-size: 8px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-800;
+    background-color: #140b2f;
     border-radius: 8px;
   }
   ::-webkit-scrollbar-track:hover {
-    border-radius: 8px;
+    background-color: #1e133c;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-600;
+    background-color: #7a4d7c;
     border-radius: 8px;
+    border: 2px solid #130f2f;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #9e66a7;
   }
 </style>

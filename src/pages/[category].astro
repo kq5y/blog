@@ -26,7 +26,7 @@ const articles = convertArticles(
 <Layout title=`${categoryToStr(category)} - ${SITE_NAME}`>
   <div class="px-8 py-2">
     <h1>{categoryToStr(category)}</h1>
-    <div>
+    <div class="articles">
       {articles.length === 0 && <p>記事がありません</p>}
       {
         articles.map((article) => (
@@ -35,8 +35,8 @@ const articles = convertArticles(
               {article.props.title}
             </a>
             <div>
-              <div>{article.props.date}</div>
-              <div>
+              <div class="articleDate">{article.props.date}</div>
+              <div class="articleTags">
                 <span>{categoryToStr(category)}</span>
                 {article.props.tags.map((tag) => (
                   <span>{tag}</span>
@@ -52,6 +52,25 @@ const articles = convertArticles(
 
 <style>
   h1 {
-    @apply text-3xl font-bold;
+    @apply my-2 text-3xl font-bold;
+  }
+  div.articles {
+    @apply my-2 flex flex-col gap-2 text-sm;
+
+    a {
+      @apply text-base font-bold;
+    }
+
+    div.articleDate {
+      @apply text-neutral-500;
+    }
+
+    div.articleTags {
+      @apply flex flex-row gap-2;
+
+      span {
+        @apply rounded bg-neutral-800 px-1.5 py-0.5 text-xs text-neutral-400;
+      }
+    }
   }
 </style>
