@@ -5,7 +5,8 @@
   "prettier.printWidth": 80,
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss"
   },
   "eslint.validate": [
     "javascript",
@@ -13,5 +14,24 @@
     "astro",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.addMissingImports": "explicit",
+      "source.sortImports": "explicit"
+    }
+  },
+  "[typescript][typescriptreact][javascript][javascriptreact][vue][json][scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.addMissingImports": "explicit",
+      "source.sortImports": "explicit"
+    }
+  }
 }

@@ -1,11 +1,10 @@
 ---
-import Profile from "@/components/Profile.astro";
+import type { ContentEntryMap } from "astro:content";
+
 import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { categoryToStr, convertArticles, getAllArticles } from "@/lib/article";
 import { asyncFlatMap } from "@/lib/async";
-import type { ContentEntryMap } from "astro:content";
-import type { ContentCollectionKey } from "astro:content";
 
 const articles = (
   await asyncFlatMap(["blog", "memo"], async (category) => {
