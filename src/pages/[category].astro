@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { categoryToStr, convertArticles, getAllArticles } from "@/lib/article";
+import type { ContentEntryMap } from "astro:content";
 
 export async function getStaticPaths() {
   const categories = ["blog", "memo"];
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 
 const articles = convertArticles(
-  await getAllArticles(category, false),
+  await getAllArticles(category as keyof ContentEntryMap, false),
   category
 );
 ---

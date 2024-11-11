@@ -42,20 +42,13 @@ const { title } = Astro.props;
     src: url("/font/font700.woff2") format("woff2");
   }
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
   }
   html {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background: #13151a;
-    color: #f3f8f3;
+    background: linear-gradient(to bottom right, #230113, #010721);
+    background-size: auto;
+    background-attachment: fixed;
+    color: #edeaf6;
   }
   main {
     @apply mx-auto max-w-6xl;
