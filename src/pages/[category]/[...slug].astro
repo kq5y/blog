@@ -1,5 +1,6 @@
 ---
 import Article from "@/components/Article.astro";
+import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { convertArticles, getAllArticles } from "@/lib/article";
 import { getEntry, type ContentEntryMap } from "astro:content";
@@ -20,7 +21,7 @@ if (!entry) return Astro.redirect("/404");
 const renderer = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} - かしわうどん`}>
+<Layout title={`${entry.data.title} - ${SITE_NAME}`}>
   <Article
     category={category}
     slug={slug}
