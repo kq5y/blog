@@ -23,5 +23,8 @@ export default defineConfig({
     remarkRehype: {
       footnoteLabel: "脚注",
     },
+    shikiConfig: {
+      theme: "rose-pine",
+    },
   },
 });
