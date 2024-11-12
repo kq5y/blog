@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="flex flex-row gap-4 pb-8 mx-4">
@@ -12,10 +12,10 @@
   </div>
   <div class="flex flex-col my-auto">
     <div class="font-semibold mb-2 text-lg">kq5y</div>
-    <div class="text-neutral-400 flex flex-row gap-2">
+    <div class="text-neutral-400 flex flex-row gap-2 h-6">
       <span>
-        <a href="https://t3x.jp" target="_blank" rel="noopener noreferrer"
-          >Portfolio
+        <a href="https://t3x.jp" target="_blank" rel="noopener noreferrer">
+          <Icon name="mdi:home" size={24} />
         </a>
       </span>
       <span>
@@ -23,12 +23,13 @@
           href="https://github.com/kq5y"
           target="_blank"
           rel="noopener noreferrer"
-          >Github
+        >
+          <Icon name="mdi:github" size={24} />
         </a>
       </span>
       <span>
-        <a href="https://x.com/_kq5y" target="_blank" rel="noopener noreferrer"
-          >Twitter
+        <a href="https://x.com/_kq5y" target="_blank" rel="noopener noreferrer">
+          <Icon name="mdi:twitter" size={24} />
         </a>
       </span>
     </div>

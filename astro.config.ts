@@ -10,8 +10,10 @@ import rehypeRaw from "rehype-raw";
 import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
 
+import icon from "astro-icon";
+
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind(), icon()],
   markdown: {
     remarkPlugins: [[remarkLinkCard, { shortenUrl: true }], remarkMath],
     rehypePlugins: [
