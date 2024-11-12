@@ -205,6 +205,12 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           cursor: pointer;
         }
 
+        code:not(pre > code) {
+          @apply bg-neutral-800;
+          padding: 2px 4px;
+          border-radius: 4px;
+        }
+
         .rlc-container {
           width: 100%;
           max-width: 800px;
