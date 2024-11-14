@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
@@ -9,8 +10,26 @@ import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
+import { visit } from "unist-util-visit";
 
-import icon from "astro-icon";
+const rehypeMermaidPre = () => {
+  return (tree: any) => {
+    visit(tree, "element", (node, index, parent) => {
+      if (
+        node.tagName === "pre" &&
+        parent &&
+        node.children.length === 1 &&
+        node.children[0].tagName === "code" &&
+        node.children[0].properties.className &&
+        node.children[0].properties.className.includes("language-mermaid")
+      ) {
+        node.properties = node.properties || {};
+        node.properties.className = ["mermaid-block"];
+        node.children = node.children[0].children;
+      }
+    });
+  };
+};
 
 export default defineConfig({
   integrations: [tailwind(), icon()],
@@ -18,6 +37,7 @@ export default defineConfig({
     remarkPlugins: [[remarkLinkCard, { shortenUrl: true }], remarkMath],
     rehypePlugins: [
       rehypeKatex,
+      rehypeMermaidPre,
       [
         rehypeExpressiveCode,
         {
