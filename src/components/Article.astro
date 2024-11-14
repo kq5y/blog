@@ -104,7 +104,7 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
       }
 
       div.articleTags {
-        @apply mt-1 flex flex-row gap-2;
+        @apply mt-1 flex flex-row flex-wrap gap-x-2 gap-y-1;
 
         span {
           @apply rounded bg-neutral-800 px-1.5 py-0.5 text-xs text-neutral-400;
@@ -116,7 +116,7 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
       @apply block lg:flex lg:flex-row-reverse lg:gap-4;
 
       nav {
-        @apply w-72;
+        width: min(18rem, 100%);
 
         h2 {
           @apply m-0 mb-2 mt-4 border-b-0 text-2xl font-bold;
@@ -136,7 +136,7 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
       }
 
       div.articleContent {
-        @apply flex-1 overflow-auto;
+        @apply flex-1 overflow-hidden;
 
         > div {
           margin-bottom: 16px;
@@ -179,10 +179,11 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
 
         table {
           display: block;
-          width: max-content;
           max-width: 100%;
           overflow: auto;
           margin: 1em 0 1em 1em;
+          overflow-x: auto;
+          overflow-y: hidden;
 
           tr,
           th,
@@ -228,8 +229,8 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
         blockquote {
           margin: 8px 0;
           padding: 8px;
-          border-left: 4px solid gray;
-          background-color: rgba(25, 25, 25, 0.5);
+          border-left: 4px solid #7a4d7c;
+          background-color: #140b2f88;
         }
 
         summary {
@@ -240,6 +241,11 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           @apply bg-neutral-800;
           padding: 2px 4px;
           border-radius: 4px;
+        }
+
+        span.katex-display {
+          overflow-x: auto;
+          overflow-y: hidden;
         }
 
         .rlc-container {
