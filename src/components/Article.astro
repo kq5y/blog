@@ -17,37 +17,6 @@ export interface Props {
 const { category, slug, title, tags, date, renderer } = Astro.props;
 ---
 
-<script>
-  import mermaid from "mermaid";
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: "dark",
-    themeVariables: {
-      background: "#010721",
-      fontFamily: `"M PLUS Rounded 1c", trebuchet ms, verdana, arial`,
-      primaryColor: "#7a4d7c",
-      primaryTextColor: "#edeaf6",
-      primaryBorderColor: "#7a4d7c",
-      lineColor: "#9e66a7",
-      secondaryColor: "#1e133c",
-      tertiaryColor: "#140b2f",
-      textColor: "#edeaf6",
-      nodeTextColor: "#edeaf6",
-      mainBkg: "#140b2f",
-      nodeBorder: "#7a4d7c",
-      edgeLabelBackground: "#230113",
-      labelTextColor: "#edeaf6",
-      nodeAltBackground: "#130f2f",
-      tooltipBackgroundColor: "#140b2f",
-      tooltipTextColor: "#edeaf6",
-      tooltipBorderColor: "#7a4d7c",
-    },
-  });
-  await mermaid.run({
-    querySelector: ".mermaid-block",
-  });
-</script>
-
 <article>
   <div class="articleMeta">
     <div class="articleSlug">{slug}</div>
@@ -86,6 +55,41 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
     <Profile />
   </div>
 </article>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"
+  integrity="sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="
+  crossorigin="anonymous"></script>
+
+<script is:inline>
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "dark",
+    themeVariables: {
+      background: "#010721",
+      fontFamily: `"M PLUS Rounded 1c", trebuchet ms, verdana, arial`,
+      primaryColor: "#7a4d7c",
+      primaryTextColor: "#edeaf6",
+      primaryBorderColor: "#7a4d7c",
+      lineColor: "#9e66a7",
+      secondaryColor: "#1e133c",
+      tertiaryColor: "#140b2f",
+      textColor: "#edeaf6",
+      nodeTextColor: "#edeaf6",
+      mainBkg: "#140b2f",
+      nodeBorder: "#7a4d7c",
+      edgeLabelBackground: "#230113",
+      labelTextColor: "#edeaf6",
+      nodeAltBackground: "#130f2f",
+      tooltipBackgroundColor: "#140b2f",
+      tooltipTextColor: "#edeaf6",
+      tooltipBorderColor: "#7a4d7c",
+    },
+  });
+  mermaid.run({
+    querySelector: ".mermaid-block",
+  });
+</script>
 
 <style>
   article {
