@@ -24,8 +24,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-      - name: Install chromium
-        run: pnpm dlx playwright install --with-deps chromium
       - name: Build
         run: pnpm build
       - name: Publish
