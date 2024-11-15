@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
+import playformCompress from "@playform/compress";
 import icon from "astro-icon";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
@@ -32,7 +33,7 @@ const rehypeMermaidPre = () => {
 };
 
 export default defineConfig({
-  integrations: [tailwind(), icon()],
+  integrations: [tailwind(), icon(), playformCompress()],
   markdown: {
     remarkPlugins: [[remarkLinkCard, { shortenUrl: true }], remarkMath],
     rehypePlugins: [
