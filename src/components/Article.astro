@@ -30,7 +30,7 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
   <div class="articleMain">
     <nav>
       <ul>
-        <h2>Table of Contents</h2>
+        <li><h2>Table of Contents</h2></li>
         {
           renderer.headings.map((head) => {
             if (

@@ -1,20 +1,24 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+
+import userIconImage from "@/images/userIcon.jpg";
 ---
 
 <div class="flex flex-row gap-4 pb-8 mx-4">
   <div class="size-20">
-    <img
-      class="h-auto rounded-full"
-      src="https://avatars.githubusercontent.com/u/46104508"
-      alt="icon"
-    />
+    <Image class="h-auto rounded-full" src={userIconImage} alt="icon" />
   </div>
   <div class="flex flex-col my-auto">
     <div class="font-semibold mb-2 text-lg">kq5y</div>
     <div class="text-neutral-400 flex flex-row gap-2 h-6">
       <span>
-        <a href="https://t3x.jp" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://t3x.jp"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="homepage"
+        >
           <Icon name="mdi:home" size={24} />
         </a>
       </span>
@@ -23,12 +27,18 @@ import { Icon } from "astro-icon/components";
           href="https://github.com/kq5y"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="github"
         >
           <Icon name="mdi:github" size={24} />
         </a>
       </span>
       <span>
-        <a href="https://x.com/_kq5y" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://x.com/_kq5y"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="twitter"
+        >
           <Icon name="mdi:twitter" size={24} />
         </a>
       </span>
