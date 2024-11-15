@@ -46,7 +46,7 @@ importers:
         version: 7.0.1
       rehype-mermaid-ctm:
         specifier: github:kq5y/rehype-mermaid-ctm
-        version: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/6f4dd09609b54394eadfb2578403d8db1d331027
+        version: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/361a39f2ed9ad866e82847ac8de235b876851d3a
       rehype-raw:
         specifier: ^7.0.0
         version: 7.0.0
@@ -3072,8 +3072,8 @@ packages:
   rehype-katex@7.0.1:
     resolution: {integrity: sha512-OiM2wrZ/wuhKkigASodFoo8wimG3H12LWQaH8qSPVJn9apWKFSH3YOCtbKpBorTVw/eI7cuT21XBbvwEswbIOA==}
 
-  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/6f4dd09609b54394eadfb2578403d8db1d331027:
-    resolution: {tarball: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/6f4dd09609b54394eadfb2578403d8db1d331027}
+  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/361a39f2ed9ad866e82847ac8de235b876851d3a:
+    resolution: {tarball: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/361a39f2ed9ad866e82847ac8de235b876851d3a}
     version: 1.0.0
 
   rehype-parse@9.0.1:
@@ -7283,7 +7283,7 @@ snapshots:
       unist-util-visit-parents: 6.0.1
       vfile: 6.0.3
 
-  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/6f4dd09609b54394eadfb2578403d8db1d331027:
+  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/361a39f2ed9ad866e82847ac8de235b876851d3a:
     dependencies:
       '@mermaid-js/mermaid-cli': 11.4.0(puppeteer@23.8.0(typescript@5.6.3))
       '@types/hast': 3.0.4
