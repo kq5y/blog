@@ -137,24 +137,24 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           margin: 6px 0;
         }
 
-        a {
+        a:not(.rlc-container) {
           color: #a79fe0;
           text-decoration: none;
           transition:
             color 0.3s,
             border-bottom 0.3s;
           border-bottom: 1px solid transparent;
-        }
 
-        a:hover {
-          color: #edeaf6;
-          border-bottom: 1px solid #edeaf6;
-        }
+          &:hover {
+            color: #edeaf6;
+            border-bottom: 1px solid #edeaf6;
+          }
 
-        a:focus {
-          outline: none;
-          color: #edeaf6;
-          border-bottom: 1px solid #edeaf6;
+          &focus {
+            outline: none;
+            color: #edeaf6;
+            border-bottom: 1px solid #edeaf6;
+          }
         }
 
         table {
@@ -241,6 +241,12 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           border-radius: 0.25rem;
           display: flex;
           align-items: stretch;
+
+          transition: opacity 0.1s linear;
+        }
+
+        .rlc-container:hover {
+          opacity: 0.5;
         }
 
         .rlc-info {
