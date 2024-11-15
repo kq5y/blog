@@ -8,29 +8,10 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
+import rehypeMermaid from "rehype-mermaid";
 import rehypeRaw from "rehype-raw";
 import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
-import { visit } from "unist-util-visit";
-
-const rehypeMermaidPre = () => {
-  return (tree: any) => {
-    visit(tree, "element", (node, index, parent) => {
-      if (
-        node.tagName === "pre" &&
-        parent &&
-        node.children.length === 1 &&
-        node.children[0].tagName === "code" &&
-        node.children[0].properties.className &&
-        node.children[0].properties.className.includes("language-mermaid")
-      ) {
-        node.properties = node.properties || {};
-        node.properties.className = ["mermaid-block"];
-        node.children = node.children[0].children;
-      }
-    });
-  };
-};
 
 export default defineConfig({
   integrations: [tailwind(), icon(), playformCompress()],
@@ -38,7 +19,34 @@ export default defineConfig({
     remarkPlugins: [[remarkLinkCard, { shortenUrl: true }], remarkMath],
     rehypePlugins: [
       rehypeKatex,
-      rehypeMermaidPre,
+      [
+        rehypeMermaid,
+        {
+          mermaidConfig: {
+            theme: "dark",
+            themeVariables: {
+              background: "#010721",
+              fontFamily: `"M PLUS Rounded 1c", trebuchet ms, verdana, arial`,
+              primaryColor: "#7a4d7c",
+              primaryTextColor: "#edeaf6",
+              primaryBorderColor: "#7a4d7c",
+              lineColor: "#9e66a7",
+              secondaryColor: "#1e133c",
+              tertiaryColor: "#140b2f",
+              textColor: "#edeaf6",
+              nodeTextColor: "#edeaf6",
+              mainBkg: "#140b2f",
+              nodeBorder: "#7a4d7c",
+              edgeLabelBackground: "#230113",
+              labelTextColor: "#edeaf6",
+              nodeAltBackground: "#130f2f",
+              tooltipBackgroundColor: "#140b2f",
+              tooltipTextColor: "#edeaf6",
+              tooltipBorderColor: "#7a4d7c",
+            },
+          },
+        },
+      ],
       [
         rehypeExpressiveCode,
         {
