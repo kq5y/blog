@@ -29,7 +29,7 @@ print("test")
 
 ~~詳しくは[Link](https://example.com)を確認してください。~~
 
-[Internal](/posts)
+[Internal](/blog)
 
 > 引用です
 

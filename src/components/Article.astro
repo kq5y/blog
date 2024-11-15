@@ -130,7 +130,7 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
           @apply m-0 mb-6 list-none p-0 text-sm lg:sticky lg:top-20 lg:mt-0 lg:w-64;
 
           li.heading2 {
-            @apply mb-1 mt-0;
+            @apply mb-1 mt-0 text-lg;
           }
 
           li.heading3 {
@@ -173,12 +173,23 @@ const { category, slug, title, tags, date, renderer } = Astro.props;
         }
 
         a {
-          color: #0af;
-          transition: opacity 0.1s linear;
+          color: #a79fe0;
+          text-decoration: none;
+          transition:
+            color 0.3s,
+            border-bottom 0.3s;
+          border-bottom: 1px solid transparent;
         }
 
         a:hover {
-          opacity: 0.5;
+          color: #edeaf6;
+          border-bottom: 1px solid #edeaf6;
+        }
+
+        a:focus {
+          outline: none;
+          color: #edeaf6;
+          border-bottom: 1px solid #edeaf6;
         }
 
         table {

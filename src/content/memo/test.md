@@ -56,7 +56,7 @@ int main(void)
 
 ~~詳しくは[Link](https://example.com)を確認してください。~~
 
-[Internal](/posts)
+[Internal](/memo)
 
 > 引用です
 
