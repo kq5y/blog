@@ -22,6 +22,7 @@ export default defineConfig({
       [
         rehypeMermaidCtm,
         {
+          outputType: "img-svg",
           mermaidConfig: {
             theme: "dark",
             themeVariables: {
