@@ -8,7 +8,7 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
-import rehypeMermaid from "rehype-mermaid";
+import rehypeMermaidCtm from "rehype-mermaid-ctm";
 import rehypeRaw from "rehype-raw";
 import remarkLinkCard from "remark-link-card";
 import remarkMath from "remark-math";
@@ -20,13 +20,12 @@ export default defineConfig({
     rehypePlugins: [
       rehypeKatex,
       [
-        rehypeMermaid,
+        rehypeMermaidCtm,
         {
           mermaidConfig: {
             theme: "dark",
             themeVariables: {
               background: "#010721",
-              fontFamily: `"M PLUS Rounded 1c", trebuchet ms, verdana, arial`,
               primaryColor: "#7a4d7c",
               primaryTextColor: "#edeaf6",
               primaryBorderColor: "#7a4d7c",
