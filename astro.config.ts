@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
 import playformCompress from "@playform/compress";
 import icon from "astro-icon";
 
@@ -14,7 +13,7 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
-  integrations: [tailwind(), icon(), playformCompress()],
+  integrations: [icon(), playformCompress()],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],

@@ -4,10 +4,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 80,
   "files.insertFinalNewline": true,
-  "files.associations": {
-    "*.css": "tailwindcss",
-    "*.scss": "tailwindcss"
-  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
