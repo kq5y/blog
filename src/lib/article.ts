@@ -1,5 +1,16 @@
 import { getCollection, type ContentEntryMap } from "astro:content";
 
+let collectionCache: { [key: string]: any[] } = {};
+
+async function getCollectionCache(
+  collection: keyof ContentEntryMap
+): Promise<any[]> {
+  if (!collectionCache[collection]) {
+    collectionCache[collection] = await getCollection(collection);
+  }
+  return collectionCache[collection];
+}
+
 export interface Article {
   title: string;
   tags: string[];
@@ -26,7 +37,7 @@ export async function getAllArticles(
   cat: keyof ContentEntryMap,
   showHidden: boolean = false
 ): Promise<Article[]> {
-  const articles = await getCollection(cat);
+  const articles = await getCollectionCache(cat);
   return articles
     .filter((article) => showHidden || !(article.data.hidden === true))
     .map((article) => ({
