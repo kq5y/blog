@@ -10,13 +10,16 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
 import rehypeMermaidCtm from "rehype-mermaid-ctm";
 import rehypeRaw from "rehype-raw";
-import remarkLinkCard from "remark-link-card";
+import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
   integrations: [tailwind(), icon(), playformCompress()],
   markdown: {
-    remarkPlugins: [[remarkLinkCard, { shortenUrl: true }], remarkMath],
+    remarkPlugins: [
+      [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],
+      remarkMath,
+    ],
     rehypePlugins: [
       rehypeKatex,
       [
