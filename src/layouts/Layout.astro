@@ -22,9 +22,6 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
-    />
   </head>
   <body>
     <Header />
@@ -35,6 +32,20 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+  @font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url("/assets/font/font400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url("/assets/font/font700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
   html {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: #010721;
@@ -51,7 +62,9 @@ const { title } = Astro.props;
     min-height: 100%;
   }
   main {
-    @apply mx-auto max-w-6xl;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 72rem;
   }
   ::-webkit-scrollbar {
     inline-size: 8px;
