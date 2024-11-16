@@ -3,72 +3,19 @@ import type { ContentEntryMap } from "astro:content";
 
 import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { categoryToStr, convertArticles, getAllArticles } from "@/lib/article";
+import { getAllArticles } from "@/lib/article";
 import { asyncFlatMap } from "@/lib/async";
+import ArticleList from "@/components/ArticleList.astro";
 
 const articles = (
   await asyncFlatMap(["blog", "memo"], async (category) => {
-    return convertArticles(
-      await getAllArticles(category as keyof ContentEntryMap, false),
-      category
-    );
+    return await getAllArticles(category as keyof ContentEntryMap, false);
   })
 )
-  .sort(
-    (a, z) =>
-      new Date(z.props.date).getTime() - new Date(a.props.date).getTime()
-  )
+  .sort((a, z) => new Date(z.date).getTime() - new Date(a.date).getTime())
   .slice(0, 5);
 ---
 
 <Layout title={SITE_NAME}>
-  <div class="px-8 py-2">
-    <h1>Recent Posts</h1>
-    <div class="articles">
-      {articles.length === 0 && <p>記事がありません</p>}
-      {
-        articles.map((article) => (
-          <article>
-            <a href={`/${article.params.category}/${article.params.slug}/`}>
-              {article.props.title}
-            </a>
-            <div>
-              <div class="articleDate">{article.props.date}</div>
-              <div class="articleTags">
-                <span>{categoryToStr(article.params.category)}</span>
-                {article.props.tags.map((tag) => (
-                  <span>{tag}</span>
-                ))}
-              </div>
-            </div>
-          </article>
-        ))
-      }
-    </div>
-  </div>
+  <ArticleList title="Recent Posts" articles={articles} />
 </Layout>
-
-<style>
-  h1 {
-    @apply my-2 text-3xl font-bold;
-  }
-  div.articles {
-    @apply my-2 flex flex-col gap-2 text-sm;
-
-    a {
-      @apply text-base font-bold;
-    }
-
-    div.articleDate {
-      @apply text-neutral-500;
-    }
-
-    div.articleTags {
-      @apply flex flex-row gap-2;
-
-      span {
-        @apply rounded bg-neutral-800 px-1.5 py-0.5 text-xs text-neutral-400;
-      }
-    }
-  }
-</style>

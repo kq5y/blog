@@ -6,12 +6,12 @@ import { SITE_NAME } from "@/const";
 
 <header>
   <div class="headerContainer">
-    <div class="grow">
+    <div class="headerTitleContainer">
       <div>
-        <a class="text-2xl" href="/">{SITE_NAME}</a>
+        <a href="/">{SITE_NAME}</a>
       </div>
     </div>
-    <div class="flex gap-6 text-lg">
+    <div class="headerMenuContainer">
       <div>
         <a href="/blog/">Blog</a>
       </div>
@@ -26,12 +26,39 @@ import { SITE_NAME } from "@/const";
 
 <style>
   header {
-    @apply sticky top-0 z-10 h-16;
     background: rgba(32, 30, 41, 0.7);
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 4rem;
 
     div.headerContainer {
-      @apply mx-auto flex h-full w-full max-w-6xl items-center px-8 font-bold;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      max-width: 72rem;
+      align-items: center;
+      padding-inline: 2rem;
+      font-weight: 700;
+
+      div.headerTitleContainer {
+        flex-grow: 1;
+
+        div > a {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+      }
+
+      div.headerMenuContainer {
+        display: flex;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        gap: 1.5rem;
+      }
     }
   }
 </style>

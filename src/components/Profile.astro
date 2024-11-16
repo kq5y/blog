@@ -5,13 +5,13 @@ import { Icon } from "astro-icon/components";
 import userIconImage from "@/images/userIconImage.png";
 ---
 
-<div class="flex flex-row gap-4 pb-8 mx-4">
-  <div class="size-20">
-    <Image class="h-auto rounded-full" src={userIconImage} alt="icon" />
+<div class="profileContainerflex">
+  <div class="profileIcon">
+    <Image src={userIconImage} alt="icon" />
   </div>
-  <div class="flex flex-col my-auto">
-    <div class="font-semibold mb-2 text-lg">kq5y</div>
-    <div class="text-neutral-400 flex flex-row gap-2 h-6">
+  <div class="profileContent">
+    <div class="profileName">kq5y</div>
+    <div class="profileButtons">
       <span>
         <a
           href="https://t3x.jp"
@@ -45,3 +45,44 @@ import userIconImage from "@/images/userIconImage.png";
     </div>
   </div>
 </div>
+
+<style>
+  div.profileContainer {
+    flex-direction: row;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    margin-inline: 1rem;
+
+    div.profileIcon {
+      width: 5rem;
+      height: 5rem;
+
+      img {
+        height: auto;
+        border-radius: 9999px;
+      }
+    }
+
+    div.profileContent {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      div.profileName {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      div.profileButtons {
+        @apply text-neutral-400;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+</style>

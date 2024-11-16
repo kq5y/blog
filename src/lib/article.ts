@@ -7,6 +7,19 @@ export interface Article {
   hidden?: boolean;
   slug: string;
   body: string;
+  category: keyof ContentEntryMap;
+  path: string;
+}
+
+export function convertParams(articles: Article[]) {
+  return articles.map((article) => {
+    return {
+      params: {
+        category: article.category,
+        slug: article.slug,
+      },
+    };
+  });
 }
 
 export async function getAllArticles(
@@ -20,26 +33,10 @@ export async function getAllArticles(
       ...article.data,
       slug: article.slug,
       body: article.body,
+      category: cat,
+      path: `/${cat}/${article.slug}/`,
     }))
     .sort((a, z) => new Date(z.date).getTime() - new Date(a.date).getTime());
-}
-
-export function convertArticles(articles: Article[], category: string) {
-  return articles.map((article) => {
-    let slug = article.slug;
-    if (!Number.isNaN(Number.parseInt(article.slug))) slug = "_" + slug;
-    return {
-      params: {
-        category: category,
-        slug: slug,
-      },
-      props: {
-        title: article.title,
-        tags: article.tags,
-        date: article.date,
-      },
-    };
-  });
 }
 
 export function categoryToStr(category: string) {

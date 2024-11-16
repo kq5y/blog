@@ -4,13 +4,13 @@ import { getEntry, type ContentEntryMap } from "astro:content";
 import Article from "@/components/Article.astro";
 import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { convertArticles, getAllArticles } from "@/lib/article";
+import { convertParams, getAllArticles } from "@/lib/article";
 
 import "katex/dist/katex.min.css";
 
 export async function getStaticPaths() {
-  const blogs = convertArticles(await getAllArticles("blog", true), "blog");
-  const memos = convertArticles(await getAllArticles("memo", true), "memo");
+  const blogs = convertParams(await getAllArticles("blog", true));
+  const memos = convertParams(await getAllArticles("memo", true));
   return [...blogs, ...memos];
 }
 
