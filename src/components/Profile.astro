@@ -5,7 +5,7 @@ import { Icon } from "astro-icon/components";
 import userIconImage from "@/images/userIconImage.png";
 ---
 
-<div class="profileContainerflex">
+<div class="profileInnerContainer">
   <div class="profileIcon">
     <Image src={userIconImage} alt="icon" />
   </div>
@@ -47,7 +47,8 @@ import userIconImage from "@/images/userIconImage.png";
 </div>
 
 <style>
-  div.profileContainer {
+  div.profileInnerContainer {
+    display: flex;
     flex-direction: row;
     gap: 1rem;
     padding-bottom: 2rem;
