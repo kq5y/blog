@@ -24,6 +24,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
+      - name: Install Chrome
+        run: pnpm dlx puppeteer browsers install chrome
       - name: Build
         run: pnpm build
       - name: Publish
