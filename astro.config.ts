@@ -13,7 +13,16 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
-  integrations: [icon(), playformCompress()],
+  integrations: [
+    icon(),
+    playformCompress({
+      HTML: {
+        "html-minifier-terser": {
+          minifyCSS: false,
+        },
+      },
+    }),
+  ],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],

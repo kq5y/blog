@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "start": "astro check && astro build && astro preview",
     "astro": "astro",
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,astro}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro}\""
