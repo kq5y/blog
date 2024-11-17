@@ -6,8 +6,6 @@ import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { convertParams, getAllArticles } from "@/lib/article";
 
-import "katex/dist/katex.min.css";
-
 export async function getStaticPaths() {
   const blogs = convertParams(await getAllArticles("blog", true));
   const memos = convertParams(await getAllArticles("memo", true));
@@ -21,6 +19,15 @@ if (!entry) return Astro.redirect("/404");
 
 const renderer = await entry.render();
 ---
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  integrity="sha256-cXvJrnhTth8PdkVd3fDs1PUnp4P0LeKsJGhImcHEYlg="
+  crossorigin="anonymous"
+  media="print"
+  onload="this.media='all'"
+/>
 
 <Layout title={`${entry.data.title} - ${SITE_NAME}`}>
   <Article
