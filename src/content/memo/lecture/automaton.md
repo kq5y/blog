@@ -10,6 +10,7 @@ tags:
 
 - アルファベット ... 記号の有限集合
 - 語(記号列) ... アルファベット$\Sigma$上の記号からなる記号列
+  - 空記号列 ... 長さが0の記号列
 - 言語 ... アルファベット$\Sigma$上の語の集合
 
 - べき乗集合 ... Aの部分集合全体からなる集合 \
@@ -69,3 +70,41 @@ $
 $
 
 </details>
+
+## NFAの基礎
+
+$A= \langle Q,\Sigma,\delta,q_0,F \rangle$
+
+- $Q$ ... 状態の有限集合
+- $\Sigma$ ... 入力記号の有限集合
+- $\delta$ ... 動作関数 $Q \times \Sigma = 2^Q$
+- $q_0$ ... 初期状態($\in Q$)
+- $F$ ... 受理状態($\subseteq Q$)
+
+**DFAとの違い**
+
+NFAは0個を含め複数の状態に遷移できる
+
+<details>
+<summary>具体例</summary>
+2個の連続した0を含む語全体からなる言語
+
+```mermaid
+graph LR
+  start(( )) --> A((q0))
+  A -->|0| B((q1))
+  B -->|0| C(((q2)))
+  A -->|0,1| A
+  C -->|0,1| C
+  style start fill:none, stroke:none
+```
+
+</details>
+
+### 空動作付きNFA
+
+$\epsilon$ -NFAは $\delta(q,\epsilon)$ となる動作(=空動作, $\epsilon$ 動作)がある非決定性オートマトン
+
+動作関数は $Q \times (\Sigma \cup \{\epsilon\}) \rightarrow 2^Q$
+
+定義より非決定性は $\epsilon$ 動作のある非決定性の一部
