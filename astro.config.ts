@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 
+import preact from "@astrojs/preact";
 import playformCompress from "@playform/compress";
 import icon from "astro-icon";
 
@@ -13,8 +14,12 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
+  site: "https://t3x.jp",
   integrations: [
     icon(),
+    preact({
+      compat: true,
+    }),
     playformCompress({
       HTML: {
         "html-minifier-terser": {
@@ -77,5 +82,14 @@ export default defineConfig({
       footnoteLabel: "脚注",
     },
     syntaxHighlight: false,
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          api: "modern-compiler",
+        },
+      },
+    },
   },
 });
