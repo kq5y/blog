@@ -143,6 +143,92 @@ const WORKS: WorkItem[] = [
   },
 ];
 
-const HISTORY: HistoryItem[] = [];
+const HISTORY: HistoryItem[] = [
+  {
+    date: "2025-04",
+    category: "Education",
+    title: "筑波大学情報学群情報科学類 編入学予定",
+    future: true,
+  },
+  {
+    date: "2025-03",
+    category: "Education",
+    title: "信州大学工学部電子情報システム工学科 退学予定",
+    future: true,
+  },
+  {
+    date: "2023-04",
+    category: "Education",
+    title: "信州大学工学部電子情報システム工学科 入学",
+    description: "情報プログラム所属(2024-09～)",
+  },
+  {
+    date: "2021-06",
+    category: "Certificate",
+    title: "実用英語技能検定 準2級 合格",
+  },
+  {
+    date: "2021-02",
+    category: "Certificate",
+    title: "基本情報技術者試験 合格",
+    description: "第FE-2021-02-01828号",
+  },
+  {
+    date: "2023-10",
+    category: "Certificate",
+    title: "応用情報技術者試験 合格",
+    description: "第AP-2023-10-06136号",
+  },
+  {
+    date: "2021-09",
+    category: "Competition",
+    title: "パソコン甲子園2021",
+    description: "プログラミング部門予選成績優秀証 獲得",
+  },
+  {
+    date: "2023-08",
+    category: "Competition",
+    title: "SIGNATE Student Cup 2023",
+    description: "テーブルコンペ 🥈42th",
+    links: [
+      {
+        name: "SIGNATE",
+        url: "https://signate.jp/competitions/1051",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/tksnnx/signate_scup2023",
+      },
+    ],
+  },
+  {
+    date: "2023-09",
+    category: "Competition",
+    title:
+      "テクノプロ・デザイン社 食品パッケージ画像解析チャレンジ（一般部門・学生部門）",
+    description: "画像コンペ 学生部門 🥈11st",
+    links: [
+      {
+        name: "SIGNATE",
+        url: "https://signate.jp/competitions/1106",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/tksnnx/technopro-food-package",
+      },
+    ],
+  },
+  {
+    date: "2023-12",
+    category: "Certificate",
+    title: "普通自動車第一種運転免許（AT限定） 取得",
+  },
+  {
+    date: "2024-04",
+    category: "Certificate",
+    title: "TOEIC Listening & Reading 645点",
+    description: "Listening:330 Reading:315",
+  },
+];
 
 export { SITE_NAME, SITE_DESCRIPTION, PROFILE, WORKS, HISTORY };
