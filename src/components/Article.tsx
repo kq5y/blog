@@ -1,7 +1,5 @@
 import type { MarkdownHeading } from "astro";
 
-import { categoryToStr } from "@/lib/article";
-
 import styled from "./Article.module.scss";
 import "katex/dist/katex.min.css";
 
@@ -34,7 +32,6 @@ export const Article = ({
         <h1 className={styled.articleTitle}>{title}</h1>
         <div className={styled.articleDate}>{date}</div>
         <div className={styled.articleTags}>
-          <span>{categoryToStr(category)}</span>
           {tags.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}

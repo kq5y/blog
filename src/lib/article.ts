@@ -25,7 +25,6 @@ export interface Article {
   hidden?: boolean;
   slug: string;
   body: string;
-  category: keyof ContentEntryMap;
   path: string;
 }
 
@@ -33,36 +32,21 @@ export function convertParams(articles: Article[]) {
   return articles.map((article) => {
     return {
       params: {
-        category: article.category,
         slug: article.slug,
       },
     };
   });
 }
 
-export async function getAllArticles(
-  cat: keyof ContentEntryMap,
-  showHidden = false
-): Promise<Article[]> {
-  const articles = await getCollectionCache(cat);
+export async function getAllArticles(showHidden = false): Promise<Article[]> {
+  const articles = await getCollectionCache("post");
   return articles
     .filter((article) => showHidden || !(article.data.hidden === true))
     .map((article) => ({
       ...article.data,
       slug: article.slug,
       body: article.body,
-      category: cat,
-      path: `/${cat}/${article.slug}/`,
+      path: `/posts/${article.slug}/`,
     }))
     .sort((a, z) => new Date(z.date).getTime() - new Date(a.date).getTime());
-}
-
-export function categoryToStr(category: string) {
-  switch (category) {
-    case "blog":
-      return "Blog";
-    case "memo":
-      return "Memo";
-  }
-  return "";
 }
