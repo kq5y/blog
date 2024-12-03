@@ -24,12 +24,39 @@ import test
 print("test")
 ```
 
+```c title="report.c" del={2} ins={3-4} {6}
+#include <stdio.h>
+#define SIZE 5
+
+int main(void)
+{
+    int src[SIZE] = {1, 5, 4, 9, 6};
+    int dst[SIZE];
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        *(dst + i) = *(src + SIZE - i - 1);
+    }
+
+    int n;
+    printf("dst=[ ");
+    for (n = 0; n < SIZE; n++)
+    {
+        printf("%d ", dst[n]);
+    }
+    printf("]\n");
+
+    return 0;
+}
+
+```
+
 で*出力*できます。[^1]
 [^1]: 注釈です
 
 ~~詳しくは[Link](https://example.com)を確認してください。~~
 
-[Internal](/blog)
+[Internal](/posts)
 
 > 引用です
 
@@ -67,11 +94,11 @@ $$
 | ---- | ---- |
 | val1 | val2 |
 
-| th左 | th中央 | th右 |
-| :--- | :----: | ---: |
-| td   |   td   |   td |
+| th 左 | th 中央 | th 右 |
+| :---- | :-----: | ----: |
+| td    |   td    |    td |
 
-### 箇条書きのテスト1
+### 箇条書きのテスト 1
 
 - val1
   - val11
@@ -79,7 +106,7 @@ $$
 - val2
 - val3
 
-### 箇条書きのテスト2
+### 箇条書きのテスト 2
 
 1. yes1
    1. yes11

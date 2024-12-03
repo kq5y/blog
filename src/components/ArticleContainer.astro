@@ -3,13 +3,12 @@ import { render } from "astro:content";
 import { Article } from "@/components/Article";
 import ProfileContainer from "@/components/ProfileContainer.astro";
 
-const { category, slug, entry } = Astro.props;
+const { slug, entry } = Astro.props;
 
 const renderer = await render(entry);
 ---
 
 <Article
-  category={category}
   slug={slug}
   title={entry.data.title}
   tags={entry.data.tags}

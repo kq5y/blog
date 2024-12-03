@@ -4,7 +4,6 @@ import styled from "./Article.module.scss";
 import "katex/dist/katex.min.css";
 
 interface Props {
-  category: string;
   slug: string;
   title: string;
   tags: string[];
@@ -16,7 +15,6 @@ interface Props {
 }
 
 export const Article = ({
-  category,
   slug,
   title,
   tags,
