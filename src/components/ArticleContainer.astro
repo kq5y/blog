@@ -1,0 +1,21 @@
+---
+import { Article } from "@/components/Article";
+import ProfileContainer from "@/components/ProfileContainer.astro";
+
+const { category, slug, entry } = Astro.props;
+
+const renderer = await entry.render();
+---
+
+<Article
+  category={category}
+  slug={slug}
+  title={entry.data.title}
+  tags={entry.data.tags}
+  date={entry.data.date}
+  body={entry.body}
+  headings={renderer.headings}
+>
+  <renderer.Content slot="content" />
+  <ProfileContainer slot="profile" />
+</Article>

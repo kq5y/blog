@@ -2,7 +2,7 @@ import { type Article, categoryToStr } from "@/lib/article";
 
 import styled from "./ArticleList.module.scss";
 
-export interface Props {
+interface Props {
   title: string;
   articles: Article[];
 }
