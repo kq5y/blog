@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": [] },
+  "files": { "ignoreUnknown": false, "ignore": ["public", "dist", ".astro"] },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -12,7 +12,7 @@
     "lineWidth": 80,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": ["**/astro.config.mjs", "**/package.json", "**/pnpm-lock.yaml"]
+    "ignore": ["**/package.json", "**/pnpm-lock.yaml"]
   },
   "organizeImports": { "enabled": true },
   "linter": { "enabled": true, "rules": { "recommended": true } },

@@ -1,7 +1,7 @@
 import styled from "./Profile.module.scss";
 
 interface Props {
-  icon?: any;
+  icon?: Element;
 }
 
 export const Profile = ({ icon }: Props) => {

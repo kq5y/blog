@@ -1,4 +1,4 @@
-import { categoryToStr, type Article } from "@/lib/article";
+import { type Article, categoryToStr } from "@/lib/article";
 
 import styled from "./ArticleList.module.scss";
 
@@ -14,14 +14,14 @@ export const ArticleList = ({ title, articles }: Props) => {
       <div className={styled.articles}>
         {articles.length === 0 && <p>記事がありません</p>}
         {articles.map((article) => (
-          <article>
+          <article key={article.path}>
             <a href={article.path}>{article.title}</a>
             <div>
               <div className={styled.date}>{article.date}</div>
               <div className={styled.tags}>
                 <span>{categoryToStr(article.category)}</span>
                 {article.tags.map((tag) => (
-                  <span>{tag}</span>
+                  <span key={tag}>{tag}</span>
                 ))}
               </div>
             </div>
