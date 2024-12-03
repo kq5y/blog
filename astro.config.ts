@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 
 import preact from "@astrojs/preact";
 import playformCompress from "@playform/compress";
-import icon from "astro-icon";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
@@ -16,7 +15,6 @@ import remarkMath from "remark-math";
 export default defineConfig({
   site: "https://t3x.jp",
   integrations: [
-    icon(),
     preact({
       compat: true,
     }),
@@ -86,7 +84,7 @@ export default defineConfig({
   vite: {
     css: {
       preprocessorOptions: {
-        sass: {
+        scss: {
           api: "modern-compiler",
         },
       },

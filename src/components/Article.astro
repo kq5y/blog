@@ -1,8 +1,10 @@
 ---
 import type { RenderResult } from "astro:content";
 
-import Profile from "@/components/Profile.astro";
+import { Profile } from "@/components/Profile";
 import { categoryToStr } from "@/lib/article";
+
+import "katex/dist/katex.min.css";
 
 export interface Props {
   category: string;

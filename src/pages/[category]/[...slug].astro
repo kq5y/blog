@@ -20,15 +20,6 @@ if (!entry) return Astro.redirect("/404");
 const renderer = await entry.render();
 ---
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-  integrity="sha256-cXvJrnhTth8PdkVd3fDs1PUnp4P0LeKsJGhImcHEYlg="
-  crossorigin="anonymous"
-  media="print"
-  onload="this.media='all'"
-/>
-
 <Layout title={`${entry.data.title} - ${SITE_NAME}`}>
   <Article
     category={category}
