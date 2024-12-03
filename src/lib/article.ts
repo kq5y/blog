@@ -1,7 +1,7 @@
 import {
   type AnyEntryMap,
   type CollectionEntry,
-  type ContentEntryMap,
+  type CollectionKey,
   getCollection,
 } from "astro:content";
 
@@ -10,7 +10,7 @@ type Collection = CollectionEntry<keyof AnyEntryMap>;
 const collectionCache: { [key: string]: Collection[] } = {};
 
 async function getCollectionCache(
-  collection: keyof ContentEntryMap
+  collection: CollectionKey
 ): Promise<Collection[]> {
   if (!collectionCache[collection]) {
     collectionCache[collection] = await getCollection(collection);
@@ -24,7 +24,7 @@ export interface Article {
   date: string;
   hidden?: boolean;
   slug: string;
-  body: string;
+  body?: string;
   path: string;
 }
 
@@ -44,9 +44,9 @@ export async function getAllArticles(showHidden = false): Promise<Article[]> {
     .filter((article) => showHidden || !(article.data.hidden === true))
     .map((article) => ({
       ...article.data,
-      slug: article.slug,
+      slug: article.id,
       body: article.body,
-      path: `/posts/${article.slug}/`,
+      path: `/posts/${article.id}/`,
     }))
     .sort((a, z) => new Date(z.date).getTime() - new Date(a.date).getTime());
 }

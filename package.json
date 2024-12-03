@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/preact": "^3.5.4",
+    "@astrojs/preact": "^4.0.0",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
     "@iconify-json/mdi": "^1.2.1",
     "@playform/compress": "^0.1.6",
-    "astro": "^4.16.13",
+    "astro": "^5.0.1",
     "katex": "^0.16.11",
     "preact": "^10.25.1",
     "rehype-expressive-code": "^0.38.3",
@@ -29,10 +29,10 @@
     "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm",
     "remark-math": "^6.0.0",
     "sharp": "^0.33.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "sass": "^1.81.0"
+    "sass": "^1.81.1"
   }
 }
