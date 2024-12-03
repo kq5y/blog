@@ -13,10 +13,10 @@ export const Header = () => {
         </div>
         <div className={styled.menu}>
           <div>
-            <a href="/blog/">Blog</a>
+            <a href="/">About</a>
           </div>
           <div>
-            <a href="/memo/">Memo</a>
+            <a href="/posts/">Posts</a>
           </div>
         </div>
       </div>
