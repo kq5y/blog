@@ -1,3 +1,4 @@
+import { PROFILE } from "@/const";
 import styled from "./Profile.module.scss";
 
 interface Props {
@@ -9,11 +10,11 @@ export const Profile = ({ icon }: Props) => {
     <div className={styled.container}>
       <div className={styled.icon}>{icon}</div>
       <div className={styled.content}>
-        <div className={styled.name}>kq5y</div>
+        <div className={styled.name}>{PROFILE.name}</div>
         <div className={styled.buttons}>
           <span>
             <a
-              href="https://t3x.jp"
+              href={PROFILE.home}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="homepage"
@@ -23,7 +24,7 @@ export const Profile = ({ icon }: Props) => {
           </span>
           <span>
             <a
-              href="https://github.com/kq5y"
+              href={PROFILE.sns.GitHub}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="github"
@@ -33,7 +34,7 @@ export const Profile = ({ icon }: Props) => {
           </span>
           <span>
             <a
-              href="https://x.com/_kq5y"
+              href={PROFILE.sns.Twitter}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="twitter"

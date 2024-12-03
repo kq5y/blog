@@ -1,10 +1,11 @@
 ---
 import { Article } from "@/components/Article";
 import ProfileContainer from "@/components/ProfileContainer.astro";
+import { render } from "astro:content";
 
 const { category, slug, entry } = Astro.props;
 
-const renderer = await entry.render();
+const renderer = await render(entry);
 ---
 
 <Article

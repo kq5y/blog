@@ -1,0 +1,86 @@
+.aboutContainer {
+  padding: 0.5rem 1rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+h1 {
+  margin-block: 0.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-block: 0.5rem;
+  margin-inline: 1rem;
+  align-items: center;
+}
+
+.icon {
+  width: 6rem;
+  height: 6rem;
+
+  img {
+    height: auto;
+    border-radius: 9999px;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  p.name {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+
+  p:not(.name) {
+    color: rgb(163, 163, 163);
+  }
+}
+
+.snsList {
+  color: rgb(163 163 163 / 1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 0 0.5rem;
+  height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-block: 0.5rem;
+  margin-inline: 1rem;
+}
+
+.skillItems {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.lang {
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+}
+
+.skill {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem 0.5rem;
+  flex-wrap: wrap;
+}
