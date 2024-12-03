@@ -45,6 +45,9 @@ export const About = ({ icon }: Props) => {
           </div>
         ))}
       </div>
+      <div className={styled.menu}>
+        <a href="/works/">→Works</a>
+      </div>
     </div>
   );
 };
