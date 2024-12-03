@@ -16,7 +16,6 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/solid-js": "^5.0.0",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
-    "@iconify-json/mdi": "^1.2.1",
     "@playform/compress": "^0.1.6",
     "astro": "^5.0.1",
     "katex": "^0.16.11",

@@ -17,9 +17,6 @@ importers:
       '@expressive-code/plugin-line-numbers':
         specifier: ^0.38.3
         version: 0.38.3
-      '@iconify-json/mdi':
-        specifier: ^1.2.1
-        version: 1.2.1
       '@playform/compress':
         specifier: ^0.1.6
         version: 0.1.6(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.28.0)(sass@1.81.1)(typescript@5.7.2)(yaml@2.6.1)
@@ -633,9 +630,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       vue: ^3.2.0
-
-  '@iconify-json/mdi@1.2.1':
-    resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4229,10 +4223,6 @@ snapshots:
     dependencies:
       '@tanstack/vue-virtual': 3.10.9(vue@3.5.13(typescript@5.7.2))
       vue: 3.5.13(typescript@5.7.2)
-
-  '@iconify-json/mdi@1.2.1':
-    dependencies:
-      '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 
