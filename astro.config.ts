@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
-import preact from "@astrojs/preact";
+import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
@@ -14,16 +14,7 @@ import remarkMath from "remark-math";
 
 export default defineConfig({
   site: "https://t3x.jp",
-  integrations: [
-    preact(),
-    playformCompress({
-      HTML: {
-        "html-minifier-terser": {
-          minifyCSS: false,
-        },
-      },
-    }),
-  ],
+  integrations: [solid(), playformCompress()],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],

@@ -9,18 +9,18 @@ interface Props {
 
 export const ArticleList = ({ title, articles }: Props) => {
   return (
-    <div className={styled.mainContainer}>
+    <div class={styled.mainContainer}>
       <h1>{title}</h1>
-      <div className={styled.articles}>
+      <div class={styled.articles}>
         {articles.length === 0 && <p>記事がありません</p>}
         {articles.map((article) => (
-          <article key={article.path}>
+          <article>
             <a href={article.path}>{article.title}</a>
             <div>
-              <div className={styled.date}>{article.date}</div>
-              <div className={styled.tags}>
+              <div class={styled.date}>{article.date}</div>
+              <div class={styled.tags}>
                 {article.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                  <span>{tag}</span>
                 ))}
               </div>
             </div>

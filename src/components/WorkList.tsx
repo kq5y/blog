@@ -4,31 +4,26 @@ import styled from "./WorkList.module.scss";
 
 export const WorkList = () => {
   return (
-    <div className={styled.mainContainer}>
+    <div class={styled.mainContainer}>
       <h1>Works</h1>
-      <div className={styled.works}>
+      <div class={styled.works}>
         {WORKS.map((work) => (
-          <div key={work.title} className={styled.work}>
+          <div class={styled.work}>
             <h2>{work.title}</h2>
             {work.tags && (
-              <div className={styled.tags}>
+              <div class={styled.tags}>
                 {work.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                  <span>{tag}</span>
                 ))}
               </div>
             )}
             {work.description && (
-              <p className={styled.description}>{work.description}</p>
+              <p class={styled.description}>{work.description}</p>
             )}
             {work.links && (
-              <div className={styled.links}>
+              <div class={styled.links}>
                 {work.links.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
                     {link.name}
                   </a>
                 ))}

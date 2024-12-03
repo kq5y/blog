@@ -8,16 +8,16 @@ interface Props {
 
 export const About = ({ icon }: Props) => {
   return (
-    <div className={styled.aboutContainer}>
+    <div class={styled.aboutContainer}>
       <h1>About</h1>
-      <div className={styled.profile}>
-        <div className={styled.icon}>{icon}</div>
-        <div className={styled.meta}>
-          <p className={styled.name}>{PROFILE.name}</p>
+      <div class={styled.profile}>
+        <div class={styled.icon}>{icon}</div>
+        <div class={styled.meta}>
+          <p class={styled.name}>{PROFILE.name}</p>
           <p>{PROFILE.other_names.join(", ")}</p>
-          <div className={styled.snsList}>
+          <div class={styled.snsList}>
             {Object.entries(PROFILE.sns).map(([key, value]) => (
-              <span key={key}>
+              <span>
                 <a
                   href={value}
                   target="_blank"
@@ -31,21 +31,21 @@ export const About = ({ icon }: Props) => {
           </div>
         </div>
       </div>
-      <div className={styled.skills}>
+      <div class={styled.skills}>
         {Object.entries(PROFILE.skills).map(([lang, skills]) => (
-          <div key={lang} className={styled.skillItems}>
-            <div className={styled.lang}>
+          <div class={styled.skillItems}>
+            <div class={styled.lang}>
               <span>{lang}</span>
             </div>
-            <div className={styled.skill}>
+            <div class={styled.skill}>
               {skills.map((skill) => (
-                <span key={skill}>{skill}</span>
+                <span>{skill}</span>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <div className={styled.menu}>
+      <div class={styled.menu}>
         <a href="/works/">→Works</a>
         <a href="/history/">→History</a>
       </div>

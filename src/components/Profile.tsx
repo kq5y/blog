@@ -7,11 +7,11 @@ interface Props {
 
 export const Profile = ({ icon }: Props) => {
   return (
-    <div className={styled.container}>
-      <div className={styled.icon}>{icon}</div>
-      <div className={styled.content}>
-        <div className={styled.name}>{PROFILE.name}</div>
-        <div className={styled.buttons}>
+    <div class={styled.container}>
+      <div class={styled.icon}>{icon}</div>
+      <div class={styled.content}>
+        <div class={styled.name}>{PROFILE.name}</div>
+        <div class={styled.buttons}>
           <span>
             <a
               href={PROFILE.home}

@@ -30,5 +30,17 @@
     },
     "globals": ["Astro"]
   },
-  "overrides": [{ "include": ["*.astro"] }]
+  "overrides": [
+    { "include": ["*.astro"] },
+    {
+      "include": ["*.tsx", "*.jsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useJsxKeyInIterable": "off"
+          }
+        }
+      }
+    }
+  ]
 }

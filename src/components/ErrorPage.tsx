@@ -7,7 +7,7 @@ interface Props {
 
 export const ErrorPage = ({ code, message }: Props) => {
   return (
-    <div className={styled.container}>
+    <div class={styled.container}>
       <h1>
         <b>{code}</b> - {message}
       </h1>

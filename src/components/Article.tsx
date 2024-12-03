@@ -27,17 +27,17 @@ export const Article = ({
 }: Props) => {
   return (
     <article>
-      <div className={styled.articleMeta}>
-        <div className={styled.articleSlug}>{slug}</div>
-        <h1 className={styled.articleTitle}>{title}</h1>
-        <div className={styled.articleDate}>{date}</div>
-        <div className={styled.articleTags}>
+      <div class={styled.articleMeta}>
+        <div class={styled.articleSlug}>{slug}</div>
+        <h1 class={styled.articleTitle}>{title}</h1>
+        <div class={styled.articleDate}>{date}</div>
+        <div class={styled.articleTags}>
           {tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <span>{tag}</span>
           ))}
         </div>
       </div>
-      <div className={styled.articleMain}>
+      <div class={styled.articleMain}>
         <nav>
           <ul>
             <li>
@@ -49,7 +49,7 @@ export const Article = ({
                 head.slug !== "footnote-label"
               ) {
                 return (
-                  <li className={styled[`heading${head.depth}`]}>
+                  <li class={styled[`heading${head.depth}`]}>
                     <a href={`#${head.slug}`}>{head.text}</a>
                   </li>
                 );
@@ -57,9 +57,9 @@ export const Article = ({
             })}
           </ul>
         </nav>
-        <div className={styled.articleContent}>{content}</div>
+        <div class={styled.articleContent}>{content}</div>
       </div>
-      <div className={styled.profileContainer}>{profile}</div>
+      <div class={styled.profileContainer}>{profile}</div>
     </article>
   );
 };
