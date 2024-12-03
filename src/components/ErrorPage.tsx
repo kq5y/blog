@@ -1,5 +1,3 @@
-import type { FunctionalComponent } from "preact";
-
 import styled from "./ErrorPage.module.scss";
 
 interface Props {
@@ -7,7 +5,7 @@ interface Props {
   message: string;
 }
 
-export const ErrorPage: FunctionalComponent<Props> = ({ code, message }) => {
+export const ErrorPage = ({ code, message }: Props) => {
   return (
     <div className={styled.container}>
       <h1>

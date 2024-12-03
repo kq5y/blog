@@ -4,7 +4,7 @@ import type { ContentEntryMap } from "astro:content";
 import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { categoryToStr, getAllArticles } from "@/lib/article";
-import ArticleList from "@/components/ArticleList.astro";
+import { ArticleList } from "@/components/ArticleList";
 
 export async function getStaticPaths() {
   const categories = ["blog", "memo"];

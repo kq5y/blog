@@ -1,15 +1,13 @@
-import { Image } from "@/components/Image";
-import iconImage from "@/images/icon.png";
-import type { FunctionalComponent } from "preact";
-
 import styled from "./Profile.module.scss";
 
-export const Profile: FunctionalComponent = async () => {
+interface Props {
+  icon?: any;
+}
+
+export const Profile = ({ icon }: Props) => {
   return (
     <div className={styled.container}>
-      <div className={styled.icon}>
-        <Image src={iconImage} alt="icon" width={80} height={80} />
-      </div>
+      <div className={styled.icon}>{icon}</div>
       <div className={styled.content}>
         <div className={styled.name}>kq5y</div>
         <div className={styled.buttons}>

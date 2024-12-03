@@ -1,0 +1,45 @@
+.mainContainer {
+  padding: 0.5rem 2rem;
+}
+
+h1 {
+  margin-block: 0.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.articles {
+  margin-block: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.date {
+  color: rgb(115 115 115 / 1);
+  margin-bottom: 0.125rem;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  span {
+    background-color: rgb(38 38 38 / 1);
+    color: rgb(163 163 163 / 1);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}

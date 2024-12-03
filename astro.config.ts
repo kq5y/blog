@@ -15,9 +15,7 @@ import remarkMath from "remark-math";
 export default defineConfig({
   site: "https://t3x.jp",
   integrations: [
-    preact({
-      compat: true,
-    }),
+    preact(),
     playformCompress({
       HTML: {
         "html-minifier-terser": {

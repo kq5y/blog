@@ -1,0 +1,9 @@
+---
+import { Image } from "astro:assets";
+import iconImage from "@/images/icon.png";
+import { Profile } from "@/components/Profile";
+---
+
+<Profile>
+  <Image slot="icon" src={iconImage} alt="icon" width={80} height={80} />
+</Profile>

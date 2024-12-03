@@ -1,9 +1,8 @@
 import { SITE_NAME } from "@/const";
-import type { FunctionalComponent } from "preact";
 
 import styled from "./Header.module.scss";
 
-export const Header: FunctionalComponent = () => {
+export const Header = () => {
   return (
     <header>
       <div className={styled.container}>
