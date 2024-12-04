@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 
+import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
 
@@ -14,7 +15,7 @@ import remarkMath from "remark-math";
 
 export default defineConfig({
   site: "https://t3x.jp",
-  integrations: [solid(), playformCompress()],
+  integrations: [solid(), partytown(), playformCompress()],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],

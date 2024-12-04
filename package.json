@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/partytown": "^2.1.2",
     "@astrojs/solid-js": "^5.0.0",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
     "@playform/compress": "^0.1.6",
