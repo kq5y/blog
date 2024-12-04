@@ -6,15 +6,15 @@
 }
 html {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  background: #010721;
+  background: #08031a;
   color: #edeaf6;
   scroll-padding-top: 4rem;
   margin: 0;
   padding: 0;
-  height: fit-content;
+  height: 100dvh;
 }
 body {
-  background: linear-gradient(to bottom right, #230113, #010721);
+  background: linear-gradient(to bottom right, #19010d, #01051a);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -82,17 +82,17 @@ table {
   block-size: 8px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #140b2f;
+  background-color: #08031a;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-track:hover {
-  background-color: #1e133c;
+  background-color: #11082e;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #7a4d7c;
+  background-color: #4d2445;
   border-radius: 8px;
   border: 2px solid #130f2f;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9e66a7;
+  background-color: #64335a;
 }

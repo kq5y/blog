@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
+import playformInline from "@playform/inline";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
@@ -15,7 +16,12 @@ import remarkMath from "remark-math";
 
 export default defineConfig({
   site: "https://t3x.jp",
-  integrations: [solid(), partytown(), playformCompress()],
+  integrations: [
+    solid(),
+    partytown(),
+    playformInline({ Logger: 1 }),
+    playformCompress(),
+  ],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],
