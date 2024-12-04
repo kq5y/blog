@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import { Header } from "@/components/Header";
 import { SITE_DESCRIPTION } from "@/const";
 
@@ -19,9 +18,14 @@ const { title } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
-    <ClientRouter />
   </head>
   <body>
     <Header />
@@ -32,20 +36,6 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  @font-face {
-    font-family: "M PLUS Rounded 1c";
-    src: url("/assets/font/mplus400.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "M PLUS Rounded 1c";
-    src: url("/assets/font/mplus700.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
   *,
   :before,
   :after {
@@ -57,7 +47,9 @@ const { title } = Astro.props;
     background: #010721;
     color: #edeaf6;
     scroll-padding-top: 4rem;
-    height: 100%;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
   }
   body {
     background: linear-gradient(to bottom right, #230113, #010721);
