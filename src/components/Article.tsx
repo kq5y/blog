@@ -1,7 +1,6 @@
 import type { MarkdownHeading } from "astro";
 
 import styled from "./Article.module.scss";
-import "katex/dist/katex.min.css";
 
 interface Props {
   slug: string;

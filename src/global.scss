@@ -1,0 +1,98 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+html {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  background: #010721;
+  color: #edeaf6;
+  scroll-padding-top: 4rem;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+}
+body {
+  background: linear-gradient(to bottom right, #230113, #010721);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  line-height: inherit;
+  margin: 0;
+}
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+summary {
+  display: list-item;
+}
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+ol,
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  vertical-align: middle;
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+table {
+  border-collapse: collapse;
+}
+::-webkit-scrollbar {
+  inline-size: 8px;
+  block-size: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #140b2f;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #1e133c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7a4d7c;
+  border-radius: 8px;
+  border: 2px solid #130f2f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9e66a7;
+}
