@@ -4,11 +4,12 @@
   gap: 1rem;
   padding-bottom: 2rem;
   margin-inline: 1rem;
+  align-items: center;
 }
 
 .icon {
-  width: 5rem;
-  height: 5rem;
+  width: min(5rem, 25%);
+  aspect-ratio: 1 / 1;
 
   img {
     height: auto;
@@ -19,8 +20,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  margin-top: auto;
-  margin-bottom: auto;
+  flex: 1;
 }
 
 .name {
@@ -34,8 +34,10 @@
   color: rgb(163 163 163 / 1);
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0 0.5rem;
   height: 1.5rem;
+  flex-wrap: wrap;
+  flex: 1;
 
   a {
     text-decoration-line: underline;

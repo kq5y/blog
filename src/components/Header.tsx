@@ -12,7 +12,7 @@ export const Header = () => {
           </div>
         </div>
         <div class={styled.menu}>
-          <div>
+          <div class={styled.about}>
             <a href="/">About</a>
           </div>
           <div>
