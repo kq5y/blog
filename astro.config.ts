@@ -77,6 +77,7 @@ export default defineConfig({
     },
     syntaxHighlight: false,
   },
+  prefetch: true,
   vite: {
     css: {
       preprocessorOptions: {
