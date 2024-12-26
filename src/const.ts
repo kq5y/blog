@@ -145,18 +145,6 @@ const WORKS: WorkItem[] = [
 
 const HISTORY: HistoryItem[] = [
   {
-    date: "2025-04",
-    category: "Education",
-    title: "筑波大学情報学群情報科学類 編入学予定",
-    future: true,
-  },
-  {
-    date: "2025-03",
-    category: "Education",
-    title: "信州大学工学部電子情報システム工学科 退学予定",
-    future: true,
-  },
-  {
     date: "2023-04",
     category: "Education",
     title: "信州大学工学部電子情報システム工学科 入学",
@@ -174,7 +162,7 @@ const HISTORY: HistoryItem[] = [
     description: "第FE-2021-02-01828号",
   },
   {
-    date: "2023-10",
+    date: "2023-12",
     category: "Certificate",
     title: "応用情報技術者試験 合格",
     description: "第AP-2023-10-06136号",
@@ -228,6 +216,24 @@ const HISTORY: HistoryItem[] = [
     category: "Certificate",
     title: "TOEIC Listening & Reading 645点",
     description: "Listening:330 Reading:315",
+  },
+  {
+    date: "2024-12",
+    category: "Certificate",
+    title: "情報処理安全確保支援士試験 合格",
+    description: "第SC-2024-10-01891号",
+  },
+  {
+    date: "2025-03",
+    category: "Education",
+    title: "信州大学工学部電子情報システム工学科 退学予定",
+    future: true,
+  },
+  {
+    date: "2025-04",
+    category: "Education",
+    title: "筑波大学情報学群情報科学類 編入学予定",
+    future: true,
   },
 ];
 
