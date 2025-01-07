@@ -29,6 +29,29 @@ const PROFILE = {
 
 const WORKS: WorkItem[] = [
   {
+    title: "BlackJack",
+    description:
+      "講義課題としてC言語で作成したコンソールで遊べるブラックジャック",
+    links: [
+      {
+        name: "Github",
+        url: "https://github.com/kq5y-lectures/prg-lang-2/tree/main/final/BlackJack",
+      },
+    ],
+    tags: ["C", "Escape Sequence"],
+  },
+  {
+    title: "Caluculator",
+    description: "講義課題として作成したVerilog-HDL製の計算機",
+    links: [
+      {
+        name: "Github",
+        url: "https://github.com/kq5y-lectures/logic-circuit-design/tree/main/practice/06_Caluculator",
+      },
+    ],
+    tags: ["Verilog-HDL"],
+  },
+  {
     title: "blog",
     description: "ポートフォリオかつブログサイト",
     links: [
@@ -45,7 +68,8 @@ const WORKS: WorkItem[] = [
   },
   {
     title: "tools",
-    description: "色々なツールをまとめたもの",
+    description:
+      "調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
     links: [
       {
         name: "Link",
