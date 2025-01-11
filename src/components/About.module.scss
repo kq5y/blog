@@ -85,14 +85,3 @@ h1 {
   flex-wrap: wrap;
   flex: 1;
 }
-
-.menu {
-  display: flex;
-  flex-direction: row;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-
-  a {
-    font-weight: 700;
-  }
-}

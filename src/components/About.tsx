@@ -9,7 +9,6 @@ interface Props {
 export const About = ({ icon }: Props) => {
   return (
     <div class={styled.aboutContainer}>
-      <h1>About</h1>
       <div class={styled.profile}>
         <div class={styled.icon}>{icon}</div>
         <div class={styled.meta}>
@@ -44,10 +43,6 @@ export const About = ({ icon }: Props) => {
             </div>
           </div>
         ))}
-      </div>
-      <div class={styled.menu}>
-        <a href="/works/">→Works</a>
-        <a href="/history/">→History</a>
       </div>
     </div>
   );

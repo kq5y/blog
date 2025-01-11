@@ -12,8 +12,11 @@ export const Header = () => {
           </div>
         </div>
         <div class={styled.menu}>
-          <div class={styled.about}>
-            <a href="/">About</a>
+          <div>
+            <a href="/works/">Works</a>
+          </div>
+          <div>
+            <a href="/history/">History</a>
           </div>
           <div>
             <a href="/posts/">Posts</a>

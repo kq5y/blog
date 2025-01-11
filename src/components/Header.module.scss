@@ -35,9 +35,3 @@ div.menu {
   line-height: 1.75rem;
   gap: 1.5rem;
 }
-
-.about {
-  @media (max-width: 335px) {
-    display: none;
-  }
-}
