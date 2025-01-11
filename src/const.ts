@@ -1,14 +1,14 @@
-const SITE_NAME = "かしわもち";
-const SITE_DESCRIPTION = "かしわもち";
+const SITE_NAME = "kq5iwam0chi";
+const SITE_DESCRIPTION = "kq5y's portfolio and blog page";
 
 const PROFILE = {
   name: "kq5y",
   other_names: ["kasi", "tksnn"],
   home: "https://t3x.jp",
   sns: {
-    Twitter: "https://twitter.com/kq5yy",
+    "X(Twitter)": "https://x.com/kq5yy",
     GitHub: "https://github.com/kq5y",
-    Kaggle: "https://www.kaggle.com/tksnnn",
+    Kaggle: "https://www.kaggle.com/kq5yyy",
     SIGNATE: "https://signate.jp/users/114309",
     AtCoder: "https://atcoder.jp/users/tksnn",
   },
