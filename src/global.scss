@@ -1,20 +1,35 @@
+:root {
+  --main-color: #edeaf6;
+  --main-bg-color-0: #13161b;
+  --main-bg-color-1: #131217;
+  --main-bg-hover-color-1: #222029;
+  --link-color: #a7c0ea;
+  --link-hover-color: #7198dc;
+  --scroll-color: #666091;
+  --scroll-hover-color: #99938a;
+  --header-color: #212438c9;
+}
 *,
 :before,
 :after {
   box-sizing: border-box;
-  border: 0 solid #e5e7eb;
+  border: 0 solid var(--main-color);
 }
 html {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  background: #08031a;
-  color: #edeaf6;
+  background: var(--main-bg-color-1);
+  color: var(--main-color);
   scroll-padding-top: 4rem;
   margin: 0;
   padding: 0;
   height: 100dvh;
 }
 body {
-  background: linear-gradient(to bottom right, #19010d, #01051a);
+  background: linear-gradient(
+    to bottom right,
+    var(--main-bg-color-0),
+    var(--main-bg-color-1)
+  );
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -65,7 +80,6 @@ audio,
 iframe,
 embed,
 object {
-  vertical-align: middle;
   display: block;
 }
 
@@ -82,17 +96,17 @@ table {
   block-size: 8px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #08031a;
+  background-color: var(--main-bg-color-1);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-track:hover {
-  background-color: #11082e;
+  background-color: var(--main-bg-hover-color-1);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #4d2445;
+  background-color: var(--link-color);
   border-radius: 8px;
-  border: 2px solid #130f2f;
+  border: 2px solid var(--main-bg-hover-color-1);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #64335a;
+  background-color: var(--link-hover-color);
 }

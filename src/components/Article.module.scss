@@ -123,20 +123,20 @@ article {
       }
 
       a:not(:global(.rlc-container)) {
-        color: #a79fe0;
+        color: var(--link-color);
         text-decoration: none;
         transition: color 0.3s, border-bottom 0.3s;
         border-bottom: 1px solid transparent;
 
         &:hover {
-          color: #edeaf6;
-          border-bottom: 1px solid #edeaf6;
+          color: var(--link-hover-color);
+          border-bottom: 1px solid var(--link-hover-color);
         }
 
         &:focus {
           outline: none;
-          color: #edeaf6;
-          border-bottom: 1px solid #edeaf6;
+          color: var(--main-color);
+          border-bottom: 1px solid var(--main-color);
         }
       }
 
@@ -192,8 +192,8 @@ article {
       blockquote {
         margin: 8px 0;
         padding: 8px;
-        border-left: 4px solid #7a4d7c;
-        background-color: #140b2f88;
+        border-left: 4px solid var(--link-color);
+        background-color: var(--header-color);
       }
 
       summary {
