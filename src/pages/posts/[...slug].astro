@@ -3,7 +3,7 @@ import { getEntry } from "astro:content";
 
 import ArticleContainer from "@/components/ArticleContainer.astro";
 import { SITE_NAME } from "@/const";
-import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import Layout from "@/layouts/Layout.astro";
 import { convertParams, getAllArticles } from "@/lib/article";
 
 export async function getStaticPaths() {
@@ -17,6 +17,6 @@ const entry = await getEntry("post", slug);
 if (!entry) return Astro.redirect("/404");
 ---
 
-<ArticleLayout title={`${entry.data.title} - ${SITE_NAME}`}>
+<Layout title={`${entry.data.title} - ${SITE_NAME}`} katex>
   <ArticleContainer slug={slug} entry={entry} />
-</ArticleLayout>
+</Layout>
