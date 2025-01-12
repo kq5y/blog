@@ -23,7 +23,7 @@
     "astro": "^5.1.5",
     "astro-google-fonts-optimizer": "^0.2.2",
     "katex": "^0.16.19",
-    "puppeteer": "^24.0.0",
+    "puppeteer": "^23.11.1",
     "rehype-expressive-code": "^0.38.3",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",
