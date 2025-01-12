@@ -73,16 +73,23 @@ h1 {
   flex-direction: column;
   gap: 0.3rem;
   margin-block: 0.5rem;
+
+  td {
+    vertical-align: baseline;
+  }
 }
 
 .items {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
 }
 
 .lang {
   font-weight: 700;
+  padding-right: 0.5rem;
+  white-space: nowrap;
 }
 
 .langDesc {
