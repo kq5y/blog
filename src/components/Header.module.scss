@@ -1,6 +1,7 @@
 header {
   --header-color: rgba(var(--header-color-rgb), 0.8);
   --header-color-fill: rgba(var(--header-color-rgb), 1);
+  --header-hover-color-fill: rgb(var(--header-hover-color-rgb));
 
   background: var(--header-color);
   backdrop-filter: blur(10px);
@@ -57,6 +58,18 @@ div.title {
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
+  .menuToggle:checked + & span:nth-child(1) {
+    transform: rotate(45deg) translate(0.35rem, 0.35rem);
+  }
+
+  .menuToggle:checked + & span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuToggle:checked + & span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.35rem, -0.35rem);
+  }
+
   &:hover span {
     background: var(--main-hover-color);
   }
@@ -64,12 +77,12 @@ div.title {
 
 nav.menu {
   display: flex;
-  gap: 1rem 1.5rem;
+  gap: 0 1.5rem;
   font-size: 1.125rem;
   font-weight: bold;
 
   @media (max-width: 528px) {
-    display: none;
+    display: flex;
     position: absolute;
     top: 4rem;
     left: 0;
@@ -77,13 +90,26 @@ nav.menu {
     background: var(--header-color-fill);
     border-top: 1px solid var(--main-bg-color-1);
     flex-direction: column;
-    padding: 1rem 2rem;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s ease, padding 0.5s ease;
+    padding: 0 1rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    a {
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease;
+    }
   }
 }
 
 .menuToggle:checked ~ nav.menu {
-  display: flex;
+  height: 9rem;
+  padding-block: 0.5rem;
+
+  a:hover {
+    background: var(--header-hover-color-fill);
+  }
 }
 
 @media (max-width: 528px) {
