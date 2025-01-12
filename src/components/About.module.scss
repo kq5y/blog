@@ -16,7 +16,7 @@ h1 {
   flex-direction: row;
   gap: 1rem;
   margin-block: 0.75rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .icon {
@@ -40,8 +40,14 @@ h1 {
     font-weight: 700;
   }
 
-  p:not(.name) {
+  p.subName {
     color: var(--sub-color);
+  }
+
+  p.profileDesc {
+    color: var(--main-color);
+    white-space: pre-wrap;
+    margin-top: 0.375rem;
   }
 }
 
@@ -62,29 +68,27 @@ h1 {
   }
 }
 
-.skills {
+.stacks {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   margin-block: 0.5rem;
 }
 
-.skillItems {
+.items {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
 .lang {
-  display: flex;
-  flex-direction: row;
   font-weight: 700;
 }
 
-.skill {
-  display: flex;
-  flex-direction: row;
-  gap: 0.2rem 0.5rem;
-  flex-wrap: wrap;
-  flex: 1;
+.langDesc {
+  color: var(--sub-color);
+}
+
+.blankRow {
+  height: 0.5rem;
 }

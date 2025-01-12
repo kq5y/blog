@@ -13,7 +13,7 @@ export const About = ({ icon }: Props) => {
         <div class={styled.icon}>{icon}</div>
         <div class={styled.meta}>
           <p class={styled.name}>{PROFILE.name}</p>
-          <p>{PROFILE.other_names.join(", ")}</p>
+          <p class={styled.subName}>{PROFILE.other_names.join(", ")}</p>
           <div class={styled.snsList}>
             {Object.entries(PROFILE.sns).map(([key, value]) => (
               <span>
@@ -28,21 +28,50 @@ export const About = ({ icon }: Props) => {
               </span>
             ))}
           </div>
+          <p class={styled.profileDesc}>{`${PROFILE.desc}`}</p>
         </div>
       </div>
-      <div class={styled.skills}>
-        {Object.entries(PROFILE.skills).map(([lang, skills]) => (
-          <div class={styled.skillItems}>
-            <div class={styled.lang}>
-              <span>{lang}</span>
-            </div>
-            <div class={styled.skill}>
-              {skills.map((skill) => (
-                <span>{skill}</span>
+      <div class={styled.stacks}>
+        <h3>Stacks</h3>
+        <table>
+          <tbody>
+            {Object.entries(PROFILE.stacks.Languages).map(
+              ([lang, { desc, libs }]) => (
+                <>
+                  <tr>
+                    <td class={styled.lang}>{lang}</td>
+                    <td
+                      class={libs.length === 0 ? styled.langDesc : styled.items}
+                    >
+                      {libs.length === 0
+                        ? desc
+                        : libs.map((lib) => <span>{lib}</span>)}
+                    </td>
+                  </tr>
+                  {libs.length !== 0 && (
+                    <tr>
+                      <td />
+                      <td class={styled.langDesc}>{desc}</td>
+                    </tr>
+                  )}
+                </>
+              )
+            )}
+            <tr class={styled.blankRow} />
+            {Object.entries(PROFILE.stacks)
+              .filter(([key]) => key !== "Languages")
+              .map(([key, items]) => (
+                <tr>
+                  <td>{key}</td>
+                  <td class={styled.items}>
+                    {(items as string[]).map((item) => (
+                      <span>{item}</span>
+                    ))}
+                  </td>
+                </tr>
               ))}
-            </div>
-          </div>
-        ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -4,6 +4,9 @@ const SITE_DESCRIPTION = "kq5y's portfolio and blog page";
 const PROFILE = {
   name: "kq5y",
   other_names: ["kasi", "tksnn"],
+  desc:
+    "Currently living in Chiba, Japan, interested in deep learning such as speech synthesis.\n" +
+    "I love Vocaloid and Voiceroid. My favorite games are Minecraft and Factorio.",
   home: "https://t3x.jp",
   sns: {
     "X(Twitter)": "https://x.com/kq5yy",
@@ -12,18 +15,53 @@ const PROFILE = {
     SIGNATE: "https://signate.jp/users/114309",
     AtCoder: "https://atcoder.jp/users/tksnn",
   },
-  skills: {
-    "C++": ["OpenSiv3D"],
-    Python: ["Flask", "FastAPI", "scikit-learn", "PyTorch"],
-    TypeScript: [
-      "React",
-      "Next.js",
-      "Remix",
-      "Astro",
-      "Electron",
-      "AkashicEngine",
-    ],
-    "C#": ["WPF", "Unity"],
+  stacks: {
+    Languages: {
+      "C++": {
+        desc: "High quality games, little competitive programming",
+        libs: ["OpenSiv3D"],
+      },
+      Python: {
+        desc: "Machine learning and backend",
+        libs: ["Flask", "FastAPI", "scikit-learn", "PyTorch"],
+      },
+      TypeScript: {
+        desc: "Frontend, backend, extensions, softwares and complex games",
+        libs: [
+          "React",
+          "Next.js",
+          "Remix",
+          "Astro",
+          "Electron",
+          "AkashicEngine",
+          "WXT",
+        ],
+      },
+      "C#": {
+        desc: "Desktop application and simple games",
+        libs: ["WPF", "Unity"],
+      },
+      C: {
+        desc: "A simple console app",
+        libs: [],
+      },
+      "Verilog HDL": {
+        desc: "Programs at register transfer level",
+        libs: [],
+      },
+      PHP: {
+        desc: "A simple website with login functionality",
+        libs: [],
+      },
+      Java: {
+        desc: "Simple game mods and programs",
+        libs: [],
+      },
+    },
+    Database: ["MySQL", "MongoDB", "Redis"],
+    Tool: ["Git", "Docker", "Jupyter"],
+    Service: ["Cloudflare", "OCI", "wandb"],
+    OS: ["Windows", "macOS", "Ubuntu", "CentOS"],
   },
 };
 
