@@ -27,7 +27,7 @@ h1 {
   span {
     font-size: 0.75rem;
     line-height: 1rem;
-    color: rgb(171, 171, 171);
+    color: var(--sub-color);
   }
 }
 
@@ -42,7 +42,7 @@ h1 {
     top: 1.75rem;
     width: 1px;
     transform: translateX(-0.5px);
-    background-color: rgb(64 64 64);
+    background-color: var(--sub-hover-color);
   }
 
   > div {
@@ -57,7 +57,7 @@ h1 {
     > div {
       width: 0.5rem;
       height: 0.5rem;
-      background-color: rgb(82 82 82);
+      background-color: var(--sub-hover-color);
       border-radius: 9999px;
     }
   }
@@ -78,7 +78,7 @@ h1 {
 .category {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: rgb(163 163 163);
+  color: var(--sub-color);
 }
 
 .title {
@@ -87,14 +87,14 @@ h1 {
   line-height: 1.5rem;
 
   &.future {
-    color: rgb(115 115 115);
+    color: var(--sub-hover-color);
   }
 }
 
 .description {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: rgb(163 163 163);
+  color: var(--sub-color);
 }
 
 .links {
@@ -106,6 +106,9 @@ h1 {
     font-size: 0.875rem;
     line-height: 1.25rem;
     text-decoration-line: underline;
-    color: rgb(163 163 163);
+    color: var(--sub-color);
+    &:hover {
+      color: var(--sub-hover-color);
+    }
   }
 }

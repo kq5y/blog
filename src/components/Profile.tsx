@@ -34,12 +34,12 @@ export const Profile = ({ icon }: Props) => {
           </span>
           <span>
             <a
-              href={PROFILE.sns.Twitter}
+              href={PROFILE.sns["X(Twitter)"]}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="twitter"
+              aria-label="x(twitter)"
             >
-              Twitter
+              X(Twitter)
             </a>
           </span>
         </div>

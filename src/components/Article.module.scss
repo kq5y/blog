@@ -14,7 +14,7 @@ article {
 
     div.articleSlug,
     div.articleDate {
-      color: rgb(163 163 163 / 1);
+      color: var(--sub-color);
       font-size: 0.875rem;
       line-height: 1.25rem;
     }
@@ -27,8 +27,8 @@ article {
       gap: 0.25rem 0.5rem;
 
       span {
-        background-color: rgb(38 38 38 / 1);
-        color: rgb(163 163 163 / 1);
+        background-color: var(--main-bg-hover-color-1);
+        color: var(--sub-color);
         border-radius: 0.25rem;
         padding: 0.125rem 0.375rem;
         font-size: 0.75rem;
@@ -201,7 +201,7 @@ article {
       }
 
       code:not(pre > code) {
-        background-color: rgb(38 38 38 / 1);
+        background-color: var(--main-bg-hover-color-1);
         padding: 2px 4px;
         border-radius: 4px;
       }
@@ -217,10 +217,10 @@ article {
         max-height: 120px;
         margin: 0 auto 2rem 0;
 
-        color: rgb(230, 230, 230);
+        color: var(--main-color);
         text-decoration: none;
 
-        border: 1px solid rgb(25, 25, 25);
+        border: 1px solid var(--main-bg-hover-color-1);
         border-radius: 0.25rem;
         display: flex;
         align-items: stretch;
@@ -251,7 +251,7 @@ article {
 
       :global(.rlc-description) {
         font-size: 0.875rem;
-        color: rgb(230, 230, 230);
+        color: var(--main-color);
         overflow: hidden;
         line-height: 1rem;
         height: 2rem;

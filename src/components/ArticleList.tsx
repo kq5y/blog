@@ -15,9 +15,9 @@ export const ArticleList = ({ title, articles }: Props) => {
         {articles.length === 0 && <p>記事がありません</p>}
         {articles.map((article) => (
           <article>
-            <a href={article.path}>{article.title}</a>
-            <div>
+            <div class={styled.meta}>
               <div class={styled.date}>{article.date}</div>
+              <a href={article.path}>{article.title}</a>
               <div class={styled.tags}>
                 {article.tags.map((tag) => (
                   <span>{tag}</span>
