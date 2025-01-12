@@ -45,6 +45,10 @@ article {
       gap: 1rem;
     }
 
+    .tocToggle {
+      display: none;
+    }
+
     nav {
       width: min(18rem, 100%);
 
@@ -57,6 +61,15 @@ article {
         font-weight: 700;
       }
 
+      @media (min-width: 1024px) {
+        div {
+          position: sticky;
+          top: 5rem;
+          margin-top: 0px;
+          width: 16rem;
+        }
+      }
+
       ul {
         margin: 0;
         margin-bottom: 1.5rem;
@@ -64,12 +77,6 @@ article {
         padding: 0;
         font-size: 0.875rem;
         line-height: 1.25rem;
-        @media (min-width: 1024px) {
-          position: sticky;
-          top: 5rem;
-          margin-top: 0px;
-          width: 16rem;
-        }
 
         li.heading2 {
           margin-bottom: 0.25rem;
@@ -78,12 +85,73 @@ article {
           line-height: 1.75rem;
 
           &::before {
-            content: "> ";
+            content: "・";
+            font-weight: bold;
           }
         }
 
         li.heading3 {
           margin: 0 0 0.25rem 1.25rem;
+        }
+      }
+    }
+
+    @media (max-width: 528px) {
+      nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--header-hover-color-fill);
+        z-index: 20;
+
+        ul {
+          display: block;
+          max-height: 0;
+          transition: max-height 0.5s ease, padding 0.5s ease;
+          margin: 0;
+          padding-inline: 1rem;
+          background: var(--header-color-fill);
+        }
+        h2 {
+          margin: 0;
+          padding: 0.5rem 1rem;
+          font-size: 1.2rem;
+          label {
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding-left: 25px;
+            cursor: pointer;
+          }
+          label::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-top: solid 2px var(--main-color);
+            border-right: solid 2px var(--main-color);
+            position: absolute;
+            top: 22px;
+            left: 18px;
+            transform: rotate(-45deg);
+            transition: transform 0.5s ease, top 0.5s ease;
+          }
+        }
+      }
+      .tocToggle:checked ~ nav {
+        max-height: 18rem;
+        ul {
+          max-height: 14rem;
+          padding-block: 0.5rem;
+          overflow: auto;
+        }
+        h2 {
+          padding: 0.5rem 1rem;
+          label::before {
+            content: "";
+            top: 16px;
+            transform: rotate(135deg);
+          }
         }
       }
     }

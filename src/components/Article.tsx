@@ -35,24 +35,27 @@ export const Article = ({
         </div>
       </div>
       <div class={styled.articleMain}>
+        <input type="checkbox" id="toc-toggle" class={styled.tocToggle} />
         <nav>
-          <ul>
-            <li>
-              <h2>Table of Contents</h2>
-            </li>
-            {headings.map((head) => {
-              if (
-                (head.depth === 2 || head.depth === 3) &&
-                head.slug !== "footnote-label"
-              ) {
-                return (
-                  <li class={styled[`heading${head.depth}`]}>
-                    <a href={`#${head.slug}`}>{head.text}</a>
-                  </li>
-                );
-              }
-            })}
-          </ul>
+          <div>
+            <h2>
+              <label for="toc-toggle">Table of Contents</label>
+            </h2>
+            <ul>
+              {headings.map((head) => {
+                if (
+                  (head.depth === 2 || head.depth === 3) &&
+                  head.slug !== "footnote-label"
+                ) {
+                  return (
+                    <li class={styled[`heading${head.depth}`]}>
+                      <a href={`#${head.slug}`}>{head.text}</a>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          </div>
         </nav>
         <div class={styled.articleContent}>{content}</div>
       </div>

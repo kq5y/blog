@@ -1,8 +1,4 @@
 header {
-  --header-color: rgba(var(--header-color-rgb), 0.8);
-  --header-color-fill: rgba(var(--header-color-rgb), 1);
-  --header-hover-color-fill: rgb(var(--header-hover-color-rgb));
-
   background: var(--header-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
