@@ -1,6 +1,10 @@
 article {
   padding-inline: 2rem;
 
+  @media (max-width: 528px) {
+    padding-bottom: 3rem;
+  }
+
   div.articleMeta {
     margin-block: 1rem;
 
