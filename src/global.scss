@@ -1,13 +1,14 @@
 :root {
   --main-color: #edeaf6;
+  --main-hover-color: #cbc8d4;
   --main-bg-color-0: #13161b;
   --main-bg-color-1: #131217;
   --main-bg-hover-color-1: #222029;
   --link-color: #a7c0ea;
   --link-hover-color: #7198dc;
-  --scroll-color: #666091;
-  --scroll-hover-color: #99938a;
-  --header-color: #212438c9;
+  --scroll-color: #38344e;
+  --scroll-hover-color: #595665;
+  --header-color-rgb: 33, 36, 56;
 }
 *,
 :before,
@@ -103,10 +104,10 @@ table {
   background-color: var(--main-bg-hover-color-1);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--link-color);
+  background-color: var(--scroll-color);
   border-radius: 8px;
   border: 2px solid var(--main-bg-hover-color-1);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--scroll-hover-color);
 }

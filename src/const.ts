@@ -64,7 +64,7 @@ const WORKS: WorkItem[] = [
         url: "https://github.com/kq5y/blog",
       },
     ],
-    tags: ["TypeScript", "Astro", "Cloudflare"],
+    tags: ["TypeScript", "Astro", "SolidJS", "Cloudflare"],
   },
   {
     title: "tools",
