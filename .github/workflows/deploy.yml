@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -24,8 +25,26 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
+      - name: Get installed Playwright version
+        shell: bash
+        id: puppeteer-version
+        run: echo "PUPPETEER_VERSION=$( sh .github/scripts/get-puppeteer-version.sh )" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup puppeteer cache
+        id: puppeteer-cache
+        with:
+          path: ${{ env.PUPPETEER_CACHE_DIRECTORY }}
+          key: ${{ runner.os }}-puppeteer-${{ steps.puppeteer-version.outputs.PUPPETEER_VERSION }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+        env:
+          PUPPETEER_CACHE_DIRECTORY: "/home/runner/.cache/puppeteer"
       - name: Install Chrome
-        run: pnpm install:chrome
+        run: |
+          if ${{ steps.puppeteer-cache.outputs.cache-hit != 'true' }}; then
+            pnpm install:chrome
+          fi
+        shell: bash
       - name: Build
         run: pnpm build
       - name: Publish
