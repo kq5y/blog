@@ -11,7 +11,7 @@
     "lint": "biome lint --write .",
     "format": "biome format .",
     "check": "biome check --write .",
-    "install:chrome": "node node_modules/puppeteer/install.mjs"
+    "install:chrome": "pnpm dlx puppeteer browsers install"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
