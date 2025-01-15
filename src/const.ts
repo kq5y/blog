@@ -72,8 +72,8 @@ const WORKS: WorkItem[] = [
       "講義課題としてC言語で作成したコンソールで遊べるブラックジャック",
     links: [
       {
-        name: "Github",
-        url: "https://github.com/kq5y-lectures/prg-lang-2/tree/main/final/BlackJack",
+        name: "GitFront",
+        url: "https://gitfront.io/r/kq5y/zfazNYQt1txj/prg-lang-2/tree/final/BlackJack/",
       },
     ],
     tags: ["C", "Escape Sequence"],
@@ -83,8 +83,8 @@ const WORKS: WorkItem[] = [
     description: "講義課題として作成したVerilog-HDL製の計算機",
     links: [
       {
-        name: "Github",
-        url: "https://github.com/kq5y-lectures/logic-circuit-design/tree/main/practice/06_Caluculator",
+        name: "GitFront",
+        url: "https://gitfront.io/r/kq5y/Y3Gj4gi6K8k8/logic-circuit-design/tree/practice/06_Caluculator/",
       },
     ],
     tags: ["Verilog-HDL"],
