@@ -28,6 +28,8 @@ jobs:
         run: pnpm install:chrome
       - name: Build
         run: pnpm build
+        env:
+          CF_BEACON_TOKEN: ${{ secrets.CF_BEACON_TOKEN }}
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:
