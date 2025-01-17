@@ -39,11 +39,16 @@ const { title, katex = false } = Astro.props;
     }
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
-    <script
-      type="text/partytown"
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "7727b0caf56341858a0da499f06cade8"}'></script>
+    {
+      import.meta.env.PROD && import.meta.env.CF_BEACON_TOKEN && (
+        <script
+          type="text/partytown"
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${import.meta.env.CF_BEACON_TOKEN}"}`}
+        />
+      )
+    }
   </head>
   <body>
     <Header />
