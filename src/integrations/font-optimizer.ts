@@ -41,11 +41,7 @@ export default (): AstroIntegration => ({
                   `The <link> tag for Google Fonts was not found: ${fileName}`
                 );
               }
-              await fs.writeFile(
-                filePath,
-                document.documentElement.outerHTML,
-                "utf-8"
-              );
+              await fs.writeFile(filePath, dom.serialize(), "utf-8");
               logger.info(
                 `\x1b[30m(${uniqueText.length} chars)\x1b[39m\t${fileName}`
               );
