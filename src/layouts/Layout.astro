@@ -1,7 +1,6 @@
 ---
 import { Header } from "@/components/Header";
 import { SITE_DESCRIPTION } from "@/const";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
 import "@/global.scss";
 
@@ -21,8 +20,11 @@ const { title, katex = false } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
     {
       katex && (

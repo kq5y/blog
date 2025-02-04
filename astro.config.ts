@@ -4,6 +4,7 @@ import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
 import playformInline from "@playform/inline";
+import fontOptimizer from "./src/integrations/font-optimizer";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
@@ -18,6 +19,7 @@ export default defineConfig({
   site: "https://t3x.jp",
   integrations: [
     solid(),
+    fontOptimizer(),
     partytown(),
     playformInline({ Logger: 1 }),
     playformCompress(),
