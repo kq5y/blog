@@ -4,6 +4,7 @@ import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
 import playformInline from "@playform/inline";
+
 import fontOptimizer from "./src/integrations/font-optimizer";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";

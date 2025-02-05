@@ -1,4 +1,5 @@
 import { PROFILE } from "@/const";
+
 import styled from "./Profile.module.scss";
 
 interface Props {

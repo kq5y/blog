@@ -1,4 +1,5 @@
 import { HISTORY } from "@/const";
+
 import styled from "./HistoryView.module.scss";
 
 export const HistoryView = () => {
