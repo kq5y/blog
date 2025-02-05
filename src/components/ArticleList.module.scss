@@ -33,7 +33,10 @@ h1 {
   }
 }
 
-.date {
+.metaHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
   color: var(--sub-hover-color);
 }
 

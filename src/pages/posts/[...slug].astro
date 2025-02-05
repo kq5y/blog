@@ -4,10 +4,10 @@ import { getEntry } from "astro:content";
 import ArticleContainer from "@/components/ArticleContainer.astro";
 import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { convertParams, getAllArticles } from "@/lib/article";
+import { convertParams, getBlogPosts } from "@/lib/article";
 
 export async function getStaticPaths() {
-  const posts = convertParams(await getAllArticles(true));
+  const posts = convertParams(await getBlogPosts(true));
   return posts;
 }
 

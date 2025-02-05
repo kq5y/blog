@@ -1,12 +1,12 @@
 ---
 import { ArticleList } from "@/components/ArticleList";
-import { SITE_NAME } from "@/const";
+import { SITE_NAME, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { getAllArticles } from "@/lib/article";
+import { getAllPosts } from "@/lib/article";
 
-const articles = await getAllArticles(false);
+const posts = await getAllPosts(ZENN_USERNAME, false);
 ---
 
 <Layout title=`Posts - ${SITE_NAME}`>
-  <ArticleList title={"Posts"} articles={articles} />
+  <ArticleList title={"Posts"} posts={posts} />
 </Layout>

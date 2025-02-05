@@ -1,27 +1,33 @@
-import type { Article } from "@/lib/article";
-
 import styled from "./ArticleList.module.scss";
 
 interface Props {
   title: string;
-  articles: Article[];
+  posts: Post[];
 }
 
-export const ArticleList = ({ title, articles }: Props) => {
+export const ArticleList = ({ title, posts }: Props) => {
   return (
     <div class={styled.mainContainer}>
       <h1>{title}</h1>
       <div class={styled.articles}>
-        {articles.length === 0 && <p>記事がありません</p>}
-        {articles.map((article) => (
+        {posts.length === 0 && <p>記事がありません</p>}
+        {posts.map((post) => (
           <article>
             <div class={styled.meta}>
-              <time class={styled.date} datetime={article.date}>
-                {article.date}
-              </time>
-              <a href={article.path}>{article.title}</a>
+              <div class={styled.metaHeader}>
+                <time datetime={post.date}>{post.date}</time>
+                <span>|</span>
+                <span>{post.type}</span>
+              </div>
+              {post.type === "Blog" ? (
+                <a href={post.path}>{post.title}</a>
+              ) : (
+                <a href={post.url} target="_blank" rel="noopener noreferrer">
+                  {post.title}
+                </a>
+              )}
               <div class={styled.tags}>
-                {article.tags.map((tag) => (
+                {post.tags.map((tag) => (
                   <span>{tag}</span>
                 ))}
               </div>
