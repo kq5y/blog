@@ -38,7 +38,7 @@ export const Article = ({
       </div>
       <div class={styled.articleMain}>
         <input type="checkbox" id="toc-toggle" class={styled.tocToggle} />
-        <nav>
+        <nav class={styled.toc}>
           <div>
             <h2>
               <label for="toc-toggle">Table of Contents</label>
