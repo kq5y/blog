@@ -1,7 +1,7 @@
 const SITE_NAME = "kq5iwam0chi";
 const SITE_DESCRIPTION = "kq5y's portfolio and blog page";
 
-const ZENN_USERNAME = null;
+const ZENN_USERNAME = "kq5y";
 
 const PROFILE = {
   name: "kq5y",
