@@ -20,6 +20,7 @@ export default defineConfig({
   output: "static",
   build: {
     inlineStylesheets: "auto",
+    assets: "assets",
   },
   integrations: [
     solid({
