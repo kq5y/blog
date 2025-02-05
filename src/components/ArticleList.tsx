@@ -16,7 +16,9 @@ export const ArticleList = ({ title, articles }: Props) => {
         {articles.map((article) => (
           <article>
             <div class={styled.meta}>
-              <div class={styled.date}>{article.date}</div>
+              <time class={styled.date} datetime={article.date}>
+                {article.date}
+              </time>
               <a href={article.path}>{article.title}</a>
               <div class={styled.tags}>
                 {article.tags.map((tag) => (

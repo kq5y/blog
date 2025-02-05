@@ -27,7 +27,9 @@ export const Article = ({
       <div class={styled.articleMeta}>
         <div class={styled.articleSlug}>{slug}</div>
         <h1 class={styled.articleTitle}>{title}</h1>
-        <div class={styled.articleDate}>{date}</div>
+        <time class={styled.articleDate} datetime={date}>
+          {date}
+        </time>
         <div class={styled.articleTags}>
           {tags.map((tag) => (
             <span>{tag}</span>
@@ -42,24 +44,27 @@ export const Article = ({
               <label for="toc-toggle">Table of Contents</label>
             </h2>
             <ul>
-              {headings.map((head) => {
-                if (
-                  (head.depth === 2 || head.depth === 3) &&
-                  head.slug !== "footnote-label"
-                ) {
-                  return (
-                    <li class={styled[`heading${head.depth}`]}>
-                      <a href={`#${head.slug}`}>{head.text}</a>
-                    </li>
-                  );
-                }
-              })}
+              {headings
+                .filter(
+                  (head) =>
+                    (head.depth === 2 || head.depth === 3) &&
+                    head.slug !== "footnote-label"
+                )
+                .map((head) => (
+                  <li class={styled[`heading${head.depth}`]}>
+                    <a href={`#${head.slug}`}>{head.text}</a>
+                  </li>
+                ))}
             </ul>
           </div>
         </nav>
         <div class={styled.articleContent}>{content}</div>
       </div>
-      <div class={styled.profileContainer}>{profile}</div>
+      {profile && (
+        <div class={styled.profileContainer} role="complementary">
+          {profile}
+        </div>
+      )}
     </article>
   );
 };
