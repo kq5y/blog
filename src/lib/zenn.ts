@@ -31,25 +31,6 @@ interface ZennArticle {
   } | null;
 }
 
-export async function getZennArticles(
-  username: string
-): Promise<ZennArticle[]> {
-  let page: number | null = 1;
-  const articles = [];
-  while (page !== null) {
-    const response = await fetch(
-      `https://zenn.dev/api/articles?username=${username}&page=${page}`
-    );
-    const data = (await response.json()) as {
-      articles: ZennArticle[];
-      next_page: number | null;
-    };
-    articles.push(...data.articles);
-    page = data.next_page;
-  }
-  return articles;
-}
-
 interface ZennArticleDetail extends ZennArticle {
   body_html: string;
   og_image_url: string;
@@ -88,10 +69,42 @@ interface TOCItem {
   children: TOCItem[];
 }
 
+const articlesCache: { [key: string]: ZennArticle[] } = {};
+const articleDetailCache: { [key: string]: ZennArticleDetail } = {};
+
+export async function getZennArticles(
+  username: string,
+  cache = true
+): Promise<ZennArticle[]> {
+  if (cache && articlesCache[username]) {
+    return articlesCache[username];
+  }
+  let page: number | null = 1;
+  const articles = [];
+  while (page !== null) {
+    const response = await fetch(
+      `https://zenn.dev/api/articles?username=${username}&page=${page}`
+    );
+    const data = (await response.json()) as {
+      articles: ZennArticle[];
+      next_page: number | null;
+    };
+    articles.push(...data.articles);
+    page = data.next_page;
+  }
+  articlesCache[username] = articles;
+  return articles;
+}
+
 export async function getZennArticleDetail(
-  slug: string
+  slug: string,
+  cache = true
 ): Promise<ZennArticleDetail> {
+  if (cache && articleDetailCache[slug]) {
+    return articleDetailCache[slug];
+  }
   const response = await fetch(`https://zenn.dev/api/articles/${slug}`);
   const data = (await response.json()) as { article: ZennArticleDetail };
+  articleDetailCache[slug] = data.article;
   return data.article;
 }
