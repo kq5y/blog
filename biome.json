@@ -15,7 +15,15 @@
     "ignore": ["**/package.json", "**/pnpm-lock.yaml"]
   },
   "organizeImports": { "enabled": true },
-  "linter": { "enabled": true, "rules": { "recommended": true } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      }
+    }
+  },
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",

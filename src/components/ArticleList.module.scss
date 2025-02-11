@@ -4,11 +4,26 @@
   margin-inline: auto;
 }
 
-h1 {
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   margin-block: 0.5rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 700;
+
+  h1 {
+    flex: 1;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+  }
+
+  a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+  }
 }
 
 .articles {
