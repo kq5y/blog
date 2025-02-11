@@ -134,7 +134,13 @@ article {
           margin: 0;
           padding-inline: 1rem;
           background: var(--header-color-fill);
+
+          li.heading2 {
+            margin-block: 0;
+            transition: margin 0.5s ease;
+          }
         }
+
         h2 {
           margin: 0;
           padding: 0.5rem 1rem;
@@ -166,7 +172,12 @@ article {
           max-height: 14rem;
           padding-block: 0.5rem;
           overflow: auto;
+
+          li.heading2 {
+            margin-block: 0.5rem;
+          }
         }
+
         h2 {
           padding: 0.5rem 1rem;
           label::before {
