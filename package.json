@@ -20,7 +20,6 @@
     "@astrojs/solid-js": "^5.0.4",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
     "@playform/compress": "^0.1.7",
-    "@playform/inline": "^0.1.1",
     "astro": "^5.2.5",
     "jsdom": "^26.0.0",
     "katex": "^0.16.21",
