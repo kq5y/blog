@@ -17,6 +17,10 @@ const entry = await getEntry("post", slug);
 if (!entry) return Astro.redirect("/404");
 ---
 
-<Layout title={`${entry.data.title} - ${SITE_NAME}`} katex>
+<Layout
+  title={`${entry.data.title} - ${SITE_NAME}`}
+  katex
+  post={{ slug, date: entry.data.date }}
+>
   <ArticleContainer slug={slug} entry={entry} />
 </Layout>

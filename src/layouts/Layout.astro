@@ -1,15 +1,19 @@
 ---
 import { Header } from "@/components/Header";
-import { SITE_DESCRIPTION } from "@/const";
+import { POST_OGP_URL, SITE_DESCRIPTION, SITE_NAME } from "@/const";
 
 import "@/global.scss";
 
 interface Props {
   title: string;
   katex?: boolean;
+  post?: {
+    slug: string;
+    date: string;
+  };
 }
 
-const { title, katex = false } = Astro.props;
+const { title, katex = false, post = undefined } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,6 +27,30 @@ const { title, katex = false } = Astro.props;
     />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    {
+      post && (
+        <>
+          <meta property="og:title" content={title} />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:url"
+            content={`${import.meta.env.SITE}/posts/${post.slug}/`}
+          />
+          <meta
+            property="og:image"
+            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
+          />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:locale" content="ja_JP" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta
+            name="twitter:image"
+            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
+          />
+        </>
+      )
+    }
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

@@ -1,6 +1,8 @@
 const SITE_NAME = "kq5iwam0chi";
 const SITE_DESCRIPTION = "kq5y's portfolio and blog page";
 
+const POST_OGP_URL = "https://ogp.t3x.jp/blog/image.png";
+
 const ZENN_USERNAME = "kq5y";
 
 const PROFILE = {
@@ -301,4 +303,12 @@ const HISTORY: HistoryItem[] = [
   },
 ];
 
-export { SITE_NAME, SITE_DESCRIPTION, ZENN_USERNAME, PROFILE, WORKS, HISTORY };
+export {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  POST_OGP_URL,
+  ZENN_USERNAME,
+  PROFILE,
+  WORKS,
+  HISTORY,
+};
