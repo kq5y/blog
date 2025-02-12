@@ -71,6 +71,21 @@ const PROFILE = {
 
 const WORKS: WorkItem[] = [
   {
+    title: "ogp-worker",
+    description: "blogとtoolsのOGP画像を生成するAPI",
+    links: [
+      {
+        name: "Link",
+        url: "https://ogp.t3x.jp",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/kq5y/ogp-worker",
+      },
+    ],
+    tags: ["TypeScript", "Cloudflare Workers", "Hono"],
+  },
+  {
     title: "BlackJack",
     description:
       "講義課題としてC言語で作成したコンソールで遊べるブラックジャック",
@@ -107,7 +122,7 @@ const WORKS: WorkItem[] = [
         url: "https://github.com/kq5y/blog",
       },
     ],
-    tags: ["TypeScript", "Astro", "SolidJS", "Cloudflare"],
+    tags: ["TypeScript", "Astro", "SolidJS", "Cloudflare Pages"],
   },
   {
     title: "tools",
@@ -124,7 +139,7 @@ const WORKS: WorkItem[] = [
         url: "https://github.com/kq5y/tools",
       },
     ],
-    tags: ["TypeScript", "Remix", "Cloudflare"],
+    tags: ["TypeScript", "Remix", "Cloudflare Workers", "Tailwind CSS"],
   },
   {
     title: "nicoarch",
