@@ -96,6 +96,7 @@ const WORKS: WorkItem[] = [
   {
     title: "blog",
     description: "ポートフォリオかつブログサイト",
+    pinned: true,
     links: [
       {
         name: "Link",
@@ -112,6 +113,7 @@ const WORKS: WorkItem[] = [
     title: "tools",
     description:
       "調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
+    pinned: true,
     links: [
       {
         name: "Link",
@@ -128,6 +130,7 @@ const WORKS: WorkItem[] = [
     title: "nicoarch",
     description:
       "ニコニコ動画の動画やメタデータ、コメントをアーカイブするツール",
+    pinned: true,
     links: [
       {
         name: "Github",

@@ -3,12 +3,17 @@ import { WORKS } from "@/const";
 import styled from "./WorkList.module.scss";
 
 export const WorkList = () => {
+  const sortedWorks = [...WORKS].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return 0;
+  });
   return (
     <div class={styled.mainContainer}>
       <h1>Works</h1>
       <div class={styled.works}>
-        {WORKS.map((work) => (
-          <div class={styled.work}>
+        {sortedWorks.map((work) => (
+          <div class={styled.work} data-pinned={work.pinned}>
             <h2>{work.title}</h2>
             {work.tags && (
               <div class={styled.tags}>

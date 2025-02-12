@@ -27,4 +27,5 @@ type WorkItem = {
     url: string;
   }[];
   tags?: string[];
+  pinned?: boolean;
 };
