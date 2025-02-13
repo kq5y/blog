@@ -88,3 +88,24 @@ h1 {
     }
   }
 }
+
+@media (max-width: 600px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+  .work {
+    padding: 0.75rem;
+    h2 {
+      font-size: 1rem;
+    }
+    &[data-pinned="true"] {
+      grid-column: span 1;
+      h2 {
+        font-size: 1.125rem;
+      }
+      .description {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
