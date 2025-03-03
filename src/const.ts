@@ -13,7 +13,7 @@ const PROFILE = {
     "I love Vocaloid and Voiceroid. My favorite games are Minecraft and Factorio.",
   home: "https://t3x.jp",
   sns: {
-    "X(Twitter)": "https://x.com/kq5yy",
+    "X(Twitter)": "https://x.com/kq5y__",
     GitHub: "https://github.com/kq5y",
     Kaggle: "https://www.kaggle.com/kq5yyy",
     SIGNATE: "https://signate.jp/users/114309",
