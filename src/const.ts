@@ -1,7 +1,7 @@
 const SITE_NAME = "kq5iwam0chi";
 const SITE_DESCRIPTION = "kq5y's portfolio and blog page";
 
-const POST_OGP_URL = "https://ogp.t3x.jp/blog/image.png";
+const POST_OGP_URL = "https://ogp.kq5.jp/blog/image.png";
 
 const ZENN_USERNAME = "kq5y";
 
@@ -11,7 +11,7 @@ const PROFILE = {
   desc:
     "Currently living in Chiba, Japan, interested in deep learning such as speech synthesis.\n" +
     "I love Vocaloid and Voiceroid. My favorite games are Minecraft and Factorio.",
-  home: "https://t3x.jp",
+  home: "https://kq5.jp",
   sns: {
     "X(Twitter)": "https://x.com/kq5y__",
     GitHub: "https://github.com/kq5y",
@@ -76,7 +76,7 @@ const WORKS: WorkItem[] = [
     links: [
       {
         name: "Link",
-        url: "https://ogp.t3x.jp",
+        url: "https://ogp.kq5.jp",
       },
       {
         name: "GitHub",
@@ -115,7 +115,7 @@ const WORKS: WorkItem[] = [
     links: [
       {
         name: "Link",
-        url: "https://t3x.jp",
+        url: "https://kq5.jp",
       },
       {
         name: "Github",
@@ -132,7 +132,7 @@ const WORKS: WorkItem[] = [
     links: [
       {
         name: "Link",
-        url: "https://tools.t3x.jp",
+        url: "https://tools.kq5.jp",
       },
       {
         name: "Github",
@@ -176,7 +176,7 @@ const WORKS: WorkItem[] = [
     links: [
       {
         name: "Link",
-        url: "https://note.t3x.jp",
+        url: "https://note.kq5.jp",
       },
       {
         name: "GitHub",
@@ -322,11 +322,11 @@ const HISTORY: HistoryItem[] = [
 ];
 
 export {
-  SITE_NAME,
-  SITE_DESCRIPTION,
-  POST_OGP_URL,
-  ZENN_USERNAME,
-  PROFILE,
-  WORKS,
   HISTORY,
+  POST_OGP_URL,
+  PROFILE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  WORKS,
+  ZENN_USERNAME,
 };

@@ -9,7 +9,7 @@ tags:
 
 ↓ 比較ソートのシミュレーションを行うツール
 
-https://tools.t3x.jp/simulation/sorting
+https://tools.kq5.jp/simulation/sorting
 
 ## 挿入ソート
 

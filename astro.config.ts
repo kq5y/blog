@@ -15,7 +15,7 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
-  site: "https://t3x.jp",
+  site: "https://kq5.jp",
   output: "static",
   build: {
     inlineStylesheets: "auto",
