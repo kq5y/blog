@@ -27,15 +27,17 @@ export default (): AstroIntegration => ({
                 );
                 continue;
               }
-              const linkTag = document.querySelector(
+              const linkTags = document.querySelectorAll(
                 'link[href*="https://fonts.googleapis.com/css2?family="]'
               );
-              if (linkTag) {
-                const originalHref = linkTag.getAttribute("href") || "";
-                const newHref = originalHref.includes("&text=")
-                  ? originalHref.replace(/&text=.*$/, `&text=${encodedText}`)
-                  : `${originalHref}&text=${encodedText}`;
-                linkTag.setAttribute("href", newHref);
+              if (linkTags.length > 0) {
+                for (const linkTag of linkTags) {
+                  const originalHref = linkTag.getAttribute("href") || "";
+                  const newHref = originalHref.includes("&text=")
+                    ? originalHref.replace(/&text=.*$/, `&text=${encodedText}`)
+                    : `${originalHref}&text=${encodedText}`;
+                  linkTag.setAttribute("href", newHref);
+                }
               } else {
                 logger.warn(
                   `The <link> tag for Google Fonts was not found: ${fileName}`
