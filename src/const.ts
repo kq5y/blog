@@ -9,7 +9,7 @@ const PROFILE = {
   name: "kq5y",
   other_names: ["kasi", "tksnn"],
   desc:
-    "Currently living in Chiba, Japan, interested in deep learning such as speech synthesis.\n" +
+    "Currently living in Chiba, Japan, interested in deep learning such as speech synthesis and front-end performance tuning.\n" +
     "I love Vocaloid and Voiceroid. My favorite games are Minecraft and Factorio.",
   home: "https://kq5.jp",
   sns: {
@@ -269,7 +269,7 @@ const HISTORY: HistoryItem[] = [
       },
       {
         name: "GitHub",
-        url: "https://github.com/tksnnx/signate_scup2023",
+        url: "https://github.com/kq5y/signate_scup2023",
       },
     ],
   },
@@ -286,7 +286,7 @@ const HISTORY: HistoryItem[] = [
       },
       {
         name: "GitHub",
-        url: "https://github.com/tksnnx/technopro-food-package",
+        url: "https://github.com/kq5y/technopro-food-package",
       },
     ],
   },
