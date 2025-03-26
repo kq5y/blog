@@ -14,6 +14,7 @@ export const ArticleList = ({ title, posts }: Props) => {
           href={`${import.meta.env.SITE}/rss.xml`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="RSS"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
