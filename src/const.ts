@@ -310,14 +310,12 @@ const HISTORY: HistoryItem[] = [
   {
     date: "2025-03",
     category: "Education",
-    title: "信州大学工学部電子情報システム工学科 退学予定",
-    future: true,
+    title: "信州大学工学部電子情報システム工学科 退学",
   },
   {
     date: "2025-04",
     category: "Education",
-    title: "筑波大学情報学群情報科学類 編入学予定",
-    future: true,
+    title: "筑波大学情報学群情報科学類 編入学",
   },
 ];
 
