@@ -41,9 +41,11 @@
     padding-left: 1rem;
   }
 
-  &:global(.active) {
-    color: $accent-color;
-    font-weight: 700;
+  @media (min-width: 1024px) {
+    &:global(.active) {
+      color: $accent-color;
+      font-weight: 700;
+    }
   }
 }
 

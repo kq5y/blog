@@ -44,19 +44,6 @@ const renderer = await render(entry);
         </div>
       </div>
     </div>
-    <div class={styles.mobileToc}>
-      <details class={styles.tocDetails}>
-        <summary class={styles.tocSummary}>
-          <div class={styles.tocSummaryInner}>
-            <Menu />
-            <span>Table of Contents</span>
-          </div>
-        </summary>
-        <div class={styles.tocContent}>
-          <TableOfContents headings={renderer.headings} />
-        </div>
-      </details>
-    </div>
     <div class={styles.postContent}>
       <div class={styles.postContentInner}>
         <article>
@@ -67,9 +54,17 @@ const renderer = await render(entry);
         </div>
       </div>
       <aside class={styles.postAside}>
-        <div class={styles.postAsideInner}>
-          <TableOfContents headings={renderer.headings} />
-        </div>
+        <details class={styles.tocDetails} open>
+          <summary class={styles.tocSummary}>
+            <div class={styles.tocSummaryInner}>
+              <Menu />
+              <span>Table of Contents</span>
+            </div>
+          </summary>
+          <div class={styles.tocContent}>
+            <TableOfContents headings={renderer.headings} />
+          </div>
+        </details>
       </aside>
     </div>
   </div>
