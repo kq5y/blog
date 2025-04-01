@@ -1,0 +1,21 @@
+---
+import { METADATA, PERSONAL_DATA } from "@/const";
+
+import styles from "./Footer.module.scss";
+
+const thisYear = new Date().getFullYear();
+---
+
+<footer class={styles.footer}>
+  <div class={styles.footerContent}>
+    <a href={METADATA.url} class={styles.footerLink}>
+      <h3 class={styles.footerTitle}>
+        {METADATA.domain}
+      </h3>
+    </a>
+    <p class={styles.footerText}>
+      Copyright {thisYear}
+      {PERSONAL_DATA.name}. All rights reserved.
+    </p>
+  </div>
+</footer>

@@ -1,40 +1,7 @@
-$bg-color: #eef5fb;
-$text-primary: #334155;
-$text-secondary: #475569;
-$text-tertiary: #64748b;
-$text-muted: #94a3b8;
-$border-color: #e2e8f0;
-$accent-color: #0f766e;
-$white: #ffffff;
-
-@mixin container {
-  width: 100%;
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@mixin flexCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin gridColumns($min-width) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, $min-width), 1fr));
-  gap: 1.5rem;
-}
+@use "./global.scss" as *;
 
 .container {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, $bg-color, $white);
-}
-
-.main {
   @include container;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 /*** Profile ***/

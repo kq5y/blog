@@ -1,0 +1,25 @@
+@use "../../styles/global.scss" as *;
+
+.footer {
+  background-color: $white;
+  border-top: 1px solid $border-color;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footerContent {
+  @include container;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: $text-tertiary;
+  text-align: end;
+}

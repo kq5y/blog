@@ -1,7 +1,8 @@
 ---
+import Footer from "@/components/Footer/Footer.astro";
 import { METADATA } from "@/const";
 
-import "@/styles/global.scss";
+import "@/styles/style.scss";
 
 interface Props {
   title: string;
@@ -45,6 +46,9 @@ const { title } = Astro.props;
     }
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
