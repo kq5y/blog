@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
+
+import { METADATA } from "./src/const";
 import fontOptimizer from "./src/integrations/font-optimizer";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
@@ -15,20 +17,13 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
-  site: "https://kq5.jp",
+  site: METADATA.url,
   output: "static",
   build: {
     inlineStylesheets: "auto",
     assets: "assets",
   },
-  integrations: [
-    solid({
-      include: ["**/components/**/*.tsx"],
-    }),
-    fontOptimizer(),
-    partytown(),
-    playformCompress(),
-  ],
+  integrations: [solid(), fontOptimizer(), partytown(), playformCompress()],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],

@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -23,6 +23,7 @@
     "astro": "^5.5.4",
     "jsdom": "^26.0.0",
     "katex": "^0.16.21",
+    "lucide-solid": "^0.486.0 <1.0.0",
     "rehype-expressive-code": "^0.38.3",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",

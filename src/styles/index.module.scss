@@ -1,0 +1,263 @@
+$bg-color: #eef5fb;
+$text-primary: #334155;
+$text-secondary: #475569;
+$text-tertiary: #64748b;
+$text-muted: #94a3b8;
+$border-color: #e2e8f0;
+$accent-color: #0f766e;
+$white: #ffffff;
+
+@mixin container {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gridColumns($min-width) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, $min-width), 1fr));
+  gap: 1.5rem;
+}
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, $bg-color, $white);
+}
+
+.main {
+  @include container;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/*** Profile ***/
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: $text-primary;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  color: $text-tertiary;
+  font-size: 0.875rem;
+  margin-bottom: 1.125rem;
+}
+
+.links {
+  @include flexCenter;
+  gap: 0.75rem;
+}
+
+.link {
+  padding: 0.375rem;
+  border-radius: 9999px;
+  color: $text-secondary;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:hover {
+    color: $text-primary;
+    background-color: $border-color;
+  }
+
+  svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+/*** Separator ***/
+
+.separator {
+  height: 1px;
+  background-color: $border-color;
+  margin-bottom: 2rem;
+}
+
+/*** Posts ***/
+
+.posts {
+  margin-bottom: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.postsTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.viewAllLink {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $text-primary;
+
+    svg {
+      transform: translateX(2px);
+    }
+  }
+
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    transition: transform 0.2s;
+  }
+}
+
+.postsGrid {
+  @include gridColumns(16rem);
+}
+
+.card {
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.06);
+
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.postImageLink {
+  display: block;
+}
+
+.postImage {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 0.75rem 1rem;
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.postType {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  line-height: 1;
+
+  &[data-type="Blog"] {
+    background-color: rgba(102, 73, 245, 0.1);
+    color: #6669b2;
+    border: 1px solid rgba(102, 73, 245, 0.2);
+  }
+  &[data-type="Zenn"] {
+    background-color: rgba(62, 168, 255, 0.1);
+    color: #3ea8ff;
+    border: 1px solid rgba(62, 168, 255, 0.2);
+  }
+}
+
+.postDate {
+  font-size: 0.875rem;
+  color: $text-tertiary;
+}
+
+.postTitle {
+  font-size: 1rem;
+  color: $text-primary;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+/*** Footer ***/
+
+.footer {
+  background-color: $white;
+  border-top: 1px solid $border-color;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footerContent {
+  @include container;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: $text-tertiary;
+  text-align: end;
+}

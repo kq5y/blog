@@ -1,92 +1,38 @@
 ---
-import { Header } from "@/components/Header";
-import { POST_OGP_URL, SITE_DESCRIPTION, SITE_NAME } from "@/const";
+import { METADATA } from "@/const";
 
-import "@/global.scss";
+import "@/styles/global.scss";
 
 interface Props {
   title: string;
-  katex?: boolean;
-  post?: {
-    slug: string;
-    date: string;
-  };
 }
 
-const { title, katex = false, post = undefined } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={SITE_DESCRIPTION} />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-    {
-      post && (
-        <>
-          <meta property="og:title" content={title} />
-          <meta property="og:type" content="article" />
-          <meta
-            property="og:url"
-            content={`${import.meta.env.SITE}/posts/${post.slug}/`}
-          />
-          <meta
-            property="og:image"
-            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
-          />
-          <meta property="og:site_name" content={SITE_NAME} />
-          <meta property="og:locale" content="ja_JP" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={title} />
-          <meta
-            name="twitter:image"
-            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
-          />
-        </>
-      )
-    }
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={METADATA.description} />
+    <link rel="icon" href="/favicon.ico" />
+    {/* ogp, katex */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
       fetchpriority="high"
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap"
       media="print"
       onload="this.media='all'"
     />
-    {
-      katex && (
-        <>
-          <link
-            rel="preconnect"
-            href="https://cdnjs.cloudflare.com"
-            crossorigin
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"
-            integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-            media="print"
-            onload="this.media='all'"
-          />
-        </>
-      )
-    }
-    <link rel="icon" href="/favicon.ico" />
-    <title>{title}</title>
     {
       import.meta.env.PROD && import.meta.env.CF_BEACON_TOKEN && (
         <script
@@ -99,9 +45,6 @@ const { title, katex = false, post = undefined } = Astro.props;
     }
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>

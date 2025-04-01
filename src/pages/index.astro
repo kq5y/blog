@@ -1,9 +1,137 @@
 ---
-import AboutContainer from "@/components/AboutContainer.astro";
-import { SITE_NAME } from "@/const";
+import { Image } from "astro:assets";
+import { ArrowRight, Github, Mail, Twitter, User } from "lucide-solid";
+
+import { METADATA, PERSONAL_DATA, ZENN_USERNAME } from "@/const";
+import iconImage from "@/images/icon.png";
 import Layout from "@/layouts/Layout.astro";
+import { getAllPosts } from "@/libraries/article";
+
+import styles from "@/styles/index.module.scss";
+
+const thisYear = new Date().getFullYear();
+const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
 ---
 
-<Layout title={SITE_NAME}>
-  <AboutContainer />
+<Layout title={METADATA.title}>
+  <div class={styles.container}>
+    <main class={styles.main}>
+      <section class={styles.profile}>
+        <div class={styles.avatar}>
+          <Image
+            slot="icon"
+            src={iconImage}
+            alt="icon"
+            width={320}
+            height={320}
+            loading="eager"
+            class={styles.icon}
+          />
+        </div>
+        <h1 class={styles.name}>{PERSONAL_DATA.name}</h1>
+        <p class={styles.bio}>{PERSONAL_DATA.bio}</p>
+        <div class={styles.links}>
+          <a href="/about" class={styles.link} aria-label="About" title="About">
+            <User />
+          </a>
+          <a
+            href={PERSONAL_DATA.links.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={styles.link}
+            aria-label="Twitter"
+            title="Twitter"
+          >
+            <Twitter />
+          </a>
+          <a
+            href={PERSONAL_DATA.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={styles.link}
+            aria-label="Github"
+            title="Github"
+          >
+            <Github />
+          </a>
+          <a
+            href={`mailto:${PERSONAL_DATA.links.mail}`}
+            class={styles.link}
+            aria-label="Mail"
+            title="Mail"
+          >
+            <Mail />
+          </a>
+        </div>
+      </section>
+      <div class={styles.separator}></div>
+      <section class={styles.posts}>
+        <div class={styles.postsHeader}>
+          <h2 class={styles.postsTitle}>Latest Posts</h2>
+          <a
+            href="/posts"
+            class={styles.viewAllLink}
+            aria-label="View all posts"
+          >
+            View all posts
+            <ArrowRight />
+          </a>
+        </div>
+        <div class={styles.postsGrid}>
+          {
+            recentPosts.map((post) => (
+              <div class={styles.card}>
+                <a
+                  href={post.type === "Blog" ? post.path : post.url}
+                  class={styles.postImageLink}
+                  target={post.type === "Zenn" ? "_blank" : undefined}
+                  rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
+                  aria-label={post.title}
+                >
+                  <img
+                    src={post.ogp}
+                    alt={post.title}
+                    class={styles.postImage}
+                    loading="lazy"
+                  />
+                </a>
+                <div class={styles.cardContent}>
+                  <div class={styles.postMeta}>
+                    <span class={styles.postType} data-type={post.type}>
+                      {post.type}
+                    </span>
+                    <div class={styles.postDate}>{post.date}</div>
+                  </div>
+                  <a
+                    href={post.type === "Blog" ? post.path : post.url}
+                    class={styles.postLink}
+                    target={post.type === "Zenn" ? "_blank" : undefined}
+                    rel={
+                      post.type === "Zenn" ? "noopener noreferrer" : undefined
+                    }
+                    aria-label={post.title}
+                  >
+                    <h3 class={styles.postTitle}>{post.title}</h3>
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+    <footer class={styles.footer}>
+      <div class={styles.footerContent}>
+        <a href={METADATA.url} class={styles.footerLink}>
+          <h3 class={styles.footerTitle}>
+            {METADATA.domain}
+          </h3>
+        </a>
+        <p class={styles.footerText}>
+          Copyright {thisYear}
+          {PERSONAL_DATA.name}. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
 </Layout>

@@ -4,7 +4,33 @@ import {
   type CollectionKey,
   getCollection,
 } from "astro:content";
+
+import { POST_OGP_URL } from "@/const";
+
 import { getZennArticleDetail, getZennArticles } from "./zenn";
+
+interface PostBase {
+  title: string;
+  tags: string[];
+  date: string;
+  hidden?: boolean;
+  ogp?: string;
+}
+
+interface BlogPost extends PostBase {
+  type: "Blog";
+  slug: string;
+  body?: string;
+  path: string;
+}
+
+interface ZennPost extends PostBase {
+  type: "Zenn";
+  slug: string;
+  url: string;
+}
+
+type Post = BlogPost | ZennPost;
 
 type Collection = CollectionEntry<keyof AnyEntryMap>;
 
@@ -29,17 +55,25 @@ export function convertParams(posts: BlogPost[]) {
   });
 }
 
+export function makeOgpUrl(slug: string, date: string) {
+  return `${POST_OGP_URL}?slug=${slug}&date=${date}`;
+}
+
 export async function getBlogPosts(showHidden = false): Promise<BlogPost[]> {
   const articles = await getCollectionCache("post");
   return articles
     .filter((article) => showHidden || !(article.data.hidden === true))
-    .map((article) => ({
-      ...article.data,
-      type: "Blog",
-      slug: article.id,
-      body: article.body,
-      path: `/posts/${article.id}/`,
-    }));
+    .map(
+      (article) =>
+        ({
+          ...article.data,
+          type: "Blog",
+          slug: article.id,
+          body: article.body,
+          path: `/posts/${article.id}/`,
+          ogp: makeOgpUrl(article.id, article.data.date),
+        }) as BlogPost
+    );
 }
 
 export async function getZennPosts(username: string): Promise<ZennPost[]> {
@@ -55,6 +89,7 @@ export async function getZennPosts(username: string): Promise<ZennPost[]> {
       url: `https://zenn.dev${detail.path}`,
       tags: detail.topics.map((topic) => topic.display_name),
       date: `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`,
+      ogp: detail.og_image_url,
     });
   }
   return posts;
