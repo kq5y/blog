@@ -11,7 +11,7 @@ import styles from "@/styles/posts.module.scss";
 const posts = await getAllPosts(ZENN_USERNAME, false);
 ---
 
-<Layout title=`Posts | ${METADATA.title}`>
+<Layout title=`Posts - ${METADATA.title}`>
   <div class={styles.container}>
     <BackLink />
     <div class={styles.postsHeader}>
