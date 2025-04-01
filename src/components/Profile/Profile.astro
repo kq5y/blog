@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { Github, Mail, Twitter, User } from "lucide-solid";
+
+import { PERSONAL_DATA } from "@/const";
+import iconImage from "@/images/icon.png";
+
+import styles from "./Profile.module.scss";
+
+interface Props {
+  mode?: "column" | "row";
+  class?: string;
+  hideAbout?: boolean;
+}
+
+const {
+  class: className,
+  mode = "column",
+  hideAbout = false,
+} = Astro.props as Props;
+---
+
+<div class:list={[styles.profile, className]} data-mode={mode}>
+  <div class={styles.avatar}>
+    <Image
+      slot="icon"
+      src={iconImage}
+      alt="icon"
+      width={320}
+      height={320}
+      loading="eager"
+      class={styles.icon}
+    />
+  </div>
+  <div class={styles.info}>
+    <h1 class={styles.name}>{PERSONAL_DATA.name}</h1>
+    {mode === "column" && <p class={styles.bio}>{PERSONAL_DATA.bio}</p>}
+    <div class={styles.links}>
+      {
+        !hideAbout && (
+          <a href="/about" class={styles.link} aria-label="About" title="About">
+            <User />
+          </a>
+        )
+      }
+      <a
+        href={PERSONAL_DATA.links.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={styles.link}
+        aria-label="Twitter"
+        title="Twitter"
+      >
+        <Twitter />
+      </a>
+      <a
+        href={PERSONAL_DATA.links.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={styles.link}
+        aria-label="Github"
+        title="Github"
+      >
+        <Github />
+      </a>
+      <a
+        href={`mailto:${PERSONAL_DATA.links.mail}`}
+        class={styles.link}
+        aria-label="Mail"
+        title="Mail"
+      >
+        <Mail />
+      </a>
+    </div>
+  </div>
+</div>

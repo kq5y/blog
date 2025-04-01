@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 import Footer from "@/components/Footer/Footer.astro";
 import { METADATA } from "@/const";
 
@@ -44,6 +46,7 @@ const { title } = Astro.props;
         />
       )
     }
+    <ClientRouter />
   </head>
   <body>
     <main>

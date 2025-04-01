@@ -7,59 +7,10 @@
 /*** Profile ***/
 
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 4rem;
-  padding-top: 2rem;
   max-width: 28rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.avatar {
-  width: 10rem;
-  height: 10rem;
-  margin-bottom: 1.25rem;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 2px solid #e2e8f0;
-  overflow: hidden;
-}
-
-.icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.name {
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 2rem;
-  color: $text-primary;
-  margin-bottom: 1rem;
-}
-
-.bio {
-  color: $text-tertiary;
-  font-size: 0.875rem;
-  margin-bottom: 1.125rem;
-}
-
-.links {
-  @include flexCenter;
-  gap: 0.75rem;
-}
-
-.link {
-  @include iconButton;
+  margin-bottom: 2rem;
 }
 
 /*** Separator ***/

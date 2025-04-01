@@ -1,10 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import { ArrowRight, Github, Mail, Twitter, User } from "lucide-solid";
+import { ArrowRight } from "lucide-solid";
 
 import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
-import { METADATA, PERSONAL_DATA, ZENN_USERNAME } from "@/const";
-import iconImage from "@/images/icon.png";
+import Profile from "@/components/Profile/Profile.astro";
+import { METADATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts } from "@/libraries/article";
 import styles from "@/styles/index.module.scss";
@@ -14,54 +13,7 @@ const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
 
 <Layout title={METADATA.title}>
   <div class={styles.container}>
-    <section class={styles.profile}>
-      <div class={styles.avatar}>
-        <Image
-          slot="icon"
-          src={iconImage}
-          alt="icon"
-          width={320}
-          height={320}
-          loading="eager"
-          class={styles.icon}
-        />
-      </div>
-      <h1 class={styles.name}>{PERSONAL_DATA.name}</h1>
-      <p class={styles.bio}>{PERSONAL_DATA.bio}</p>
-      <div class={styles.links}>
-        <a href="/about" class={styles.link} aria-label="About" title="About">
-          <User />
-        </a>
-        <a
-          href={PERSONAL_DATA.links.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={styles.link}
-          aria-label="Twitter"
-          title="Twitter"
-        >
-          <Twitter />
-        </a>
-        <a
-          href={PERSONAL_DATA.links.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={styles.link}
-          aria-label="Github"
-          title="Github"
-        >
-          <Github />
-        </a>
-        <a
-          href={`mailto:${PERSONAL_DATA.links.mail}`}
-          class={styles.link}
-          aria-label="Mail"
-          title="Mail"
-        >
-          <Mail />
-        </a>
-      </div>
-    </section>
+    <Profile mode="column" class={styles.profile} />
     <div class={styles.separator}></div>
     <section class={styles.posts}>
       <div class={styles.postsHeader}>

@@ -1,0 +1,116 @@
+---
+import { ArrowLeft } from "lucide-solid";
+
+import Profile from "@/components/Profile/Profile.astro";
+import { METADATA, PERSONAL_DATA } from "@/const";
+import Layout from "@/layouts/Layout.astro";
+import styles from "@/styles/about.module.scss";
+---
+
+<Layout title=`About | ${METADATA.title}`>
+  <div class={styles.container}>
+    <a href="/" class={styles.backLink}>
+      <ArrowLeft />
+      <span>Home</span>
+    </a>
+    <Profile mode="row" hideAbout class={styles.header} />
+    <div class={styles.content}>
+      <section class={styles.interests}>
+        <h2>興味のあること</h2>
+        <div class={styles.sectionContent}>
+          <ul>
+            {PERSONAL_DATA.interests.map((interest) => <li>{interest}</li>)}
+          </ul>
+        </div>
+      </section>
+      <section class={styles.skills}>
+        <h2>できること</h2>
+        <div class={styles.sectionContent}>
+          <ul>
+            {PERSONAL_DATA.skills.map((skill) => <li>{skill}</li>)}
+          </ul>
+        </div>
+      </section>
+      <section class={styles.likes}>
+        <h2>好きなもの</h2>
+        <div class={styles.sectionContent}>
+          <ul>
+            {PERSONAL_DATA.likes.map((like) => <li>{like}</li>)}
+          </ul>
+          <div class={styles.spotifyEmbed}>
+            <iframe
+              src={PERSONAL_DATA.spotifyEmbedLink}
+              width="100%"
+              height="152"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+      <section class={styles.experience}>
+        <h2>所属</h2>
+        <div class:list={[styles.sectionContent, styles.timeline]}>
+          {
+            PERSONAL_DATA.timeline.map((item) => (
+              <div class={styles.timelineItem}>
+                <div class={styles.timelineDate}>{item.date}</div>
+                <div class={styles.timelineContent}>
+                  <h3>{item.title}</h3>
+                  {item.description && <p>{item.description}</p>}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+      <section class={styles.certs}>
+        <h2>資格・受賞</h2>
+        <div class={styles.sectionContent}>
+          <ul>
+            {
+              PERSONAL_DATA.certs.map((cert) => (
+                <li>
+                  <span class={styles.certName}>{cert.name}</span>
+                  {cert.description && (
+                    <span class={styles.certDescription}>
+                      {cert.description}
+                    </span>
+                  )}
+                  {cert.date && (
+                    <span class={styles.certDate}>{cert.date}</span>
+                  )}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+      <section class={styles.works}>
+        <h2>制作物</h2>
+        <div class={styles.sectionContent}>
+          {
+            PERSONAL_DATA.works.map((work) => (
+              <div class={styles.workItem}>
+                <h3 class={styles.workTitle}>{work.title}</h3>
+                <p class={styles.workDescription}>{work.description}</p>
+                <div class={styles.workLinks}>
+                  {work.links.map((link) => (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class={styles.workLink}
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
