@@ -59,21 +59,22 @@ export function makeOgpUrl(slug: string, date: string) {
   return `${POST_OGP_URL}?slug=${slug}&date=${date}`;
 }
 
+export function entry2post(post: AnyEntryMap["post"][string]): BlogPost {
+  return {
+    ...post.data,
+    type: "Blog",
+    slug: post.id,
+    body: post.body,
+    path: `/posts/${post.id}/`,
+    ogp: makeOgpUrl(post.id, post.data.date),
+  };
+}
+
 export async function getBlogPosts(showHidden = false): Promise<BlogPost[]> {
   const articles = await getCollectionCache("post");
   return articles
     .filter((article) => showHidden || !(article.data.hidden === true))
-    .map(
-      (article) =>
-        ({
-          ...article.data,
-          type: "Blog",
-          slug: article.id,
-          body: article.body,
-          path: `/posts/${article.id}/`,
-          ogp: makeOgpUrl(article.id, article.data.date),
-        }) as BlogPost
-    );
+    .map(entry2post);
 }
 
 export async function getZennPosts(username: string): Promise<ZennPost[]> {
