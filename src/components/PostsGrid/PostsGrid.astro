@@ -1,0 +1,51 @@
+---
+import type { Post } from "@/libraries/article";
+
+import styles from "./PostsGrid.module.scss";
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props as Props;
+---
+
+<div class={styles.postsGrid}>
+  {
+    posts.map((post) => (
+      <div class={styles.card}>
+        <a
+          href={post.type === "Blog" ? post.path : post.url}
+          class={styles.postImageLink}
+          target={post.type === "Zenn" ? "_blank" : undefined}
+          rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
+          aria-label={post.title}
+        >
+          <img
+            src={post.ogp}
+            alt={post.title}
+            class={styles.postImage}
+            loading="lazy"
+          />
+        </a>
+        <div class={styles.cardContent}>
+          <div class={styles.postMeta}>
+            <span class={styles.postType} data-type={post.type}>
+              {post.type}
+            </span>
+            <div class={styles.postDate}>{post.date}</div>
+          </div>
+          <a
+            href={post.type === "Blog" ? post.path : post.url}
+            class={styles.postLink}
+            target={post.type === "Zenn" ? "_blank" : undefined}
+            rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
+            aria-label={post.title}
+          >
+            <h3 class={styles.postTitle}>{post.title}</h3>
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</div>

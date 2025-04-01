@@ -30,7 +30,7 @@ interface ZennPost extends PostBase {
   url: string;
 }
 
-type Post = BlogPost | ZennPost;
+export type Post = BlogPost | ZennPost;
 
 type Collection = CollectionEntry<keyof AnyEntryMap>;
 

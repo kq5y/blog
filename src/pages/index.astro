@@ -2,11 +2,11 @@
 import { Image } from "astro:assets";
 import { ArrowRight, Github, Mail, Twitter, User } from "lucide-solid";
 
+import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
 import { METADATA, PERSONAL_DATA, ZENN_USERNAME } from "@/const";
 import iconImage from "@/images/icon.png";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts } from "@/libraries/article";
-
 import styles from "@/styles/index.module.scss";
 
 const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
@@ -71,45 +71,7 @@ const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
           <ArrowRight />
         </a>
       </div>
-      <div class={styles.postsGrid}>
-        {
-          recentPosts.map((post) => (
-            <div class={styles.card}>
-              <a
-                href={post.type === "Blog" ? post.path : post.url}
-                class={styles.postImageLink}
-                target={post.type === "Zenn" ? "_blank" : undefined}
-                rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
-                aria-label={post.title}
-              >
-                <img
-                  src={post.ogp}
-                  alt={post.title}
-                  class={styles.postImage}
-                  loading="lazy"
-                />
-              </a>
-              <div class={styles.cardContent}>
-                <div class={styles.postMeta}>
-                  <span class={styles.postType} data-type={post.type}>
-                    {post.type}
-                  </span>
-                  <div class={styles.postDate}>{post.date}</div>
-                </div>
-                <a
-                  href={post.type === "Blog" ? post.path : post.url}
-                  class={styles.postLink}
-                  target={post.type === "Zenn" ? "_blank" : undefined}
-                  rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
-                  aria-label={post.title}
-                >
-                  <h3 class={styles.postTitle}>{post.title}</h3>
-                </a>
-              </div>
-            </div>
-          ))
-        }
-      </div>
+      <PostsGrid posts={recentPosts} />
     </section>
   </div>
 </Layout>
