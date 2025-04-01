@@ -1,4 +1,4 @@
-import { PROFILE } from "@/const";
+import { PROFILE } from "old_src/const";
 
 import styled from "./Profile.module.scss";
 

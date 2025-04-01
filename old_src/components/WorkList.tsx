@@ -1,4 +1,4 @@
-import { WORKS } from "@/const";
+import { WORKS } from "old_src/const";
 
 import styled from "./WorkList.module.scss";
 

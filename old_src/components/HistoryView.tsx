@@ -1,4 +1,4 @@
-import { HISTORY } from "@/const";
+import { HISTORY } from "old_src/const";
 
 import styled from "./HistoryView.module.scss";
 

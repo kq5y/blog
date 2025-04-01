@@ -2,9 +2,9 @@
 import { getEntry } from "astro:content";
 
 import ArticleContainer from "@/components/ArticleContainer.astro";
-import { SITE_NAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { convertParams, getBlogPosts } from "@/lib/article";
+import { SITE_NAME } from "old_src/const";
+import { convertParams, getBlogPosts } from "old_src/lib/article";
 
 export async function getStaticPaths() {
   const posts = convertParams(await getBlogPosts(true));
