@@ -2,7 +2,7 @@
 import { Rss } from "lucide-solid";
 
 import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
-import { ZENN_USERNAME } from "@/const";
+import { METADATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts } from "@/libraries/article";
 import styles from "@/styles/posts.module.scss";
@@ -10,7 +10,7 @@ import styles from "@/styles/posts.module.scss";
 const posts = await getAllPosts(ZENN_USERNAME, false);
 ---
 
-<Layout title="Posts">
+<Layout title=`Posts | ${METADATA.title}`>
   <div class={styles.container}>
     <section class={styles.posts}>
       <div class={styles.postsHeader}>
