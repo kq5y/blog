@@ -23,7 +23,7 @@ export const PERSONAL_DATA = {
     "Webページのパフォーマンスチューニング",
   ],
   skills: [
-    "Reactなどのフレームワークを使用したWebサイト構築",
+    "ReactやRemix、Next.jsなどのフレームワークを使用したWebサイト構築",
     "OpenSiv3DやUnityを使用したゲーム制作",
     "RailsやFlaskを使用したAPI開発",
     "WPFやElectronを使用したスタンドアロンアプリケーション開発",

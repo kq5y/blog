@@ -5,30 +5,6 @@
   @include container;
 }
 
-.backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: $text-secondary;
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
-  transition: color 0.2s;
-
-  &:hover {
-    color: $text-primary;
-
-    svg {
-      transform: translateX(-2px);
-    }
-  }
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-    transition: transform 0.2s;
-  }
-}
-
 .header {
   margin-block: 1rem;
 }
