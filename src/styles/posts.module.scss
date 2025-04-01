@@ -1,0 +1,26 @@
+@use "./global.scss" as *;
+
+.container {
+  @include container;
+}
+
+.posts {
+  margin-bottom: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.postsTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.rssLink {
+  @include iconButton;
+}

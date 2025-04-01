@@ -5,14 +5,15 @@ import styles from "./PostsGrid.module.scss";
 
 interface Props {
   posts: Post[];
+  eagerLoadCount?: number;
 }
 
-const { posts } = Astro.props as Props;
+const { posts, eagerLoadCount = 0 } = Astro.props as Props;
 ---
 
 <div class={styles.postsGrid}>
   {
-    posts.map((post) => (
+    posts.map((post, index) => (
       <div class={styles.card}>
         <a
           href={post.type === "Blog" ? post.path : post.url}
@@ -25,7 +26,7 @@ const { posts } = Astro.props as Props;
             src={post.ogp}
             alt={post.title}
             class={styles.postImage}
-            loading="lazy"
+            loading={index < eagerLoadCount ? "eager" : "lazy"}
           />
         </a>
         <div class={styles.cardContent}>
