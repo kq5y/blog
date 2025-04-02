@@ -1,5 +1,5 @@
 export const METADATA = {
-  title: "kq5y's portfolio",
+  title: "kq5.jp",
   description: "kq5y's portfolio and blog page",
   url: "https://kq5.jp",
   domain: "kq5.jp",
