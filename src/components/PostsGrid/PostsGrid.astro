@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import type { Post } from "@/libraries/article";
 
 import styles from "./PostsGrid.module.scss";
@@ -22,12 +24,17 @@ const { posts, eagerLoadCount = 0 } = Astro.props as Props;
           rel={post.type === "Zenn" ? "noopener noreferrer" : undefined}
           aria-label={post.title}
         >
-          <img
-            src={post.ogp}
-            alt={post.title}
-            class={styles.postImage}
-            loading={index < eagerLoadCount ? "eager" : "lazy"}
-          />
+          {post.ogp && (
+            <Image
+              src={post.ogp}
+              alt={post.title}
+              class={styles.postImage}
+              width={600}
+              height={315}
+              loading={index < eagerLoadCount ? "eager" : "lazy"}
+              format="avif"
+            />
+          )}
         </a>
         <div class={styles.cardContent}>
           <div class={styles.postMeta}>

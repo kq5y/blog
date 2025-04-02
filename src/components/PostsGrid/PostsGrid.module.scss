@@ -18,11 +18,13 @@
 
 .postImageLink {
   display: block;
+  width: 100%;
+  aspect-ratio: 1200 / 630;
 }
 
 .postImage {
   width: 100%;
-  aspect-ratio: 1200 / 630;
+  height: 100%;
   object-fit: cover;
 }
 
