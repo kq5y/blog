@@ -85,5 +85,18 @@ export default defineConfig({
         },
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: (chunkInfo) => {
+            const name = chunkInfo.name.split(".")[0];
+            return `assets/${name}.[hash].js`;
+          },
+        },
+      },
+    },
+  },
+  image: {
+    domains: ["ogp.kq5.jp", "res.cloudinary.com"],
   },
 });
