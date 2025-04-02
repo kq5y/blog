@@ -1,34 +1,31 @@
 ---
-import { Header } from "@/components/Header";
-import { POST_OGP_URL, SITE_DESCRIPTION, SITE_NAME } from "@/const";
+import { ClientRouter } from "astro:transitions";
 
-import "@/global.scss";
+import Footer from "@/components/Footer/Footer.astro";
+import { METADATA } from "@/const";
+
+import "@/styles/style.scss";
+import type { Post } from "@/libraries/article";
 
 interface Props {
   title: string;
+  post?: Post;
   katex?: boolean;
-  post?: {
-    slug: string;
-    date: string;
-  };
 }
 
-const { title, katex = false, post = undefined } = Astro.props;
+const { title, post, katex = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={SITE_DESCRIPTION} />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={METADATA.description} />
+    <link rel="icon" href="/favicon.ico" />
     {
-      post && (
+      post?.ogp && (
         <>
           <meta property="og:title" content={title} />
           <meta property="og:type" content="article" />
@@ -36,18 +33,12 @@ const { title, katex = false, post = undefined } = Astro.props;
             property="og:url"
             content={`${import.meta.env.SITE}/posts/${post.slug}/`}
           />
-          <meta
-            property="og:image"
-            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
-          />
-          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:image" content={post.ogp} />
+          <meta property="og:site_name" content={METADATA.title} />
           <meta property="og:locale" content="ja_JP" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={title} />
-          <meta
-            name="twitter:image"
-            content={`${POST_OGP_URL}?slug=${post.slug}&date=${post.date}`}
-          />
+          <meta name="twitter:image" content={post.ogp} />
         </>
       )
     }
@@ -57,11 +48,11 @@ const { title, katex = false, post = undefined } = Astro.props;
       rel="preload"
       as="style"
       fetchpriority="high"
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap"
       media="print"
       onload="this.media='all'"
     />
@@ -85,8 +76,6 @@ const { title, katex = false, post = undefined } = Astro.props;
         </>
       )
     }
-    <link rel="icon" href="/favicon.ico" />
-    <title>{title}</title>
     {
       import.meta.env.PROD && import.meta.env.CF_BEACON_TOKEN && (
         <script
@@ -97,11 +86,12 @@ const { title, katex = false, post = undefined } = Astro.props;
         />
       )
     }
+    <ClientRouter />
   </head>
   <body>
-    <Header />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

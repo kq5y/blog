@@ -1,14 +1,14 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 
-import { SITE_NAME } from "@/const";
-import { getBlogPosts } from "@/lib/article";
+import { METADATA } from "@/const";
+import { getBlogPosts } from "@/libraries/article";
 
 export async function GET(context: APIContext) {
   const posts = await getBlogPosts();
   return await rss({
-    title: `${SITE_NAME} posts`,
-    description: `RSS feed of posts on ${SITE_NAME}`,
+    title: `${METADATA.domain} posts`,
+    description: `RSS feed of posts on ${METADATA.domain}`,
     site: context.site?.origin || "",
     items: posts.map((post) => ({
       title: post.title,

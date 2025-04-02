@@ -1,10 +1,14 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
+import { Calendar, Menu, Tag } from "lucide-solid";
 
-import ArticleContainer from "@/components/ArticleContainer.astro";
-import { SITE_NAME } from "@/const";
+import BackLink from "@/components/BackLink/BackLink.astro";
+import Profile from "@/components/Profile/Profile.astro";
+import TableOfContents from "@/components/TableOfContents/TableOfContents.astro";
+import { METADATA } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { convertParams, getBlogPosts } from "@/lib/article";
+import { convertParams, entry2post, getBlogPosts } from "@/libraries/article";
+import styles from "@/styles/post.module.scss";
 
 export async function getStaticPaths() {
   const posts = convertParams(await getBlogPosts(true));
@@ -15,12 +19,54 @@ const { slug } = Astro.params;
 
 const entry = await getEntry("post", slug);
 if (!entry) return Astro.redirect("/404");
+
+const post = entry2post(entry);
+const renderer = await render(entry);
 ---
 
-<Layout
-  title={`${entry.data.title} - ${SITE_NAME}`}
-  katex
-  post={{ slug, date: entry.data.date }}
->
-  <ArticleContainer slug={slug} entry={entry} />
+<Layout title={`${post.title} - ${METADATA.title}`} katex post={post}>
+  <div class={styles.container}>
+    <BackLink />
+    <div class={styles.postHeader}>
+      <h1 class={styles.postTitle}>{post.title}</h1>
+      <div class={styles.postMeta}>
+        <div class={styles.postDate}>
+          <Calendar />
+          <time datetime={post.date}>
+            {post.date}
+          </time>
+        </div>
+        <div class={styles.postTags}>
+          <Tag />
+          <div class={styles.postTagsInner}>
+            {post.tags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class={styles.postContent}>
+      <div class={styles.postContentInner}>
+        <article>
+          <renderer.Content />
+        </article>
+        <div class={styles.postProfile}>
+          <Profile mode="row" />
+        </div>
+      </div>
+      <aside class={styles.postAside}>
+        <div class={styles.tocDetails}>
+          <input type="checkbox" id="toc-toggle" class={styles.tocToggle} />
+          <label for="toc-toggle" class={styles.tocSummary}>
+            <div class={styles.tocSummaryInner}>
+              <Menu />
+              <span>Table of Contents</span>
+            </div>
+          </label>
+          <div class={styles.tocContent}>
+            <TableOfContents headings={renderer.headings} />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
 </Layout>

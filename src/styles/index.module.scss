@@ -1,0 +1,90 @@
+@use "./global.scss" as *;
+
+.container {
+  @include container;
+}
+
+/*** Profile ***/
+
+.profile {
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+/*** Separator ***/
+
+.separator {
+  height: 1px;
+  background-color: $border-color;
+  margin-bottom: 2rem;
+}
+
+/*** Posts ***/
+
+.posts {
+  margin-bottom: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.postsTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.viewAllLink {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $text-primary;
+
+    svg {
+      transform: translateX(2px);
+    }
+  }
+
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    transition: transform 0.2s;
+  }
+}
+
+/*** Footer ***/
+
+.footer {
+  background-color: $white;
+  border-top: 1px solid $border-color;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footerContent {
+  @include container;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: $text-tertiary;
+  text-align: end;
+}

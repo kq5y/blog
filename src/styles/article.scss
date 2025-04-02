@@ -1,0 +1,249 @@
+@use "./global.scss" as *;
+
+@mixin article {
+  > div {
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: solid 1px gray;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: "#";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;
+      color: $accent-color;
+      font-weight: 700;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.875rem;
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: "#";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.25rem;
+      color: $accent-color;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    margin: 6px 0;
+  }
+
+  a:not(:global(.rlc-container)) {
+    color: $text-primary;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $accent-color;
+      border-bottom: 1px solid $accent-color;
+    }
+
+    &:focus {
+      outline: none;
+      color: $text-primary;
+      border-bottom: 1px solid $text-primary;
+    }
+  }
+
+  table {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+    margin: 1em 0 1em 1em;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    tr,
+    th,
+    td {
+      border: 1px solid gray;
+      padding: 6px 12px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style-position: inside;
+    list-style: disc;
+    margin: 1em 0 1em 2em;
+
+    ul,
+    ol {
+      margin: 0 0 0 2em;
+    }
+  }
+
+  ul.contains-task-list {
+    list-style: none;
+    margin-left: 1em;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style-position: inside;
+    list-style: decimal;
+    margin: 1em 0 1em 2em;
+
+    ul,
+    ol {
+      margin: 0 0 0 2em;
+    }
+  }
+
+  blockquote {
+    margin: 8px 0;
+    padding: 8px;
+    border-left: 4px solid $accent-color;
+    background-color: $white;
+  }
+
+  summary {
+    color: $text-primary;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  details {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+  }
+
+  details[open] {
+    summary {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  code:not(pre > code) {
+    background-color: $bg-color;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  :global(span.katex-display) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  :global(.rlc-container) {
+    width: 100%;
+    max-width: 800px;
+    max-height: 120px;
+    margin: 1rem auto 1rem 0;
+
+    color: $text-primary;
+    text-decoration: none;
+    background-color: $white;
+
+    border: 1px solid $border-color;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: stretch;
+
+    transition: opacity 0.1s linear;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  :global(.rlc-info) {
+    overflow: hidden;
+    padding: 0.5rem;
+    flex: 4 1 100px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  :global(.rlc-title) {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.rlc-description) {
+    font-size: 0.875rem;
+    color: $text-primary;
+    overflow: hidden;
+    line-height: 1rem;
+    height: 2rem;
+  }
+
+  :global(.rlc-url-container) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.rlc-favicon) {
+    margin-left: 0;
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+  }
+
+  :global(.rlc-url) {
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  :global(.rlc-image-container) {
+    position: relative;
+    flex: 1 1 100px;
+  }
+
+  :global(.rlc-image) {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  svg,
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

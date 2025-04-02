@@ -1,0 +1,72 @@
+---
+import styles from "./TableOfContents.module.scss";
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props as Props;
+---
+
+<div class={styles.toc}>
+  <h2 class={styles.title}>Table of Contents</h2>
+  <nav>
+    <ul class={styles.list}>
+      {
+        headings
+          .filter((h) => h.depth < 4)
+          .map((heading) => (
+            <li
+              class:list={[
+                styles.tocItem,
+                heading.depth === 3 ? styles.depth3 : undefined,
+              ]}
+              data-slug={heading.slug}
+            >
+              <a href={`#${heading.slug}`} class={styles.tocLink}>
+                {heading.text}
+              </a>
+            </li>
+          ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  function initializeHeadings() {
+    const headings = document.querySelectorAll("li[data-slug]");
+    if (!headings.length) return;
+    function setActive(id: string) {
+      headings.forEach((item) => {
+        if (item.getAttribute("data-slug") === id) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -80% 0px" }
+    );
+    headings.forEach((heading) => {
+      const slug = heading.getAttribute("data-slug") || "";
+      const el = document.getElementById(slug);
+      if (el) observer.observe(el);
+    });
+  }
+  document.addEventListener("astro:page-load", initializeHeadings);
+</script>

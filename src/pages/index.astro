@@ -1,9 +1,29 @@
 ---
-import AboutContainer from "@/components/AboutContainer.astro";
-import { SITE_NAME } from "@/const";
+import { ArrowRight } from "lucide-solid";
+
+import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
+import Profile from "@/components/Profile/Profile.astro";
+import { METADATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
+import { getAllPosts } from "@/libraries/article";
+import styles from "@/styles/index.module.scss";
+
+const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
 ---
 
-<Layout title={SITE_NAME}>
-  <AboutContainer />
+<Layout title={METADATA.title}>
+  <div class={styles.container}>
+    <Profile mode="column" class={styles.profile} />
+    <div class={styles.separator}></div>
+    <section class={styles.posts}>
+      <div class={styles.postsHeader}>
+        <h2 class={styles.postsTitle}>Latest Posts</h2>
+        <a href="/posts" class={styles.viewAllLink} aria-label="View all posts">
+          View all posts
+          <ArrowRight />
+        </a>
+      </div>
+      <PostsGrid posts={recentPosts} />
+    </section>
+  </div>
 </Layout>

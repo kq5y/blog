@@ -1,9 +1,13 @@
 ---
-import { ErrorPage } from "@/components/ErrorPage";
-import { SITE_NAME } from "@/const";
+import { METADATA } from "@/const";
 import Layout from "@/layouts/Layout.astro";
+import styles from "@/styles/404.module.scss";
 ---
 
-<Layout title={SITE_NAME}>
-  <ErrorPage code={404} message="Not Found" />
+<Layout title={METADATA.title}>
+  <div class={styles.container}>
+    <h1 class={styles.title}>
+      <b>404</b> - Page Not Found
+    </h1>
+  </div>
 </Layout>

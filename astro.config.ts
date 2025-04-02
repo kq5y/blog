@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
 import playformCompress from "@playform/compress";
+
+import { METADATA } from "./src/const";
 import fontOptimizer from "./src/integrations/font-optimizer";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
@@ -15,20 +17,13 @@ import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
 
 export default defineConfig({
-  site: "https://kq5.jp",
+  site: METADATA.url,
   output: "static",
   build: {
     inlineStylesheets: "auto",
     assets: "assets",
   },
-  integrations: [
-    solid({
-      include: ["**/components/**/*.tsx"],
-    }),
-    fontOptimizer(),
-    partytown(),
-    playformCompress(),
-  ],
+  integrations: [solid(), fontOptimizer(), partytown(), playformCompress()],
   markdown: {
     remarkPlugins: [
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],
@@ -42,25 +37,22 @@ export default defineConfig({
           outputType: "img-svg",
           imgAsyncLazy: true,
           mermaidConfig: {
-            theme: "dark",
+            theme: "default",
             themeVariables: {
-              background: "#1a1b26",
-              primaryColor: "#7aa2f7",
-              primaryTextColor: "#c0caf5",
-              primaryBorderColor: "#7aa2f7",
-              lineColor: "#bb9af7",
-              secondaryColor: "#414868",
-              tertiaryColor: "#32344a",
-              textColor: "#c0caf5",
-              nodeTextColor: "#c0caf5",
-              mainBkg: "#1a1b26",
-              nodeBorder: "#7aa2f7",
-              edgeLabelBackground: "#2f334d",
-              labelTextColor: "#c0caf5",
-              nodeAltBackground: "#24283b",
-              tooltipBackgroundColor: "#1a1b26",
-              tooltipTextColor: "#c0caf5",
-              tooltipBorderColor: "#7aa2f7",
+              background: "#eef5fb",
+              mainBkg: "#eef5fb",
+              nodeBkg: "#e2ecf5",
+              nodeBorder: "#e2e8f0",
+              nodeTextColor: "#334155",
+              textColor: "#334155",
+              labelColor: "#475569",
+              secondaryLabelColor: "#64748b",
+              noteTextColor: "#94a3b8",
+              edgeColor: "#0f766e",
+              lineColor: "#0f766e",
+              accentColor: "#0f766e",
+              clusterBkg: "#eef5fb",
+              clusterBorder: "#0f766e",
             },
           },
         },
@@ -68,7 +60,7 @@ export default defineConfig({
       [
         rehypeExpressiveCode,
         {
-          themes: ["tokyo-night"],
+          themes: ["github-light"],
           plugins: [pluginLineNumbers()],
           defaultLocale: "ja-JP",
         },

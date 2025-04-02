@@ -1,12 +1,32 @@
 ---
-import { ArticleList } from "@/components/ArticleList";
-import { SITE_NAME, ZENN_USERNAME } from "@/const";
+import { Rss } from "lucide-solid";
+
+import BackLink from "@/components/BackLink/BackLink.astro";
+import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
+import { METADATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
-import { getAllPosts } from "@/lib/article";
+import { getAllPosts } from "@/libraries/article";
+import styles from "@/styles/posts.module.scss";
 
 const posts = await getAllPosts(ZENN_USERNAME, false);
 ---
 
-<Layout title=`Posts - ${SITE_NAME}`>
-  <ArticleList title={"Posts"} posts={posts} />
+<Layout title=`Posts - ${METADATA.title}`>
+  <div class={styles.container}>
+    <BackLink />
+    <div class={styles.postsHeader}>
+      <h2 class={styles.postsTitle}>Posts</h2>
+      <a
+        href="/rss.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={styles.rssLink}
+        aria-label="RSS Feed"
+        title="RSS Feed"
+      >
+        <Rss class={styles.rssIcon} />
+      </a>
+    </div>
+    <PostsGrid posts={posts} eagerLoadCount={4} />
+  </div>
 </Layout>

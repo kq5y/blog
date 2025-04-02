@@ -1,0 +1,170 @@
+@use "./global.scss" as *;
+@use "./article.scss" as *;
+
+.container {
+  @include container(72rem);
+}
+
+.postHeader {
+  margin-bottom: 2rem;
+}
+
+.postTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 1rem;
+}
+
+.postMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: $text-tertiary;
+}
+
+.postDate {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.postTags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.postTagsInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  span {
+    display: inline-block;
+    background-color: $bg-color-item;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    color: $text-secondary;
+    font-size: 0.875rem;
+  }
+}
+
+.postContent {
+  padding-top: 2rem;
+  border-top: 1px solid $border-color;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+  }
+}
+
+.postContentInner {
+  @media (min-width: 1024px) {
+    grid-column: 1;
+  }
+
+  article {
+    @include article;
+
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+}
+
+.postProfile {
+  padding-top: 2rem;
+  border-top: 1px solid $border-color;
+}
+
+.postAside {
+  order: -1;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 1024px) {
+    order: initial;
+    margin-bottom: 0;
+    grid-column: 2;
+  }
+}
+
+.tocDetails {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+
+  @media (min-width: 1024px) {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+.tocToggle {
+  display: none;
+}
+
+.tocSummary {
+  font-weight: 500;
+  color: $text-primary;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.tocSummaryInner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  user-select: none;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.tocContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  transition: padding-block 0.1s ease-out;
+  padding: 0;
+  margin: 0 1rem;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+    border-top: none;
+    max-height: none;
+  }
+}
+
+.tocToggle:checked ~ .tocContent {
+  padding-block: 0.5rem;
+  border-top: 1px solid $border-color;
+  max-height: 1000px;
+}
