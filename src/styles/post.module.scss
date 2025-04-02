@@ -76,6 +76,8 @@
 }
 
 .postContentInner {
+  overflow: hidden;
+
   @media (min-width: 1024px) {
     grid-column: 1;
   }
@@ -84,7 +86,6 @@
     @include article;
 
     margin-bottom: 2rem;
-    overflow: hidden;
   }
 }
 
