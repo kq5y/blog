@@ -40,29 +40,33 @@ const { headings } = Astro.props as Props;
 </div>
 
 <script>
-  const headings = document.querySelectorAll("li[data-slug]");
-  function setActive(id: string) {
-    headings.forEach((item) => {
-      if (item.getAttribute("data-slug") === id) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
+  function initializeHeadings() {
+    const headings = document.querySelectorAll("li[data-slug]");
+    if (!headings.length) return;
+    function setActive(id: string) {
+      headings.forEach((item) => {
+        if (item.getAttribute("data-slug") === id) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -80% 0px" }
+    );
+    headings.forEach((heading) => {
+      const slug = heading.getAttribute("data-slug") || "";
+      const el = document.getElementById(slug);
+      if (el) observer.observe(el);
     });
   }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
-      }
-    },
-    { rootMargin: "0px 0px -80% 0px" }
-  );
-  headings.forEach((heading) => {
-    const slug = heading.getAttribute("data-slug") || "";
-    const el = document.getElementById(slug);
-    if (el) observer.observe(el);
-  });
+  document.addEventListener("astro:page-load", initializeHeadings);
 </script>
