@@ -54,7 +54,7 @@
   }
 
   p {
-    margin: 6px 0;
+    margin: 1rem 0;
   }
 
   a:not(:global(.rlc-container)) {
@@ -149,8 +149,10 @@
   img {
     margin: 1.5rem auto;
     display: table;
+    max-height: 32rem;
     max-width: 100%;
     height: auto;
+    width: auto;
   }
 
   section:global(.footnotes) {
