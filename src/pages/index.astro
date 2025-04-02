@@ -23,7 +23,7 @@ const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
           <ArrowRight />
         </a>
       </div>
-      <PostsGrid posts={recentPosts} />
+      <PostsGrid posts={recentPosts} eagerLoadCount={2} />
     </section>
   </div>
 </Layout>
