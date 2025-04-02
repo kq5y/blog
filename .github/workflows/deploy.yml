@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: pnpm install
       - name: Install Chrome
         run: pnpm install:chrome
       - name: Build
