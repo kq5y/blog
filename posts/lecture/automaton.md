@@ -10,28 +10,37 @@ tags:
 
 - アルファベット ... 記号の有限集合
 - 語(記号列) ... アルファベット$\Sigma$上の記号からなる記号列
-  - 空記号列 ... 長さが0の記号列
+  - 空記号列 ... 長さが 0 の記号列
 - 言語 ... アルファベット$\Sigma$上の語の集合
 
-- べき乗集合 ... Aの部分集合全体からなる集合 \
-  $A = \{a,b,c\}$ \
-  $2^A = \{\varnothing,\{a\},\{b\},\{c\},\{a,b\},\{b,c\},\{a,c\},\{a,b,c\}\}$ \
-  $|A|=n \Rightarrow |2^A|=2^n$
+- べき乗集合 ... A の部分集合全体からなる集合 \
 
-- クリーネ閉包 ... $\Sigma$に含まれる0個以上の文字列を連結して作ることができる文字列の集合 \
-  $\Sigma = \{xx\}$ \
-  $\Sigma^* = \{\varnothing,xx,xxxx,...\}$
+  $$
+    \begin{aligned}
+      A &= \{a,b,c\} \\
+      2^A &= \{\varnothing,\{a\},\{b\},\{c\},\{a,b\},\{b,c\},\{a,c\},\{a,b,c\}\} \\
+      |A| &= n \Rightarrow |2^A| = 2^n
+    \end{aligned}
+  $$
+
+- クリーネ閉包 ... $\Sigma$に含まれる 0 個以上の文字列を連結して作ることができる文字列の集合 \
+  $$
+    \begin{aligned}
+      \Sigma &= \{xx\} \\
+      \Sigma^* &= \{\varnothing,xx,xxxx,...\}
+    \end{aligned}
+  $$
 
 ### 同値関係
 
 $x$と$y$の関係性を$xRy$と書く \
-集合X上の関係Rが同値関係を満たすためには3つの条件が必要($a,b,c \in X$)
+集合 X 上の関係 R が同値関係を満たすためには 3 つの条件が必要($a,b,c \in X$)
 
 - 反射的 $aRa$
 - 対称的 $aRb \Rightarrow bRa$
 - 推移的 $aRb \land bRc \Rightarrow aRc$
 
-## DFAの基礎
+## DFA の基礎
 
 $A= \langle Q,\Sigma,\delta,q_0,F \rangle$
 
@@ -58,20 +67,22 @@ graph LR
   style start fill:none, stroke:none
 ```
 
-$
-  A= \langle Q,\Sigma,\delta,q_0,F \rangle \\
-  \text{where } Q = \{q_0,q_1,q_2,q_3\} \\
-  \Sigma = \{0,1\} \\
-  \delta(q_0, 0) = q_1, \delta(q_0, 1) = q_0, \\
-  \delta(q_1, 0) = q_2, \delta(q_1, 1) = q_1, \\
-  \delta(q_2, 0) = q_3, \delta(q_2, 1) = q_2, \\
-  \delta(q_3, 0) = q_3, \delta(q_3, 1) = q_3, \\
-  F = \{q2\}
-$
+$$
+  \begin{matrix*}[l]
+    A = \langle Q,\Sigma,\delta,q_0,F \rangle \\
+    \text{where } Q = \{q_0,q_1,q_2,q_3\} \\
+    \Sigma = \{0,1\} \\
+    \delta(q_0, 0) = q_1, \delta(q_0, 1) = q_0, \\
+    \delta(q_1, 0) = q_2, \delta(q_1, 1) = q_1, \\
+    \delta(q_2, 0) = q_3, \delta(q_2, 1) = q_2, \\
+    \delta(q_3, 0) = q_3, \delta(q_3, 1) = q_3, \\
+    F = \{q2\}
+  \end{matrix*}
+$$
 
 </details>
 
-## NFAの基礎
+## NFA の基礎
 
 $A= \langle Q,\Sigma,\delta,q_0,F \rangle$
 
@@ -81,9 +92,9 @@ $A= \langle Q,\Sigma,\delta,q_0,F \rangle$
 - $q_0$ ... 初期状態($\in Q$)
 - $F$ ... 受理状態($\subseteq Q$)
 
-**DFAとの違い**
+**DFA との違い**
 
-NFAは0個を含め複数の状態に遷移できる
+NFA は 0 個を含め複数の状態に遷移できる
 
 <details>
 <summary>具体例</summary>
@@ -101,9 +112,9 @@ graph LR
 
 </details>
 
-### 空動作付きNFA
+### 空動作付き NFA
 
-$\epsilon$ -NFAは $\delta(q,\epsilon)$ となる動作(=空動作, $\epsilon$ 動作)がある非決定性オートマトン
+$\epsilon$ -NFA は $\delta(q,\epsilon)$ となる動作(=空動作, $\epsilon$ 動作)がある非決定性オートマトン
 
 動作関数は $Q \times (\Sigma \cup \{\epsilon\}) \rightarrow 2^Q$
 
