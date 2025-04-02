@@ -53,6 +53,12 @@ export const PERSONAL_DATA = {
       name: "Web Speed Hackathon 2025",
       description: "スコア1位（レギュレーション落ち）",
       date: "2025-03",
+      links: [
+        {
+          name: "記事",
+          url: "/posts/wsh2025",
+        },
+      ],
     },
     {
       name: "情報処理安全確保支援士試験 合格",
