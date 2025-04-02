@@ -11,12 +11,14 @@ interface Props {
   mode?: "column" | "row";
   class?: string;
   hideAbout?: boolean;
+  loading?: "eager" | "lazy";
 }
 
 const {
   class: className,
   mode = "column",
   hideAbout = false,
+  loading = "eager",
 } = Astro.props as Props;
 ---
 
@@ -28,7 +30,7 @@ const {
       alt="icon"
       width={320}
       height={320}
-      loading="eager"
+      loading={loading}
       class={styles.icon}
     />
   </div>
