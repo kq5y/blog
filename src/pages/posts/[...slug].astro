@@ -54,17 +54,18 @@ const renderer = await render(entry);
         </div>
       </div>
       <aside class={styles.postAside}>
-        <details class={styles.tocDetails} open>
-          <summary class={styles.tocSummary}>
+        <div class={styles.tocDetails}>
+          <input type="checkbox" id="toc-toggle" class={styles.tocToggle} />
+          <label for="toc-toggle" class={styles.tocSummary}>
             <div class={styles.tocSummaryInner}>
               <Menu />
               <span>Table of Contents</span>
             </div>
-          </summary>
+          </label>
           <div class={styles.tocContent}>
             <TableOfContents headings={renderer.headings} />
           </div>
-        </details>
+        </div>
       </aside>
     </div>
   </div>
