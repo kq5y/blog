@@ -1,0 +1,38 @@
+diff --git a/components/Picture.astro b/components/Picture.astro
+index 08d7e1cd3bc1d2cb4888cdc0fd073f8d13642876..6223f6f9ac309e86fd6ce12ce7398c88f29cc53b 100644
+--- a/components/Picture.astro
++++ b/components/Picture.astro
+@@ -16,7 +16,7 @@ export type Props = (LocalImageProps | RemoteImageProps) & {
+ 	pictureAttributes?: HTMLAttributes<'picture'>;
+ };
+ 
+-const defaultFormats = ['webp'] as const;
++const defaultFormats = ['avif'] as const;
+ const defaultFallbackFormat = 'png' as const;
+ 
+ // Certain formats don't want PNG fallbacks:
+diff --git a/dist/assets/consts.d.ts b/dist/assets/consts.d.ts
+index 3d089e70f7cf67fc9858284e57d1a248b0ed9704..0da8429a0d31107c6c6ccada9a518d9950b8221a 100644
+--- a/dist/assets/consts.d.ts
++++ b/dist/assets/consts.d.ts
+@@ -6,6 +6,6 @@ export declare const VALID_INPUT_FORMATS: readonly ["jpeg", "jpg", "png", "tiff"
+  * Certain formats can be imported (namely SVGs) but will not be processed.
+  */
+ export declare const VALID_SUPPORTED_FORMATS: readonly ["jpeg", "jpg", "png", "tiff", "webp", "gif", "svg", "avif"];
+-export declare const DEFAULT_OUTPUT_FORMAT: "webp";
++export declare const DEFAULT_OUTPUT_FORMAT: "avif";
+ export declare const VALID_OUTPUT_FORMATS: readonly ["avif", "png", "webp", "jpeg", "jpg", "svg"];
+ export declare const DEFAULT_HASH_PROPS: string[];
+diff --git a/dist/assets/consts.js b/dist/assets/consts.js
+index d60fac5bfe77e2b14651596401150202ed49dfc4..20f056186cd6c2f91b2ba2a53000c0bc6aba2a58 100644
+--- a/dist/assets/consts.js
++++ b/dist/assets/consts.js
+@@ -20,7 +20,7 @@ const VALID_SUPPORTED_FORMATS = [
+   "svg",
+   "avif"
+ ];
+-const DEFAULT_OUTPUT_FORMAT = "webp";
++const DEFAULT_OUTPUT_FORMAT = "avif";
+ const VALID_OUTPUT_FORMATS = ["avif", "png", "webp", "jpeg", "jpg", "svg"];
+ const DEFAULT_HASH_PROPS = [
+   "src",

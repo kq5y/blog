@@ -48,6 +48,9 @@
       "puppeteer",
       "sharp",
       "vue-demi"
-    ]
+    ],
+    "patchedDependencies": {
+      "astro": "patches/astro.patch"
+    }
   }
 }
