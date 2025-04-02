@@ -77,6 +77,12 @@ export const PERSONAL_DATA = {
       name: "テクノプロ・デザイン社 食品パッケージ画像解析チャレンジ（一般部門・学生部門）",
       description: "画像コンペ 学生部門 🥈11st",
       date: "2023-12",
+      links: [
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/technopro-food-package",
+        },
+      ],
     },
     {
       name: "実用英語技能検定 準2級 合格",

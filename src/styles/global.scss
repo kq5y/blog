@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $bg-color: #eef5fb;
 $bg-color-item: #e2ecf5;
 $text-primary: #334155;
@@ -41,5 +43,23 @@ $white: #ffffff;
   svg {
     width: $size;
     height: $size;
+  }
+}
+
+@mixin link {
+  color: $accent-color;
+  text-decoration: none;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: color.adjust($accent-color, $lightness: -10%);
+    border-bottom: 1px solid color.adjust($accent-color, $lightness: -10%);
+  }
+
+  &:focus {
+    outline: none;
+    color: $text-primary;
+    border-bottom: 1px solid $text-primary;
   }
 }

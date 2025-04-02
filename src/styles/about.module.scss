@@ -88,7 +88,8 @@
   gap: 1rem;
 }
 
-.timelineItem {
+.termTimelineItem,
+.dateTimelineItem {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
@@ -96,6 +97,12 @@
   @media (min-width: 640px) {
     grid-template-columns: 8rem 1fr;
     gap: 2rem;
+  }
+}
+
+.dateTimelineItem {
+  @media (min-width: 640px) {
+    grid-template-columns: 4rem 1fr;
   }
 }
 
@@ -115,49 +122,28 @@
     font-weight: 500;
     color: $text-primary;
   }
-
-  p {
-    color: $text-secondary;
-    font-size: 0.875rem;
-  }
 }
 
-.certs {
-  .sectionContent {
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      li {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        align-items: center;
-      }
-    }
-  }
-}
-
-.certName {
-  font-weight: 500;
-  color: $text-primary;
-}
-
-.certDescription {
-  color: $text-tertiary;
+.contentMeta {
+  color: $text-secondary;
   font-size: 0.875rem;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.certDate {
-  color: $text-tertiary;
-  font-size: 0.875rem;
-  margin-left: auto;
+.itemLinks {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-  @media (max-width: 639px) {
-    width: 100%;
-    margin-left: 0;
-  }
+.itemLink {
+  @include link;
 }
 
 .works {
