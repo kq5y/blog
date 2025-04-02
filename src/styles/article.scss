@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./global.scss" as *;
 
 @mixin article {
@@ -17,6 +18,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: $text-primary;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     position: relative;
     padding-left: 1.25rem;
@@ -36,6 +38,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: $text-primary;
+    margin-top: 1rem;
     margin-bottom: 0.875rem;
     position: relative;
     padding-left: 1.25rem;
@@ -56,14 +59,14 @@
   }
 
   a:not(:global(.rlc-container)) {
-    color: $text-primary;
+    color: $accent-color;
     text-decoration: none;
     transition: color 0.3s, border-bottom 0.3s;
     border-bottom: 1px solid transparent;
 
     &:hover {
-      color: $accent-color;
-      border-bottom: 1px solid $accent-color;
+      color: color.adjust($accent-color, $lightness: -10%);
+      border-bottom: 1px solid color.adjust($accent-color, $lightness: -10%);
     }
 
     &:focus {
@@ -123,8 +126,8 @@
   }
 
   blockquote {
-    margin: 8px 0;
-    padding: 8px;
+    margin: 1.5rem 0;
+    padding: 1rem;
     border-left: 4px solid $accent-color;
     background-color: $white;
   }
@@ -152,9 +155,23 @@
   }
 
   code:not(pre > code) {
-    background-color: $bg-color;
-    padding: 2px 4px;
+    background-color: $bg-color-item;
+    padding: 4px 6px;
     border-radius: 4px;
+  }
+
+  svg,
+  img {
+    margin: 1.5rem auto;
+    display: table;
+    max-width: 100%;
+    height: auto;
+  }
+
+  section:global(.footnotes) {
+    > ol > li > p {
+      margin: 0;
+    }
   }
 
   :global(span.katex-display) {
@@ -186,7 +203,7 @@
 
   :global(.rlc-info) {
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 0.75rem;
     flex: 4 1 100px;
     text-align: left;
     display: flex;
@@ -215,6 +232,8 @@
   }
 
   :global(.rlc-favicon) {
+    margin: 0;
+    display: block;
     margin-left: 0;
     margin-right: 4px;
     width: 16px;
@@ -234,16 +253,12 @@
   }
 
   :global(.rlc-image) {
+    margin: 0;
+    display: block;
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-bottom-right-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-  }
-
-  svg,
-  img {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
