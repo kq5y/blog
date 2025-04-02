@@ -19,5 +19,8 @@
       "quickfix.biome": "explicit",
       "source.organizeImports.biome": "explicit"
     }
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
   }
 }
