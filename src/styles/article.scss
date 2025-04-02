@@ -14,17 +14,41 @@
   }
 
   h2 {
-    padding-bottom: 4px;
-    margin: 16px 0;
-    font-size: 21px;
-    font-weight: bold;
-    border-bottom: solid 1px gray;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: "#";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;
+      color: $accent-color;
+      font-weight: 700;
+    }
   }
 
   h3 {
-    margin: 16px 0;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.875rem;
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: "#";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.25rem;
+      color: $accent-color;
+      font-weight: 700;
+    }
   }
 
   p {
@@ -106,8 +130,25 @@
   }
 
   summary {
-    margin-bottom: 0.5rem;
+    color: $text-primary;
     cursor: pointer;
+    font-weight: 500;
+  }
+
+  details {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+  }
+
+  details[open] {
+    summary {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid $border-color;
+    }
   }
 
   code:not(pre > code) {
