@@ -5,6 +5,10 @@
     margin-bottom: 16px;
   }
 
+  > p:first-child {
+    margin-top: 0;
+  }
+
   h1 {
     padding-bottom: 4px;
     margin-bottom: 16px;
@@ -17,7 +21,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: $text-primary;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     position: relative;
     padding-left: 1.25rem;
@@ -37,8 +41,8 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: $text-primary;
-    margin-top: 1rem;
-    margin-bottom: 0.875rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
     position: relative;
     padding-left: 1.25rem;
 
@@ -54,7 +58,7 @@
   }
 
   p {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
   }
 
   a:not(:global(.rlc-container)) {
@@ -207,7 +211,7 @@
 
   :global(.rlc-description) {
     font-size: 0.875rem;
-    color: $text-primary;
+    color: $text-secondary;
     overflow: hidden;
     line-height: 1rem;
     height: 2rem;
