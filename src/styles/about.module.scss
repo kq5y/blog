@@ -52,20 +52,19 @@
 
 .interests,
 .skills,
-.likes {
+.likes,
+.extraLinks {
   .sectionContent {
     ul {
-      list-style: none;
+      list-style-position: inside;
+      list-style: disc;
       padding-left: 1.5rem;
 
       li {
         position: relative;
 
-        &::before {
-          content: "・";
-          position: absolute;
-          left: -1.5rem;
-          color: $accent-color;
+        a {
+          @include link;
         }
       }
     }

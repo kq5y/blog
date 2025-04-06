@@ -126,6 +126,22 @@ import styles from "@/styles/about.module.scss";
           }
         </div>
       </section>
+      <section class={styles.extraLinks}>
+        <h2>リンク</h2>
+        <div class={styles.sectionContent}>
+          <ul>
+            {
+              PERSONAL_DATA.extraLinks.map((link) => (
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
     </div>
   </div>
 </Layout>
