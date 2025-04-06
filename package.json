@@ -19,8 +19,8 @@
     "@astrojs/rss": "^4.0.11",
     "@astrojs/solid-js": "^5.0.7",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
-    "@playform/compress": "^0.1.8",
-    "astro": "^5.5.6",
+    "@playform/compress": "^0.1.9",
+    "astro": "^5.6.1",
     "jsdom": "^26.0.0",
     "lucide-solid": "^0.486.0",
     "rehype-expressive-code": "^0.38.3",
@@ -30,10 +30,10 @@
     "rehype-raw": "^7.0.0",
     "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm",
     "remark-math": "^6.0.0",
-    "sass": "^1.86.1",
+    "sass": "^1.86.3",
     "sharp": "^0.33.5",
     "solid-js": "^1.9.5",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
