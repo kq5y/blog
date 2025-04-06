@@ -30,8 +30,7 @@ export const PERSONAL_DATA = {
     "PyTorchを使用した既存モデルの学習やレイヤー構築",
   ],
   likes: ["ボーカロイド楽曲", "ボイスロイド作品", "Minecraft", "Factorio"],
-  spotifyEmbedLink:
-    "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
+  lastfmUsername: "kq5y",
   timeline: [
     {
       date: "2025-04 ~ Now",
