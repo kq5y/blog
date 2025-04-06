@@ -18,7 +18,11 @@ const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
     <section class={styles.posts}>
       <div class={styles.postsHeader}>
         <h2 class={styles.postsTitle}>Latest Posts</h2>
-        <a href="/posts" class={styles.viewAllLink} aria-label="View all posts">
+        <a
+          href="/posts/"
+          class={styles.viewAllLink}
+          aria-label="View all posts"
+        >
           View all posts
           <ArrowRight />
         </a>

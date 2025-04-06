@@ -56,7 +56,7 @@ export const PERSONAL_DATA = {
       links: [
         {
           name: "記事",
-          url: "/posts/wsh2025",
+          url: "/posts/wsh2025/",
         },
       ],
     },
@@ -126,6 +126,20 @@ export const PERSONAL_DATA = {
           url: "https://github.com/kq5y/tools",
         },
       ],
+    },
+  ],
+  extraLinks: [
+    {
+      name: "AtCoder",
+      url: "https://atcoder.jp/users/kq5y",
+    },
+    {
+      name: "Kaggle",
+      url: "https://www.kaggle.com/kq5yyy",
+    },
+    {
+      name: "SIGNATE",
+      url: "https://signate.jp/users/114309",
     },
   ],
 };
