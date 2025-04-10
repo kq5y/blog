@@ -31,6 +31,8 @@ export const PERSONAL_DATA = {
   ],
   likes: ["ボーカロイド楽曲", "ボイスロイド作品", "Minecraft", "Factorio"],
   lastfmUsername: "kq5y",
+  spotifyEmbedUrl:
+    "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   timeline: [
     {
       date: "2025-04 ~ Now",

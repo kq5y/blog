@@ -1,0 +1,46 @@
+---
+import BackLink from "@/components/BackLink/BackLink.astro";
+import { METADATA, PERSONAL_DATA } from "@/const";
+import Layout from "@/layouts/Layout.astro";
+import styles from "@/styles/about.module.scss";
+---
+
+<Layout title=`Music - ${METADATA.title}`>
+  <div class={styles.container}>
+    <BackLink />
+    <div class={styles.content}>
+      <section>
+        <h2>好きな音楽</h2>
+        <div class={styles.sectionContent}>
+          <div class={styles.spotifyEmbed}>
+            <iframe
+              title="Top Tracks"
+              src={`https://last-embeds.kq5.jp/embed/tracks?type=frequently&user=${PERSONAL_DATA.lastfmUsername}`}
+              width="100%"
+              height="160"
+              loading="lazy"></iframe>
+          </div>
+          <div class={styles.spotifyEmbed}>
+            <iframe
+              title="Recent Tracks"
+              src={`https://last-embeds.kq5.jp/embed/tracks?type=recently&user=${PERSONAL_DATA.lastfmUsername}`}
+              width="100%"
+              height="160"
+              loading="lazy"></iframe>
+          </div>
+          <div class={styles.spotifyEmbed}>
+            <iframe
+              style="border-radius:12px"
+              src={PERSONAL_DATA.spotifyEmbedUrl}
+              width="100%"
+              height="152"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
