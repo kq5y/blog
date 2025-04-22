@@ -2,9 +2,16 @@
 import { ArrowLeft } from "lucide-solid";
 
 import styles from "./BackLink.module.scss";
+
+interface Props {
+  to?: string;
+  title?: string;
+}
+
+const { to = "/", title = "Home" }: Props = Astro.props;
 ---
 
-<a href="/" class={styles.backLink}>
+<a href={to} class={styles.backLink}>
   <ArrowLeft />
-  <span>Home</span>
+  <span>{title}</span>
 </a>

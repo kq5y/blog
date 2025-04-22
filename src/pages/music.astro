@@ -7,11 +7,14 @@ import styles from "@/styles/about.module.scss";
 
 <Layout title=`Music - ${METADATA.title}`>
   <div class={styles.container}>
-    <BackLink />
+    <BackLink to="/about/" title="Back" />
     <div class={styles.content}>
-      <section>
+      <section class={styles.likes}>
         <h2>好きな音楽</h2>
         <div class={styles.sectionContent}>
+          <ul>
+            {PERSONAL_DATA.music_likes.map((like) => <li>{like}</li>)}
+          </ul>
           <div class={styles.spotifyEmbed}>
             <iframe
               title="Top Tracks"

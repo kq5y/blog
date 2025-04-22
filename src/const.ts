@@ -33,6 +33,16 @@ export const PERSONAL_DATA = {
   lastfmUsername: "kq5y",
   spotifyEmbedUrl:
     "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
+  music_likes: [
+    "ボカロ(DECO*27、じんなど広く)",
+    "アニソン(アイマス、ラブライブ含む)",
+    "東方アレンジ(聞き専)",
+    "米津玄師(ハチ)",
+    "SOUL'd OUT",
+    "back number",
+    "いきものがかり",
+    "懐メロ(槇原敬之とか)",
+  ],
   timeline: [
     {
       date: "2025-04 ~ Now",
