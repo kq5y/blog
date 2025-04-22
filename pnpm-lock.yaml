@@ -56,8 +56,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       remark-link-card-ctm:
-        specifier: github:kq5y/remark-link-card-ctm#845cafd9b1ba3184c8cb9575af2dd7a8b867de73
-        version: https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/845cafd9b1ba3184c8cb9575af2dd7a8b867de73
+        specifier: github:kq5y/remark-link-card-ctm#256b05537101161b653b1039585fae58a058678c
+        version: https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/256b05537101161b653b1039585fae58a058678c
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
@@ -3052,8 +3052,8 @@ packages:
   remark-gfm@4.0.1:
     resolution: {integrity: sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==}
 
-  remark-link-card-ctm@https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/845cafd9b1ba3184c8cb9575af2dd7a8b867de73:
-    resolution: {tarball: https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/845cafd9b1ba3184c8cb9575af2dd7a8b867de73}
+  remark-link-card-ctm@https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/256b05537101161b653b1039585fae58a058678c:
+    resolution: {tarball: https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/256b05537101161b653b1039585fae58a058678c}
     version: 1.0.0
 
   remark-math@6.0.0:
@@ -7464,7 +7464,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-link-card-ctm@https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/845cafd9b1ba3184c8cb9575af2dd7a8b867de73:
+  remark-link-card-ctm@https://codeload.github.com/kq5y/remark-link-card-ctm/tar.gz/256b05537101161b653b1039585fae58a058678c:
     dependencies:
       he: 1.2.0
       open-graph-scraper: 6.10.0
