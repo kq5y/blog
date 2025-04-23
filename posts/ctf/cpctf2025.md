@@ -3,8 +3,7 @@ title: "CPCTF 2025 writeup"
 date: "2025-04-23"
 tags:
   - "CTF"
-  - "Writeup"
-hidden: true
+  - "writeup"
 ---
 
 東京科学大学デジタル創作同好会traPが開催するCPCTF 2025に参加したので、生まれて初めてwriteupを書きたいと思います。
@@ -20,7 +19,7 @@ https://github.com/kq5y/cpctf25
 
 ### Lv.2 Guessing
 
-uncompyle6でデコンパイル使用としてみたり実行しようとしたが、マジックナンバーがおかしいのかできない。
+uncompyle6でデコンパイルしようとしてみたり実行しようとしたが、マジックナンバーがおかしいのかできない。
 
 https://blog.hamayanhamayan.com/entry/2023/09/11/071621#forensics-Barbara-Liskov
 
@@ -85,7 +84,9 @@ print(flag)
 
 ### Lv.3 Fortune Teller
 
-radare2でpdfしても何やってるのかわからなかったので、説明文が出力されることには入力と比較用のフラグを作成していると思い、そこにブレークポイント。Stackの中身を見ると良い感じに出来上がっていた。
+radare2でpdf[^pdf]しても何やってるのかわからなかったので、説明文が出力される頃には入力と比較するためのフラグを作成していると思い、そこにブレークポイント。Stackの中身を見ると良い感じに出来上がっていた。
+
+[^pdf]: radare2で関数の逆アセンブルを行うコマンド
 
 ```
 radare2 -d chall
@@ -162,9 +163,11 @@ print(long_to_bytes(m).decode())
 ```
 
 やってることを簡単にまとめると、
-$ p+q $は巨大だから、素数の間隔は$ ln(p+q)<1000 $ぐらいになって$ p+q \simeq r $  
-ここで$ n = pqr \simeq p^2q + pq^2$と$hint = p^3 + q^3 + r^3 = 2p^3 + 3pq^2 + 3p^2q + 2q^3$を利用すると、$(3n + hint)/2 \simeq (p + q)^3$となる。これで$p + q$の近似から$r$が求まり、必然的に$p,q$が求まる。  
-ここからは普通のRSA問題と同じように$\phi$を求めて良い感じにすると
+$ p+q $は巨大だから、素数の間隔[^sosuu]は $ln(p+q)<1000$ ぐらいになって $p+q \simeq r$  
+ここで $ n = pqr \simeq p^2q + pq^2$ と $hint = p^3 + q^3 + r^3 = 2p^3 + 3pq^2 + 3p^2q + 2q^3$ を利用すると、 $(3n + hint)/2 \simeq (p + q)^3$ となる。これで $p + q$ の近似から $r$ が求まり、必然的に $p,q$ が求まる。  
+ここからは普通のRSA問題と同じように $\phi$ を求めて良い感じにすると
+
+[^sosuu]: 素数の密度は素数定理により対数関数でおおまかに評価できる。よって巨大な数の近辺には高確率で素数が存在することが言える。
 
 `CPCTF{tr1pl3_RSA_8011aed45d7c060f}`
 
@@ -182,7 +185,7 @@ https://tech-lagoon.com/imagechef/image-to-monochrome.html
 
 ### Lv.3 Golden Protocol
 
-wiresharkで解析。`frame:49`に添付ファイル(zip)、`frame:120`にそのパスワードが含まれているメールがあるのでこれをパケットバイト列をエクスポートで`.eml`にして下のサイトで確認。
+wiresharkで解析。`frame:49`に添付ファイル(zip)、`frame:120`にそのパスワードが含まれているメールがあるので、これをパケットバイト列をエクスポートで`.eml`にして下のサイトで確認。
 
 https://www.encryptomatic.com/viewer/
 
@@ -198,8 +201,10 @@ https://www.encryptomatic.com/viewer/
 [2025-04-07 16:14:06] Hash: 3238b6 | Input: "ブラックホールってど" | Output: "ブラックホールを観測" | Cache: MISS
 ```
 
-一番上にフラグの断片が！
+一番上にフラグの断片が！[^logfile]
 Hashが`41633f`なので先頭6文字が一致する文字列を探すことに。
+
+[^logfile]: これを見つけたときの快感
 
 ```python
 import hashlib
@@ -253,9 +258,9 @@ await (await fetch("https://cached-llm.web.cpctf.space/chat", {
 
 https://yugu0202.github.io/QR-CTF/
 
-これにわかってるところを入力 25x25、j mod 3 = 0 にするとゲット。横半分だけでも読めるんですねー
+これにわかってるところを入力 25x25、`j mod 3 = 0`にするとゲット。横半分だけでも読めるんですねー
 
-`CPCTV{r1ght_51de_0n1y}`
+`CPCTF{r1ght_51de_0n1y}`
 
 ## OSINT
 
@@ -263,7 +268,7 @@ https://yugu0202.github.io/QR-CTF/
 
 「富士見・神保町ルート 秋葉原ルート」で検索すると、路線が「千代田区 風ぐるま」だとわかる。あとは２つのルートが停車する停留所を調べ時間が一致するかを確認する。
 
-`CPCTF{senshudaigakuhoukadaigakuinmae}`
+`CPCTF{senshudaigakuhokadaigakuimmae}`
 
 ### Lv.3 Bench
 
@@ -271,9 +276,11 @@ Googleレンズで画像検索をすると似たような画像がたくさん�
 
 https://note.com/itunerin/n/nc4e86dbeb58b
 
-どうやらサマポケの聖地っぽい。[ストリートビュー](https://www.google.com/maps/@34.4940304,133.9533984,3a,75y,262.05h,90t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICu-YO5ywE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2rPboGq-B-k6rYLND1tkacNEA5YaOF4TkjbaNKccpZzN2I1vSjFZy5hWtMEs9mLy2lc4S1EEUIT8IG_tDsDgCwkZmMDsRcMoBaHYa6vRzGd81EDw_u2kuGtFm0dCQyuHO90kVkPQ%3Dw900-h600-k-no-pi0-ya178.76075439453126-ro0-fo100!7i6720!8i3360?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D)で微調整をしてフラグ獲得。
+どうやらサマポケ[^summer]の聖地っぽい。[ストリートビュー](https://www.google.com/maps/@34.4940304,133.9533984,3a,75y,262.05h,90t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICu-YO5ywE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2rPboGq-B-k6rYLND1tkacNEA5YaOF4TkjbaNKccpZzN2I1vSjFZy5hWtMEs9mLy2lc4S1EEUIT8IG_tDsDgCwkZmMDsRcMoBaHYa6vRzGd81EDw_u2kuGtFm0dCQyuHO90kVkPQ%3Dw900-h600-k-no-pi0-ya178.76075439453126-ro0-fo100!7i6720!8i3360?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D)で微調整をしてフラグ獲得。
 
-`CPCTF{344940-1339534}`
+[^summer]: [Summer Pockets](http://key.visualarts.gr.jp/summer/) Key製の面白いノベルゲー、アニメやってるらしい。
+
+`CPCTF{344939-1339532}`
 
 ### Lv.4 yellow_train
 
@@ -285,7 +292,9 @@ https://w.atwiki.jp/115series/pages/12.html#id_75839f1f
 
 https://www.haisenryakuzu.net/documents/jr/west/sanyo_3/
 
-ちょうどYoutubeに[【4K60fps 速度計字幕付き前面展望】下関 → 岩国 山陽本線 115 系 Shimonoseki ~ Iwakuni. San-yo Line.](https://youtu.be/dmKp2s1Ls00?si=sbFc-V93KuPKDP3i&t=2559)という動画があったので、それを駅周辺で線路の数が多いところを注視しながら倍速で流しているとそれっぽいところを発見。[ストリートビュー](https://www.google.com/maps/place/%E5%AE%87%E9%83%A8%E9%A7%85/@34.0044636,131.2181273,39m/data=!3m1!1e3!4m6!3m5!1s0x354381a28b126ebd:0x3b44292d44304f7!8m2!3d34.0030075!4d131.2217296!16s%2Fm%2F04f3bc0?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D)で確認してフラグを獲得。
+ちょうどYoutubeに[【4K60fps 速度計字幕付き前面展望】下関 → 岩国 山陽本線 115 系 Shimonoseki ~ Iwakuni. San-yo Line.](https://youtu.be/dmKp2s1Ls00?si=sbFc-V93KuPKDP3i&t=2559)という動画があったので、それを駅周辺で線路の数が多いところを注視しながら倍速で流していると[^gohan]それっぽいところを発見。[ストリートビュー](https://www.google.com/maps/place/%E5%AE%87%E9%83%A8%E9%A7%85/@34.0044636,131.2181273,39m/data=!3m1!1e3!4m6!3m5!1s0x354381a28b126ebd:0x3b44292d44304f7!8m2!3d34.0030075!4d131.2217296!16s%2Fm%2F04f3bc0?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D)で確認してフラグを獲得。
+
+[^gohan]: ちょうどお昼ご飯を食べながら見ていました
 
 `CPCTF{34_004-131_218}`
 
@@ -303,7 +312,9 @@ https://www.haisenryakuzu.net/documents/jr/west/sanyo_3/
 ここで場所は渋谷駅西口に特定できたので、Xで画像などをリサーチします。ターゲットの写真は手前のバス停が空いていますが、shibuyaplusfunの工事が2022/8に始まる(始まってる)ことからバス停の移動などが行われているっぽい。
 Xの投稿によるとバス停近辺は2022年4月23日には工事が開始されている、ネット記事によるとおそらく4月17日開始。
 
-ここで注目したのがすでに閉店している東急百貨店にある工事中の防音壁の高さ、これをXやYoutubeなどから参考にすると次のようになり2022年3月7日から4月7日の間で特に3月19日の可能性が高いことがわかった。
+ここで注目したのがすでに閉店している東急百貨店にある工事中の防音壁の高さ、これをXやYoutube[^youtube]などから参考にすると次のようになり2022年3月7日から4月7日の間で特に3月19日の可能性が高いことがわかった。
+
+[^youtube]: 何故か渋谷駅西口の工事風景を定期的に投稿している人が存在。この方がいなかったら無理だった。
 
 |日付|高さ|ソース|
 |--|--|--|
@@ -333,7 +344,9 @@ https://www.youtube.com/@chokonekodream
 
 まず説明欄にあるShort動画にアクセス、その概要欄にある次のShort動画にアクセス、するとDiscordサーバーの情報があるのでそこに参加すると、ちょこさんが作成したサーバーっぽい。ユーザーの代名詞を確認するとフラグを獲得。
 
-ずんだもんが謎にずんずん繰り返してたからここから謎解き始まるんかと思った。
+ずんだもんが謎にずんずん[^zunzun]繰り返してたからここから謎解き始まるんかと思った。
+
+[^zunzun]: 「ずんずんずずん ずんずずんずんずん」「ずずずずずんずんずずんずん」
 
 `CPCTF{D0_y0u_l1ke_choc0lat3?_3b1da953}`
 
@@ -435,7 +448,9 @@ https://www.onsecurity.io/blog/server-side-template-injection-with-jinja2/
 const result = eval(`(${input})`);
 ```
 
-最後までヒントを見た上で、関数の実行の仕方を調べたところ、[タグ付きテンプレート](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals#%E3%82%BF%E3%82%B0%E4%BB%98%E3%81%8D%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)というものがあるようで、これを用いると簡単に関数を実行できる。
+最後までヒントを見た上で、関数の実行の仕方を調べたところ、[タグ付きテンプレート](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals#%E3%82%BF%E3%82%B0%E4%BB%98%E3%81%8D%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)というものがあるようで、これを用いると簡単[^simple]に関数を実行できる。
+
+[^simple]: Webの問題ってシンプルなの多いですよね、って思ってたらLv.5にエグいのがありました。
 
 ```js
 getFlag``
