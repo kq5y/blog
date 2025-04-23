@@ -115,7 +115,7 @@
     border: none;
     border-radius: 0;
     position: sticky;
-    top: 2rem;
+    top: 1.5rem;
   }
 }
 
@@ -168,4 +168,10 @@
   padding-block: 0.5rem;
   border-top: 1px solid $border-color;
   max-height: 1000px;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+    border-top: none;
+    max-height: none;
+  }
 }
