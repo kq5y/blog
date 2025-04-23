@@ -14,7 +14,7 @@ interface Props {
 const { headings } = Astro.props as Props;
 ---
 
-<div class={styles.toc}>
+<div class={styles.toc} data-toc>
   <h2 class={styles.title}>Table of Contents</h2>
   <nav>
     <ul class={styles.list}>
@@ -41,12 +41,27 @@ const { headings } = Astro.props as Props;
 
 <script>
   function initializeHeadings() {
+    const toc = document.querySelector("[data-toc]");
+    if (!toc) return;
     const headings = document.querySelectorAll("li[data-slug]");
     if (!headings.length) return;
     function setActive(id: string) {
-      headings.forEach((item) => {
-        if (item.getAttribute("data-slug") === id) {
+      headings.forEach((item, idx) => {
+        if (item.getAttribute("data-slug") === id && toc) {
           item.classList.add("active");
+          const tocBounds = toc.getBoundingClientRect();
+          const itemBounds = item.getBoundingClientRect();
+          if (itemBounds.top < tocBounds.top) {
+            toc.scrollTo({
+              top: toc.scrollTop - tocBounds.top + itemBounds.top - 20,
+              behavior: "smooth",
+            });
+          } else if (itemBounds.bottom > tocBounds.bottom) {
+            toc.scrollTo({
+              top: toc.scrollTop + itemBounds.bottom - tocBounds.bottom + 20,
+              behavior: "smooth",
+            });
+          }
         } else {
           item.classList.remove("active");
         }
