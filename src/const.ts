@@ -15,7 +15,7 @@ export const PERSONAL_DATA = {
   links: {
     twitter: "https://x.com/kq5y__",
     github: "https://github.com/kq5y",
-    mail: "tkser.edu@gmail.com",
+    mail: "contact@kq5.jp",
   },
   interests: [
     "音声合成などのディープラーニング",
