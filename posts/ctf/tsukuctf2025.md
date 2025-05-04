@@ -1,6 +1,6 @@
 ---
 title: "TsukuCTF 2025 writeup"
-date: "2025-04-23"
+date: "2025-05-04"
 tags:
   - "CTF"
   - "writeup"
