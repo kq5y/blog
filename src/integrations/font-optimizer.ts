@@ -12,8 +12,11 @@ export default (): AstroIntegration => ({
   hooks: {
     "astro:build:done": async ({ dir, assets, logger }) => {
       for (const [, urls] of assets.entries()) {
-        for (const { pathname: filePath } of urls) {
-          const fileName = `/${relative(dir.pathname, filePath)}`;
+        for (const { pathname } of urls) {
+          const filePath = decodeURIComponent(pathname);
+          const fileName = decodeURIComponent(
+            `/${relative(dir.pathname, filePath)}`
+          );
           if (filePath?.endsWith(".html")) {
             try {
               const htmlContent = await fs.readFile(filePath, "utf-8");
