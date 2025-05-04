@@ -4,7 +4,6 @@ date: "2025-04-23"
 tags:
   - "CTF"
   - "writeup"
-hidden: true
 ---
 
 ![結果画像](../../images/ctf/tsukuctf2025/result.png "結果画像")
@@ -12,7 +11,7 @@ hidden: true
 `TPCb`としてTsukuCTF 2025に参加し、WebとCryptoと一部のOSINTを担当しました。
 全体で51st、JapaneseStudentsで21stでした。
 
-https://x.com/tsukuctf
+https://tsukuctf.org/
 
 ## Web
 
