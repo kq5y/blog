@@ -39,7 +39,15 @@ const renderer = await render(entry);
         <div class={styles.postTags}>
           <Tag />
           <div class={styles.postTagsInner}>
-            {post.tags.map((tag) => <span>{tag}</span>)}
+            {
+              post.tags.map((tag) => (
+                <span>
+                  <a href={`/tags/${tag}`} class={styles.postTagLink}>
+                    {tag}
+                  </a>
+                </span>
+              ))
+            }
           </div>
         </div>
       </div>

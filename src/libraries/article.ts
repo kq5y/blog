@@ -55,6 +55,16 @@ export function convertParams(posts: BlogPost[]) {
   });
 }
 
+export function getUniqueTags(posts: BlogPost[]) {
+  const tags = new Set<string>();
+  for (const post of posts) {
+    for (const tag of post.tags) {
+      tags.add(tag);
+    }
+  }
+  return Array.from(tags).sort();
+}
+
 export function makeOgpUrl(slug: string, date: string) {
   return `${POST_OGP_URL}?slug=${slug}&date=${date}`;
 }
