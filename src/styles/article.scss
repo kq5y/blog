@@ -119,6 +119,10 @@
     padding: 1rem;
     border-left: 4px solid $accent-color;
     background-color: $white;
+
+    p {
+      margin: 0;
+    }
   }
 
   summary {
