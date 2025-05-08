@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-solid";
 
 import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
 import Profile from "@/components/Profile/Profile.astro";
-import { METADATA, ZENN_USERNAME } from "@/const";
+import { METADATA, PERSONAL_DATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts } from "@/libraries/article";
 import styles from "@/styles/index.module.scss";
@@ -11,7 +11,7 @@ import styles from "@/styles/index.module.scss";
 const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
 ---
 
-<Layout title={METADATA.title}>
+<Layout title={`${PERSONAL_DATA.name} - ${METADATA.title}`}>
   <div class={styles.container}>
     <Profile mode="column" class={styles.profile} />
     <div class={styles.separator}></div>
