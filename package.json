@@ -20,7 +20,7 @@
     "@astrojs/solid-js": "^5.0.10",
     "@expressive-code/plugin-line-numbers": "^0.41.2",
     "@playform/compress": "^0.1.9",
-    "astro": "^5.7.10",
+    "astro": "^5.7.11",
     "jsdom": "^26.1.0",
     "lucide-solid": "^0.486.0",
     "rehype-expressive-code": "^0.41.2",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/jsdom": "^21.1.7",
-    "puppeteer": "^24.8.0"
+    "puppeteer": "^24.8.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -52,5 +52,6 @@
     "patchedDependencies": {
       "astro": "patches/astro.patch"
     }
-  }
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
