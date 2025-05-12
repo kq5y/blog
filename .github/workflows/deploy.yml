@@ -30,6 +30,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
+          TZ: 'Asia/Tokyo'
           CF_BEACON_TOKEN: ${{ secrets.CF_BEACON_TOKEN }}
       - name: Publish
         uses: cloudflare/wrangler-action@v3
