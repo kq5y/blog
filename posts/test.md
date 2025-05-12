@@ -1,6 +1,6 @@
 ---
 title: "テスト用ページ"
-date: "2022-07-01"
+createdDate: "2022-07-01 00:00:00"
 tags:
   - "test_tag"
   - "test2_tag"
