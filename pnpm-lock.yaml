@@ -16,6 +16,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.4(typescript@5.8.3)
+      '@astrojs/markdown-remark':
+        specifier: ^6.3.1
+        version: 6.3.1
       '@astrojs/partytown':
         specifier: ^2.1.4
         version: 2.1.4

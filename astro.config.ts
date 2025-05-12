@@ -6,6 +6,7 @@ import playformCompress from "@playform/compress";
 
 import { METADATA } from "./src/const";
 import fontOptimizer from "./src/integrations/font-optimizer";
+import { remarkCharCount } from "./src/integrations/remark-char-count";
 
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode from "rehype-expressive-code";
@@ -26,6 +27,7 @@ export default defineConfig({
   integrations: [solid(), fontOptimizer(), partytown(), playformCompress()],
   markdown: {
     remarkPlugins: [
+      remarkCharCount,
       [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],
       remarkMath,
     ],

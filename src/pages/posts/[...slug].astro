@@ -22,6 +22,10 @@ if (!entry) return Astro.redirect("/404");
 
 const post = entry2post(entry);
 const renderer = await render(entry);
+
+const frontmatter = renderer.remarkPluginFrontmatter as {
+  charCount: string;
+};
 ---
 
 <Layout title={`${post.title} - ${METADATA.title}`} katex post={post}>
@@ -35,6 +39,12 @@ const renderer = await render(entry);
           <time datetime={post.date}>
             {post.date}
           </time>
+        </div>
+        <div class={styles.postChars}>
+          <LetterText />
+          <span>
+            {frontmatter.charCount} chars
+          </span>
         </div>
         <div class={styles.postTags}>
           <Tag />
