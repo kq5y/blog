@@ -41,7 +41,11 @@ const { posts, eagerLoadCount = 0 } = Astro.props as Props;
             <span class={styles.postType} data-type={post.type}>
               {post.type}
             </span>
-            <div class={styles.postDate}>{post.date}</div>
+            <div class={styles.postDate}>
+              <time datetime={post.createdDate}>
+                {post.createdDate.split(" ")[0]}
+              </time>
+            </div>
           </div>
           <a
             href={post.type === "Blog" ? post.path : post.url}

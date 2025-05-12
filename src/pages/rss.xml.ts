@@ -12,7 +12,7 @@ export async function GET(context: APIContext) {
     site: context.site?.origin || "",
     items: posts.map((post) => ({
       title: post.title,
-      pubDate: new Date(post.date),
+      pubDate: new Date(post.createdDate),
       link: post.path,
       customData: `
         <slug>${post.slug}</slug>

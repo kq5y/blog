@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import {
   type AnyEntryMap,
   type CollectionEntry,
@@ -12,9 +13,10 @@ import { getZennArticleDetail, getZennArticles } from "./zenn";
 interface PostBase {
   title: string;
   tags: string[];
-  date: string;
   hidden?: boolean;
   ogp?: string;
+  createdDate: string;
+  updatedDate: string;
 }
 
 interface BlogPost extends PostBase {
@@ -45,6 +47,30 @@ async function getCollectionCache(
   return collectionCache[collection];
 }
 
+function formatDate(isoString: string): string {
+  const date = new Date(isoString);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return (
+    `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ` +
+    `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`
+  );
+}
+
+function getPostDate(filepath: string) {
+  const created = execSync(
+    `git log --diff-filter=A --follow --format=%aI -- "${filepath}" | tail -1`
+  )
+    .toString()
+    .trim();
+  const updated = execSync(`git log -1 --pretty="format:%cI" "${filepath}"`)
+    .toString()
+    .trim();
+  return {
+    created: formatDate(created),
+    updated: formatDate(updated),
+  };
+}
+
 export function convertParams(posts: BlogPost[]) {
   return posts.map((post) => {
     return {
@@ -65,18 +91,23 @@ export function getUniqueTags(posts: BlogPost[]) {
   return Array.from(tags).sort();
 }
 
-export function makeOgpUrl(slug: string, date: string) {
+export function makeOgpUrl(slug: string, datetime: string) {
+  const date = datetime.slice(0, 10);
   return `${POST_OGP_URL}?slug=${slug}&date=${date}`;
 }
 
 export function entry2post(post: AnyEntryMap["post"][string]): BlogPost {
+  if (!post.filePath) throw new Error("filePath is undefined");
+  const { created, updated } = getPostDate(post.filePath);
   return {
+    createdDate: created,
+    updatedDate: updated,
     ...post.data,
     type: "Blog",
     slug: post.id,
     body: post.body,
     path: `/posts/${post.id}/`,
-    ogp: makeOgpUrl(post.id, post.data.date),
+    ogp: makeOgpUrl(post.id, post.data.createdDate || created),
   };
 }
 
@@ -92,14 +123,14 @@ export async function getZennPosts(username: string): Promise<ZennPost[]> {
   const posts: ZennPost[] = [];
   for (const article of articles) {
     const detail = await getZennArticleDetail(article.slug);
-    const date = new Date(detail.published_at);
     posts.push({
       type: "Zenn",
       title: detail.title,
       slug: detail.slug,
       url: `https://zenn.dev${detail.path}`,
       tags: detail.topics.map((topic) => topic.display_name),
-      date: `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`,
+      createdDate: formatDate(detail.published_at),
+      updatedDate: formatDate(detail.body_updated_at),
       ogp: detail.og_image_url,
     });
   }
@@ -114,6 +145,8 @@ export async function getAllPosts(
   posts.push(...(await getBlogPosts(showHidden)));
   if (zennUsername) posts.push(...(await getZennPosts(zennUsername)));
   return posts.sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
+    return (
+      new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
+    );
   });
 }

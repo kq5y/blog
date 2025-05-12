@@ -6,7 +6,14 @@ const postCollection = defineCollection({
   schema: z.object({
     title: z.string().max(100).min(1),
     tags: z.array(z.string()).max(5).min(1),
-    date: z.string().regex(/^\d{4}-(0?[1-9]|1[0-2])-(0?[1-9]|[12]\d|3[01])$/),
+    createdDate: z
+      .string()
+      .regex(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})$/)
+      .optional(),
+    updatedDate: z
+      .string()
+      .regex(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})$/)
+      .optional(),
     hidden: z.boolean().optional(),
   }),
 });

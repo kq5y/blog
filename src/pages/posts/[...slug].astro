@@ -1,6 +1,6 @@
 ---
 import { getEntry, render } from "astro:content";
-import { Calendar, Menu, Tag } from "lucide-solid";
+import { LetterText, Menu, PencilLine, Tag, Wrench } from "lucide-solid";
 
 import BackLink from "@/components/BackLink/BackLink.astro";
 import Profile from "@/components/Profile/Profile.astro";
@@ -35,9 +35,15 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
       <h1 class={styles.postTitle}>{post.title}</h1>
       <div class={styles.postMeta}>
         <div class={styles.postDate}>
-          <Calendar />
-          <time datetime={post.date}>
-            {post.date}
+          <PencilLine />
+          <time datetime={post.createdDate}>
+            {post.createdDate}
+          </time>
+        </div>
+        <div class={styles.postDate}>
+          <Wrench />
+          <time datetime={post.updatedDate}>
+            {post.updatedDate}
           </time>
         </div>
         <div class={styles.postChars}>
