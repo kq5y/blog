@@ -83,5 +83,10 @@ const { headings } = Astro.props as Props;
       if (el) observer.observe(el);
     });
   }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeHeadings);
+  } else {
+    initializeHeadings();
+  }
   document.addEventListener("astro:page-load", initializeHeadings);
 </script>
