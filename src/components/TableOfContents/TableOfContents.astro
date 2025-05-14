@@ -82,6 +82,10 @@ const { headings } = Astro.props as Props;
       const el = document.getElementById(slug);
       if (el) observer.observe(el);
     });
+    if (headings[0]) {
+      const id = headings[0].getAttribute("data-slug") || "";
+      setActive(id);
+    }
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initializeHeadings);
