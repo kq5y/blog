@@ -19,7 +19,7 @@ export const PERSONAL_DATA = {
   },
   interests: [
     "音声合成などのディープラーニング",
-    "フロントエンド設計",
+    "Webフロントエンド・バックエンド",
     "Webページのパフォーマンスチューニング",
     "Web領域におけるCTF・セキュリティ",
   ],
@@ -42,9 +42,13 @@ export const PERSONAL_DATA = {
     "SOUL'd OUT",
     "back number",
     "いきものがかり",
-    "懐メロ(槇原敬之とか)",
+    "他懐メロ(槇原敬之とか)",
   ],
   timeline: [
+    {
+      date: "2025-04 ~ Now",
+      title: "Tsukuba Programming Circle",
+    },
     {
       date: "2025-04 ~ Now",
       title: "筑波大学 情報学群 情報科学類",
