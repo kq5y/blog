@@ -16,9 +16,9 @@ https://ctftime.org/event/2749
 
 https://github.com/kq5y/ctf-writeups/tree/main/contest/2025/BreakTheSyntaxCT2025
 
-# web
+## web
 
-## lightweight [50pt]
+### lightweight [50pt]
 
 flask上でログインフォームを持つアプリケーションが動いている。データベースはLDAPを使用している。
 
@@ -82,7 +82,7 @@ def login():
 
 `entrypoint.sh`を見るとフラグはデータベースの`description`カラムにあるっぽい。ただ、`app.py`でそれを取り出してる様子はない。ここで`app.py`のデータベースへのクエリを確認すると、入力に対してなんの処理もされていないため _Blind LDAP Injection_ を行う。
 
-```
+```txt showLineNumbers=false
 (&(employeeType=active)(uid=testuser)(|(description={prefix}*)(userPassword=x)))
 ```
 
@@ -122,14 +122,14 @@ print('[*] Extracted flag:', flag)
 
 `BtSCTF{_bl1nd_ld4p_1nj3ct10n_y1pp333333}`
 
-## 解けなかった問題
+### 解けなかった問題
 
 web問題としてはlightweightに続いてlightweight-2とlightweight-3があった。
 これらはソースコードが提供されていなかった、がlightweightと同様の見た目のウェブサイトだったため、全問と同様にLDAPの脆弱性を攻めようと考えた。
 
 しかしながらそれは間違いで、lightweight-2はログイン後ユーザー名が表示されるところからSSTIをチェックする必要がある。
 
-```txt
+```txt showLineNumbers=false
 username=*)(!(description={{7*7}}*)&password=*
 ```
 
@@ -147,9 +147,9 @@ stdout, stderr = process.communicate()
 
 先入観に囚われては行けないんですねー
 
-# rev
+## rev
 
-## Raindom Bash Adventure [50pt]
+### Raindom Bash Adventure [50pt]
 
 renpyで作成されたゲーム、実行して会話を進めていくと大量の選択肢が大量に続く。どうやら巡回セールスマン問題を解いてほしいみたい。
 
@@ -228,9 +228,9 @@ is_correct = check_path(nodes, bytearray(b'\xc2\x92\xf9\xf66\xe8\xa5\xa6\x17\xb6
 
 `BtSCTF{YOU_are_getting_20_percent_c00ler_with_this_one_!!_B)}`
 
-# forensics
+## forensics
 
-## monkey see [50pt]
+### monkey see [50pt]
 
 次のようなパケットが多く含まれているpcapファイルが1つ与えられた。
 
@@ -305,7 +305,7 @@ print(match.group())
 
 `BtSCTF{m0nk3y_tYpE!!1!!oneone!}`
 
-## monkey paint? [212pt]
+### monkey paint? [212pt]
 
 前の問題と同様に、次のようなパケットで構成されるpcapファイルが1つ与えられた。
 
@@ -370,12 +370,12 @@ picture.save("flag.png", "PNG")
 
 `BtSCTF{yeah_it_does!11!}`
 
-## copypasta [357pt]
+### copypasta [357pt]
 
 pdfファイルとwordlist.txtが与えられる。pdfをAcrobatで開こうとすると「ファイルは壊れている」と言われた後パスワードを要求される。
 まずはpdfcrackを用いてパスワードの解析を行う。
 
-```bash
+```bash showLineNumbers=false
 $ pdfcrack -f copypasta.pdf -w wordlist.txt
 PDF version 1.7
 Security Handler: Standard
@@ -392,7 +392,7 @@ found user-password: 'pumpkin'
 
 よってパスワードが`pumpkin`であることが分かった。これを用いてAcrobatで開いてみると次のような文章が。
 
-```txt
+```txt showLineNumbers=false
 using linux in front of class mates
 teacher says “Ok students, now open photoshop”
 start furiously typing away at terminal to install Wine
@@ -410,9 +410,9 @@ I get beat up in the parking lot after school
 
 `BtSCTF{we_have_to_censor_that_one_and_another_one_and_finally_that_one}`
 
-# misc
+## misc
 
-## stupid fd manager [428pt]
+### stupid fd manager [428pt]
 
 次のコードがサーバー上で実行されている。
 
@@ -542,7 +542,7 @@ int main() {
 
 普通に手入力してもできないため、シェルを用いて入力する。
 
-```bash
+```bash showLineNumbers=false
 printf "3\n0\n2\n/app/flag\n2\n\n1\n" | nc localhost 9999
 ```
 
@@ -550,9 +550,9 @@ printf "3\n0\n2\n/app/flag\n2\n\n1\n" | nc localhost 9999
 
 `BtSCTF{f1l3_d3scr1pt0rs_4r3_tr1ckyyyy}`
 
-## 解けなかった問題
+### 解けなかった問題
 
-### flag printer
+#### flag printer
 
 入力するとpythonの実行結果が返ってくるプログラムがサーバーで動いてるっぽい。ただ入力はピッタリ4文字じゃないといけない。
 目的はflag変数を確認することだが、入力内容が`flag`だと断られる。  
@@ -568,7 +568,7 @@ https://satoooon1024.hatenablog.com/entry/2022/08/20/Python%E3%81%AE%E8%AD%98%E5
 
 よって`ﬂag `と入力すると、`flaga`にフラグは移動したと案内される。`ﬂaga`と入力するとフラグ獲得。
 
-# まとめ
+## まとめ
 
 結構初めての経験が多く学びがたくさんありました、いい話。  
 色々やることがあってこれを書くのが遅くなってしまったのはよくない話。
