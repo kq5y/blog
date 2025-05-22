@@ -18,7 +18,7 @@ import styles from "@/styles/about.module.scss";
           <div class={styles.spotifyEmbed}>
             <iframe
               title="Top Tracks"
-              src={`https://last-embeds.kq5.jp/embed/tracks?type=frequently&user=${PERSONAL_DATA.lastfmUsername}`}
+              src={`https://stats-embeds.kq5.jp/embed/top?user=${PERSONAL_DATA.statsfmUsername}`}
               width="100%"
               height="160"
               loading="lazy"></iframe>
@@ -26,7 +26,7 @@ import styles from "@/styles/about.module.scss";
           <div class={styles.spotifyEmbed}>
             <iframe
               title="Recent Tracks"
-              src={`https://last-embeds.kq5.jp/embed/tracks?type=recently&user=${PERSONAL_DATA.lastfmUsername}`}
+              src={`https://stats-embeds.kq5.jp/embed/recent?user=${PERSONAL_DATA.statsfmUsername}`}
               width="100%"
               height="160"
               loading="lazy"></iframe>

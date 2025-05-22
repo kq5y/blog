@@ -31,7 +31,7 @@ export const PERSONAL_DATA = {
     "PyTorchを使用した既存モデルの学習や簡単なレイヤー構築",
   ],
   likes: ["ボーカロイド楽曲", "ボイスロイド作品", "Minecraft", "Factorio"],
-  lastfmUsername: "kq5y",
+  statsfmUsername: "kq5y",
   spotifyEmbedUrl:
     "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   music_likes: [
