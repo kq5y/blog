@@ -3,7 +3,6 @@ title: "Break The Syntax CTF 2025 writeup"
 tags:
   - "CTF"
   - "writeup"
-hidden: true
 ---
 
 最近は週末に海外の謎CTFに参加するのがマイブームです。
