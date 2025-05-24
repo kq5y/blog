@@ -3,16 +3,14 @@ title: "TSG LIVE! 14 CTF writeup"
 tags:
   - "CTF"
   - "writeup"
-hidden: true
 ---
 
-今回は東京大学TSGさんにお誘いいただきTPCとしてオンサイトで参加させていただきました。
-TSG LIVE! 14は五月祭の企画として行われ、そのうちの１つのコンテンツとして２時間半でCTFが行われました。
-その他にもコードゴルフや競プロなどがあるっぽいです。
+今回は東京大学TSGさんにお誘いいただき、TPCとしてオンサイトで参加させていただきました。
+TSG LIVE! 14は五月祭の企画として行われ、そのコンテンツの一つとして2時間半のCTFが開催されました。その他にもコードゴルフや競技プログラミングなどの企画があるようです。
 
-アーカイブはこちら
+アーカイブはこちら（解説やインタビューがあります）
 
-https://www.youtube.com/watch?v=7Oxm6mKCIjw
+https://www.youtube.com/live/7Oxm6mKCIjw?si=HrOzfdgtfbOWBeq5
 
 TPC側は9人で参加し、自分はweb問を担当したのでそれを中心に書いていこうと思います。
 
@@ -119,7 +117,7 @@ async def redirect(short_id: str):
 
 ここでなぜだろうと唸っていると、チームメンバーがis.gdに目的のURLを入れると、次のようなエラーが発生することを特定してくれた。
 
-```json
+```json showLineNumbers=false
 {
   "errorcode": 1,
   "errormessage": "Sorry, due to widespread abuse, we no longer allow linking to hosts by IP address."
@@ -140,7 +138,7 @@ async def redirect(short_id: str):
 <details>
   <summary>問題コード</summary>
 
-```pl title=app/app.perl
+```perl title=app/app.perl
 #!/usr/bin/env perl
 use Dancer2;
 
@@ -182,7 +180,7 @@ perlを使ったechoをするだけのサービス。明らかなOSコマンド�
 
 `` `env` ``と入力して環境変数を取得し、そこにフラグが書いてあります。
 
-```txt
+```txt showLineNumbers=false
 HOSTNAME=27f06e778cd4 HOME=/home/appuser PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/app FLAG="TSGLIVE{5h3ll1ng_5h3ll3r}"
 ```
 
@@ -401,7 +399,7 @@ https://modzero.com/en/blog/spring_boot_ssti/
 
 https://blog.tagbangers.co.jp/ja/2015/01/18/thymeleaf-environment-properties.html
 
-```txt
+```txt showLineNumbers=false
 '+${@environment.getProperty("FLAG")}+'
 ```
 
@@ -411,9 +409,9 @@ https://blog.tagbangers.co.jp/ja/2015/01/18/thymeleaf-environment-properties.htm
 
 ## その後
 
-自分の担当分野であるweb問題がとき終わってからは残っている問題であるcryptoとpwnを眺めていたが、全くわからず。[^muzukasii]
+自分の担当分野であるweb問題がとき終わってからは残っている問題であるcryptoとpwnを眺めていたが、手も足も全くわからず。[^muzukasii]
 
-[^muzukasii]: そりゃ難しい問題だけが残っているので
+[^muzukasii]: そりゃ難しい問題だけが残っているわけで...
 
 そんな中チームメンバーがcyptoの問題に脆弱性を発見したようで。どうやらcryptoの後ろ２つの問題ではpickleが使用されていて、これを悪用することでフラグの値が抜けると！天才か？
 
@@ -554,7 +552,7 @@ print(f"data: {data}")
 
 ![リザルト画像](../../images/ctf/tsg-live-14/result.png "リザルト画像")
 
-CTF初めて数ヶ月、初めてオンサイトのCTFを経験しましたが、わいわいできて非常に楽しかったです。招待していただいたTSG様と、誘っていただいたチームメンバーに感謝！
+CTF初めて数ヶ月、初めてオンサイトのCTFに参加しましたが、わいわいできて非常に楽しかったです。招待してくださったTSGの皆様と、誘ってくれたチームメンバーに感謝！
 イベントの結果としてはTSGに勝利し、3988ptで全体では２位という結果でした。１つでもフラグ取れれば良いかなーと思ってましたが２つも取れて結果に寄与できて良かったです。
 
 終了後はメンバーと五月祭を回ったりしました。弊学とは違うところが多く新鮮でした。そして初対面の人とたくさん話せて非常に良かったです。
