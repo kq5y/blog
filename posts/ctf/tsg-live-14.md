@@ -110,7 +110,7 @@ async def redirect(short_id: str):
 
 </details>
 
-短縮URLを作るサービス(短縮->target)、外部の短縮URLを使い作るサービス(短縮->is.gd->target)、２つ目に通したURLのレスポンスを表示するサービスが提供されている。
+短縮URLを作るサービス(短縮1->target)、外部の短縮URLを使い作るサービス(短縮2->is.gd->target)、２つ目に通したURLのレスポンスを表示するサービスが提供されている。
 これを用いてローカルの`http://flag:45654/flag`を取得したい。
 
 この問題に一番最初に取り掛かった。普通に３つ目のサービスに`http://flag:45654/flag`を入れると見れるんじゃねということで入力してみると`Internal Server Error`が発生。このURLを１つ目のものに通してできた`http://xx.xxx.xxx.xxx:xxxxx/1WmFoYkI93mj`を３つ目に入れてみても同じくエラーが発生。
@@ -124,7 +124,7 @@ async def redirect(short_id: str):
 }
 ```
 
-要は変なホスト名だったりIPアドレスはダメみたい。なので、これをbypassするために適当な短縮URLサービス(今回は一番上に出てきたX.gd)[^short]を使用し、ターゲットのURLを短縮URLに変換し、それを３つ目に入れるとフラグ獲得。[^hisoutei]
+要は変なホスト名だったりIPアドレスはダメみたい。なので、これをbypassするために適当な短縮URLサービス(今回は一番上に出てきたX.gd)[^short]を使用し、ターゲットのURLを短縮URLに変換し、それを３つ目に入れるとフラグ獲得。[^hisoutei](短縮2->is.gd->X.gd->短縮1->target)
 
 [^short]: ホントは外部のサービスじゃなくてローカルで立ててngrokとかでやったほうがいいと思うんですが、時間がかかるので今回はこちらを採用しました。
 [^hisoutei]: 実は想定解ではないらしい https://x.com/iwashiira/status/1926228844471534076
@@ -409,11 +409,12 @@ https://blog.tagbangers.co.jp/ja/2015/01/18/thymeleaf-environment-properties.htm
 
 ## その後
 
-自分の担当分野であるweb問題がとき終わってからは残っている問題であるcryptoとpwnを眺めていたが、手も足も全くわからず。[^muzukasii]
+自分の担当分野であるweb問題がとき終わってからは残っている問題であるcryptoとpwnを眺めていましたが、全くわからず。[^muzukasii]
 
 [^muzukasii]: そりゃ難しい問題だけが残っているわけで...
 
 そんな中チームメンバーがcyptoの問題に脆弱性を発見したようで。どうやらcryptoの後ろ２つの問題ではpickleが使用されていて、これを悪用することでフラグの値が抜けると！天才か？
+そのまま2つのフラグが獲得できてしまい、部屋は大盛りあがりでした。
 
 <details>
   <summary>問題コード</summary>
@@ -525,7 +526,7 @@ else:
 
 </details>
 
-なので実際にやってみる。pickleのexploitを用意し、
+ここで実際にやってみる。pickleのexploitを用意し、
 
 ```python
 import base64
