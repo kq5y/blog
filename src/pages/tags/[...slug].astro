@@ -4,7 +4,7 @@ import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
 import { METADATA } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { getBlogPosts, getUniqueTags } from "@/libraries/article";
-import styles from "@/styles/posts.module.scss";
+import styles from "@/styles/grid.module.scss";
 
 export async function getStaticPaths() {
   const tags = getUniqueTags(await getBlogPosts(false));
@@ -25,8 +25,8 @@ const posts = (await getBlogPosts(false)).filter((post) => {
 <Layout title=`Posts - ${METADATA.title}`>
   <div class={styles.container}>
     <BackLink />
-    <div class={styles.postsHeader}>
-      <h2 class={styles.postsTitle}>{slug}</h2>
+    <div class={styles.gridHeader}>
+      <h2 class={styles.gridTitle}>{slug}</h2>
     </div>
     <PostsGrid posts={posts} eagerLoadCount={4} />
   </div>
