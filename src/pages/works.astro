@@ -1,0 +1,17 @@
+---
+import BackLink from "@/components/BackLink/BackLink.astro";
+import WorksGrid from "@/components/WorksGrid/WorksGrid.astro";
+import { METADATA } from "@/const";
+import Layout from "@/layouts/Layout.astro";
+import styles from "@/styles/grid.module.scss";
+---
+
+<Layout title=`Works - ${METADATA.title}`>
+  <div class={styles.container}>
+    <BackLink to="/about/" title="About" />
+    <div class={styles.gridHeader}>
+      <h2 class={styles.gridTitle}>Works</h2>
+    </div>
+    <WorksGrid />
+  </div>
+</Layout>

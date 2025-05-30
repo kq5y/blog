@@ -126,12 +126,21 @@ export const PERSONAL_DATA = {
           name: "GitHub",
           url: "https://github.com/kq5y/nicoarch",
         },
+        {
+          name: "GitHub(App)",
+          url: "https://github.com/kq5y/nicoarch-app",
+        },
+        {
+          name: "GitHub(Worker)",
+          url: "https://github.com/kq5y/nicoarch-worker",
+        },
       ],
+      pinned: true,
     },
     {
       title: "tools",
       description:
-        "調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
+        "Remix.jsで実装した調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
       links: [
         {
           name: "Link",
@@ -142,6 +151,108 @@ export const PERSONAL_DATA = {
           url: "https://github.com/kq5y/tools",
         },
       ],
+      pinned: true,
+    },
+    {
+      title: "blog",
+      description:
+        "Astroを用いた自身のウェブサイト。ポートフォリオやブログなど",
+      links: [
+        {
+          name: "Link",
+          url: "https://kq5.jp",
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/blog",
+        },
+      ],
+    },
+    {
+      title: "stats-embeds",
+      description:
+        "Honoを用いたSpotifyの視聴履歴をstats.fm経由で取得し埋め込みを生成するAPI",
+      links: [
+        {
+          name: "Link",
+          url: "https://stats-embeds.kq5.jp",
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/stats-embeds",
+        },
+      ],
+    },
+    {
+      title: "ogp-worker",
+      description: "Honoを用いたblogとtoolsのOGP画像を生成するAPI",
+      links: [
+        {
+          name: "Link",
+          url: "https://ogp.kq5.jp",
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/ogp-worker",
+        },
+      ],
+    },
+    {
+      title: "finix",
+      description: "ReactとRailsを使用した家計簿アプリ",
+      links: [
+        {
+          name: "Link",
+          url: "https://finix.kq5.jp",
+        },
+        {
+          name: "GitHub(App)",
+          url: "https://github.com/kq5y/finix-app",
+        },
+        {
+          name: "GitHub(API)",
+          url: "https://github.com/kq5y/finix-api",
+        },
+      ],
+    },
+    {
+      title: "next-note",
+      description: "Next.jsを使用したノート作成サービス",
+      links: [
+        {
+          name: "Link",
+          url: "https://note.kq5.jp",
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/next-note",
+        },
+      ],
+    },
+    {
+      title: "Titanic Checker",
+      description:
+        "TitanicDatasetを用いた機械学習モデルの精度を確認するためのWebアプリケーション",
+      links: [
+        {
+          name: "Link",
+          url: "https://titanic-checker.pages.dev",
+        },
+        {
+          name: "GitHub(Front)",
+          url: "https://github.com/kq5y/titanic-checker-front",
+        },
+        {
+          name: "GitHub(API)",
+          url: "https://github.com/kq5y/titanic-checker-api",
+        },
+      ],
+    },
+    {
+      title: "W-Judge",
+      description:
+        "高校の部内で利用した競プロコンテストサイト。新機能開発・保守を行った",
+      links: [],
     },
   ],
   extraLinks: [

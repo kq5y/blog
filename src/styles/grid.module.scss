@@ -4,14 +4,14 @@
   @include container;
 }
 
-.postsHeader {
+.gridHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
 }
 
-.postsTitle {
+.gridTitle {
   font-size: 1.5rem;
   font-weight: 700;
   color: $text-primary;

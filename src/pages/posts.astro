@@ -6,7 +6,7 @@ import PostsGrid from "@/components/PostsGrid/PostsGrid.astro";
 import { METADATA, ZENN_USERNAME } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import { getAllPosts } from "@/libraries/article";
-import styles from "@/styles/posts.module.scss";
+import styles from "@/styles/grid.module.scss";
 
 const posts = await getAllPosts(ZENN_USERNAME, false);
 ---
@@ -14,8 +14,8 @@ const posts = await getAllPosts(ZENN_USERNAME, false);
 <Layout title=`Posts - ${METADATA.title}`>
   <div class={styles.container}>
     <BackLink />
-    <div class={styles.postsHeader}>
-      <h2 class={styles.postsTitle}>Posts</h2>
+    <div class={styles.gridHeader}>
+      <h2 class={styles.gridTitle}>Posts</h2>
       <a
         href="/rss.xml"
         target="_blank"

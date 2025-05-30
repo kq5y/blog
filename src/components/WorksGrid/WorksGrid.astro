@@ -1,0 +1,42 @@
+---
+import { PERSONAL_DATA } from "@/const";
+
+import styles from "./WorksGrid.module.scss";
+
+interface Props {
+  onlyPinned?: boolean;
+}
+
+const { onlyPinned = false } = Astro.props;
+
+const works = PERSONAL_DATA.works
+  .filter((work) => !onlyPinned || work.pinned)
+  .sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return 0;
+  });
+---
+
+<div class={styles.worksGrid}>
+  {
+    works.map((work) => (
+      <div class={styles.workItem}>
+        <h3 class={styles.workTitle}>{work.title}</h3>
+        <p class={styles.workDescription}>{work.description}</p>
+        <div class={styles.workLinks}>
+          {work.links.map((link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={styles.workLink}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>
