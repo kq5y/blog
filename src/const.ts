@@ -66,6 +66,17 @@ export const PERSONAL_DATA = {
   ],
   certs: [
     {
+      name: "IERAE CTF 2025",
+      description: "優勝（TPC）",
+      date: "2025-06",
+      links: [
+        {
+          name: "プレスリリース",
+          url: "https://gmo-cybersecurity.com/news/20250701/",
+        },
+      ],
+    },
+    {
       name: "Web Speed Hackathon 2025",
       description: "スコア1位（レギュレーション落ち）",
       date: "2025-03",
@@ -271,6 +282,10 @@ export const PERSONAL_DATA = {
     {
       name: "DreamHack",
       url: "https://dreamhack.io/users/78015",
+    },
+    {
+      name: "scrapbox/ctf-writeups",
+      url: "https://scrapbox.io/ctf-writeups/",
     },
   ],
 };
