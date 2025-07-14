@@ -15,31 +15,31 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/markdown-remark": "^6.3.1",
+    "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/solid-js": "^5.0.10",
-    "@expressive-code/plugin-line-numbers": "^0.41.2",
-    "@playform/compress": "^0.1.9",
-    "astro": "^5.7.11",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/solid-js": "^5.1.0",
+    "@expressive-code/plugin-line-numbers": "^0.41.3",
+    "@playform/compress": "^0.2.0",
+    "astro": "^5.11.1",
     "jsdom": "^26.1.0",
     "lucide-solid": "^0.486.0",
-    "rehype-expressive-code": "^0.41.2",
+    "rehype-expressive-code": "^0.41.3",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",
     "rehype-mermaid-ctm": "github:kq5y/rehype-mermaid-ctm#18c93a36b160c6f7e7bdccf46548f2427e0f40fe",
     "rehype-raw": "^7.0.0",
     "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm#cdb4fea8ffddcd18cdfcd2c4bb419d222711f066",
     "remark-math": "^6.0.0",
-    "sass": "^1.87.0",
-    "sharp": "^0.34.1",
-    "solid-js": "^1.9.6",
+    "sass": "^1.89.2",
+    "sharp": "^0.34.3",
+    "solid-js": "^1.9.7",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/jsdom": "^21.1.7",
-    "puppeteer": "^24.8.2"
+    "puppeteer": "^24.12.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
