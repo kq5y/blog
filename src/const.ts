@@ -280,7 +280,7 @@ export const PERSONAL_DATA = {
       url: "https://signate.jp/users/114309",
     },
     {
-      name: "DreamHack",
+      name: "Dreamhack",
       url: "https://dreamhack.io/users/78015",
     },
     {
