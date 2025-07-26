@@ -1,5 +1,4 @@
 import fs from "node:fs";
-
 import type { RemarkPlugin } from "@astrojs/markdown-remark";
 
 function formatCharCount(count: number): string {
@@ -10,7 +9,7 @@ function formatCharCount(count: number): string {
 }
 
 export const remarkCharCount: RemarkPlugin = () => {
-  return (tree, file) => {
+  return (_tree, file) => {
     const filepath = file.history[0];
     if (!filepath) {
       throw new Error("File path not found");

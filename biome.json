@@ -1,7 +1,10 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": ["public", "dist", ".astro"] },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**", "!**/public", "!**/dist", "!**/.astro"]
+  },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -12,9 +15,32 @@
     "lineWidth": 80,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": ["**/package.json", "**/pnpm-lock.yaml"]
+    "includes": ["**", "!**/package.json", "!**/pnpm-lock.yaml"]
   },
-  "organizeImports": { "enabled": true },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ["npm:*", "npm:*/**"],
+              ":PACKAGE_WITH_PROTOCOL:",
+              ":PACKAGE:",
+              ":BLANK_LINE:",
+              ":URL:",
+              ":BLANK_LINE:",
+              ["/**"],
+              ["@*", "@*/**"],
+              ":BLANK_LINE:",
+              ":PATH:"
+            ]
+          }
+        }
+      }
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -39,9 +65,30 @@
     "globals": ["Astro"]
   },
   "overrides": [
-    { "include": ["*.astro"] },
     {
-      "include": ["*.tsx", "*.jsx"],
+      "includes": ["**/*.astro"],
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      },
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.tsx", "**/*.jsx"],
       "linter": {
         "rules": {
           "correctness": {

@@ -1,14 +1,8 @@
-import { defineConfig } from "astro/config";
-
 import partytown from "@astrojs/partytown";
 import solid from "@astrojs/solid-js";
-import playformCompress from "@playform/compress";
-
-import { METADATA } from "./src/const";
-import fontOptimizer from "./src/integrations/font-optimizer";
-import { remarkCharCount } from "./src/integrations/remark-char-count";
-
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import playformCompress from "@playform/compress";
+import { defineConfig } from "astro/config";
 import rehypeExpressiveCode from "rehype-expressive-code";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
@@ -16,6 +10,10 @@ import rehypeMermaidCtm from "rehype-mermaid-ctm";
 import rehypeRaw from "rehype-raw";
 import remarkLinkCardCtm from "remark-link-card-ctm";
 import remarkMath from "remark-math";
+
+import { METADATA } from "./src/const";
+import fontOptimizer from "./src/integrations/font-optimizer";
+import { remarkCharCount } from "./src/integrations/remark-char-count";
 
 export default defineConfig({
   site: METADATA.url,
