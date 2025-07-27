@@ -72,7 +72,7 @@ export const PERSONAL_DATA = {
       links: [
         {
           name: "記事",
-          url: "/posts/seccon4b-2025/",
+          url: "/posts/ctf/seccon4b-2025/",
         },
       ],
     },
