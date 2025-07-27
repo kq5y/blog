@@ -66,6 +66,17 @@ export const PERSONAL_DATA = {
   ],
   certs: [
     {
+      name: "SECCON Beginners CTF 2025",
+      description: "優勝（TPC）",
+      date: "2025-07",
+      links: [
+        {
+          name: "記事",
+          url: "/posts/seccon4b-2025/",
+        },
+      ],
+    },
+    {
       name: "IERAE CTF 2025",
       description: "優勝（TPC）",
       date: "2025-06",
