@@ -1,6 +1,15 @@
 ---
 import { getEntry, render } from "astro:content";
-import { LetterText, Menu, PencilLine, Tag, Wrench } from "lucide-solid";
+import {
+  Facebook,
+  LetterText,
+  Menu,
+  Paperclip,
+  PencilLine,
+  Tag,
+  Twitter,
+  Wrench,
+} from "lucide-solid";
 
 import BackLink from "@/components/BackLink/BackLink.astro";
 import Profile from "@/components/Profile/Profile.astro";
@@ -22,6 +31,13 @@ if (!entry) return Astro.redirect("/404");
 
 const post = entry2post(entry);
 const renderer = await render(entry);
+
+const postUrl = `${METADATA.url}/posts/${post.slug}/`;
+const encodedUrl = encodeURIComponent(postUrl);
+const encodedTitle = encodeURIComponent(`${post.title} - ${METADATA.title}`);
+
+const twitterUrl = `https://x.com/intent/post?url=${encodedUrl}&text=${encodedTitle}`;
+const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
 
 const frontmatter = renderer.remarkPluginFrontmatter as {
   charCount: string;
@@ -73,6 +89,37 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
         <article>
           <renderer.Content />
         </article>
+        <div class={styles.shareButtons}>
+          <a
+            href="#"
+            onclick=`navigator.clipboard.writeText("${postUrl}"); return false;`
+            class={styles.link}
+            aria-label="Copy URL"
+            title="Copy URL"
+          >
+            <Paperclip />
+          </a>
+          <a
+            href={twitterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={styles.link}
+            aria-label="Twitter"
+            title="Twitter"
+          >
+            <Twitter />
+          </a>
+          <a
+            href={facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={styles.link}
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <Facebook />
+          </a>
+        </div>
         <div class={styles.postProfile}>
           <Profile mode="row" loading="lazy" />
         </div>
