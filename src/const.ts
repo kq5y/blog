@@ -66,6 +66,17 @@ export const PERSONAL_DATA = {
   ],
   certs: [
     {
+      name: "MIXI Git Challenge #15",
+      description: "優勝（Foxtrot）",
+      date: "2025-08",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/HR_mixi/status/1961739052920741976",
+        },
+      ],
+    },
+    {
       name: "SECCON Beginners CTF 2025",
       description: "優勝（TPC）",
       date: "2025-07",
