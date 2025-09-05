@@ -71,8 +71,8 @@ export const PERSONAL_DATA = {
       date: "2025-08",
       links: [
         {
-          name: "ポスト",
-          url: "https://x.com/HR_mixi/status/1961739052920741976",
+          name: "記事",
+          url: "/posts/mixi-git/",
         },
       ],
     },
