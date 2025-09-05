@@ -22,7 +22,19 @@ export default defineConfig({
     inlineStylesheets: "auto",
     assets: "assets",
   },
-  integrations: [solid(), fontOptimizer(), partytown(), playformCompress()],
+  integrations: [
+    solid(),
+    fontOptimizer(),
+    partytown(),
+    playformCompress({
+      CSS: true,
+      HTML: true,
+      Image: false,
+      JavaScript: true,
+      JSON: true,
+      SVG: true,
+    }),
+  ],
   markdown: {
     remarkPlugins: [
       remarkCharCount,
