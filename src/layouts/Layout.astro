@@ -87,11 +87,20 @@ const { title, post, katex = false } = Astro.props;
       )
     }
     <ClientRouter />
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+    ></script>
   </head>
   <body>
     <main>
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      document.addEventListener("astro:after-swap", () => {
+        if (typeof twttr !== "undefined" && twttr.widgets) {
+          twttr.widgets.load();
+        }
+      });
+    </script>
   </body>
 </html>

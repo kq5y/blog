@@ -559,4 +559,4 @@ CTF初めて数ヶ月、初めてオンサイトのCTFに参加しましたが�
 
 終了後はメンバーと五月祭を回ったりしました。弊学とは違うところが多く新鮮でした。そして初対面の人とたくさん話せて非常に良かったです。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">めん <a href="https://t.co/LokMHPEOOf">pic.twitter.com/LokMHPEOOf</a></p>&mdash; kasi (@kq5y__) <a href="https://twitter.com/kq5y__/status/1926222996248653873?ref_src=twsrc%5Etfw">May 24, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">めん <a href="https://t.co/LokMHPEOOf">pic.twitter.com/LokMHPEOOf</a></p>&mdash; kasi (@kq5y__) <a href="https://twitter.com/kq5y__/status/1926222996248653873?ref_src=twsrc%5Etfw">May 24, 2025</a></blockquote>

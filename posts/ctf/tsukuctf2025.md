@@ -254,4 +254,4 @@ pwnの問題は全てkernelのものでマニュアルを見ても手も足も�
 
 [^gohan]: こんだけ写真を上げていたらすぐにどのお店か分かっちゃいそうですね。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">いたりあん <a href="https://t.co/j31hIrsZSH">pic.twitter.com/j31hIrsZSH</a></p>&mdash; kasi (@kq5y__) <a href="https://twitter.com/kq5y__/status/1918526107655237963?ref_src=twsrc%5Etfw">May 3, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">いたりあん <a href="https://t.co/j31hIrsZSH">pic.twitter.com/j31hIrsZSH</a></p>&mdash; kasi (@kq5y__) <a href="https://twitter.com/kq5y__/status/1918526107655237963?ref_src=twsrc%5Etfw">May 3, 2025</a></blockquote>

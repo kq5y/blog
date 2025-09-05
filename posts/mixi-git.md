@@ -37,7 +37,7 @@ https://github.com/mixi-git-challenge/git-challenge-minesweeper
 
 ## 午前
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">本日は Git Challenge＃15 です🎉<br>午前は、キーノートとチュートリアルから！<br>午後から本格的に競技開始です！<br>皆さんで楽しみましょう！！よろしくお願いします✨<a href="https://twitter.com/hashtag/MIXI_Git?src=hash&amp;ref_src=twsrc%5Etfw">#MIXI_Git</a> <a href="https://t.co/KJ8c3dmNTi">pic.twitter.com/KJ8c3dmNTi</a></p>&mdash; MIXI 新卒採用公式アカウント (@HR_mixi) <a href="https://twitter.com/HR_mixi/status/1961616918441594891?ref_src=twsrc%5Etfw">August 30, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">本日は Git Challenge＃15 です🎉<br>午前は、キーノートとチュートリアルから！<br>午後から本格的に競技開始です！<br>皆さんで楽しみましょう！！よろしくお願いします✨<a href="https://twitter.com/hashtag/MIXI_Git?src=hash&amp;ref_src=twsrc%5Etfw">#MIXI_Git</a> <a href="https://t.co/KJ8c3dmNTi">pic.twitter.com/KJ8c3dmNTi</a></p>&mdash; MIXI 新卒採用公式アカウント (@HR_mixi) <a href="https://twitter.com/HR_mixi/status/1961616918441594891?ref_src=twsrc%5Etfw">August 30, 2025</a></blockquote>
 
 午前中は社員さんによるキーノートと競技のチュートリアルがありました。
 
