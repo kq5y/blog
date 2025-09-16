@@ -31,8 +31,7 @@ const { posts, eagerLoadCount = 0 } = Astro.props as Props;
               class={styles.postImage}
               width={600}
               height={315}
-              loading={index < eagerLoadCount ? "eager" : "lazy"}
-              fetchpriority={index < eagerLoadCount ? "high" : "auto"}
+              priority={index < eagerLoadCount}
               format="avif"
             />
           )}

@@ -11,14 +11,14 @@ interface Props {
   mode?: "column" | "row";
   class?: string;
   hideAbout?: boolean;
-  loading?: "eager" | "lazy";
+  priority?: boolean;
 }
 
 const {
   class: className,
   mode = "column",
   hideAbout = false,
-  loading = "eager",
+  priority = false,
 } = Astro.props as Props;
 ---
 
@@ -29,8 +29,7 @@ const {
       alt="icon"
       width={mode === "column" ? 200 : 100}
       height={mode === "column" ? 200 : 100}
-      loading={loading}
-      fetchpriority={loading === "eager" ? "high" : "auto"}
+      priority={priority}
       class={styles.icon}
       format="avif"
     />

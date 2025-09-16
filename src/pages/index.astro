@@ -13,7 +13,7 @@ const recentPosts = (await getAllPosts(ZENN_USERNAME, false)).slice(0, 4);
 
 <Layout title={`${PERSONAL_DATA.name} - ${METADATA.title}`}>
   <div class={styles.container}>
-    <Profile mode="column" class={styles.profile} />
+    <Profile mode="column" class={styles.profile} priority />
     <div class={styles.separator}></div>
     <section class={styles.posts}>
       <div class={styles.postsHeader}>
