@@ -66,6 +66,17 @@ export const PERSONAL_DATA = {
   ],
   certs: [
     {
+      name: "FFRI × NFLabs. Cybersecurity Challenge 2025",
+      description: "総合2位, web部門1位",
+      date: "2025-09",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/1967471763383783820",
+        },
+      ],
+    },
+    {
       name: "MIXI Git Challenge #15",
       description: "優勝（Foxtrot）",
       date: "2025-08",
