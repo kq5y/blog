@@ -27,8 +27,8 @@ const {
     <Image
       src={iconImage}
       alt="icon"
-      width={320}
-      height={320}
+      width={mode === "column" ? 200 : 100}
+      height={mode === "column" ? 200 : 100}
       loading={loading}
       fetchpriority={loading === "eager" ? "high" : "auto"}
       class={styles.icon}
