@@ -30,6 +30,7 @@ const {
       width={320}
       height={320}
       loading={loading}
+      fetchpriority={loading === "eager" ? "high" : "auto"}
       class={styles.icon}
       format="avif"
     />
