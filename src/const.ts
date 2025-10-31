@@ -145,6 +145,10 @@ export const PERSONAL_DATA = {
       date: "2023-12",
       links: [
         {
+          name: "Slide",
+          url: "https://speakerdeck.com/kq5y/technopro-package-7th-solution",
+        },
+        {
           name: "GitHub",
           url: "https://github.com/kq5y/technopro-food-package",
         },
@@ -310,7 +314,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "SIGNATE",
-      url: "https://signate.jp/users/114309",
+      url: "https://user.competition.signate.jp/ja/user/?user=bb75df2cb66d41f88f1d76be0846d80a",
     },
     {
       name: "Dreamhack",
