@@ -166,9 +166,24 @@ export const PERSONAL_DATA = {
   ],
   works: [
     {
+      title: "kakiage",
+      description: "Honoとtanstackライブラリを用いたCTFのwriteupを投稿するためのサイト",
+      links: [
+        {
+          name: "Link",
+          url: "https://w.kq5.jp",
+        },
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/kakiage",
+        }
+      ],
+      pinned: true,
+    },
+    {
       title: "nicoarch",
       description:
-        "ニコニコ動画の動画やメタデータ、コメントをアーカイブするツール",
+        "RemixやRedisを用いたニコニコ動画の動画やメタデータ、コメントをアーカイブするツール",
       links: [
         {
           name: "GitHub",
@@ -188,7 +203,7 @@ export const PERSONAL_DATA = {
     {
       title: "tools",
       description:
-        "Remix.jsで実装した調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
+        "Remixで実装した調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
       links: [
         {
           name: "Link",
@@ -199,7 +214,16 @@ export const PERSONAL_DATA = {
           url: "https://github.com/kq5y/tools",
         },
       ],
-      pinned: true,
+    },
+    {
+      title: "paw-app",
+      description: "flaskとtraefikを用いた実験用Pythonスクリプト実行サイト",
+      links: [
+        {
+          name: "GitHub",
+          url: "https://github.com/kq5y/paw-app",
+        },
+      ],
     },
     {
       title: "blog",
@@ -299,7 +323,7 @@ export const PERSONAL_DATA = {
     {
       title: "W-Judge",
       description:
-        "高校の部内で利用した競プロコンテストサイト。新機能開発・保守を行った",
+        "FlaskやRedisを用いた高校の部内で利用した競プロコンテストサイト。新機能開発・保守を行った",
       links: [],
     },
   ],
