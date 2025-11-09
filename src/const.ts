@@ -15,7 +15,7 @@ export const PERSONAL_DATA = {
   links: {
     twitter: "https://x.com/kq5y__",
     github: "https://github.com/kq5y",
-    mail: "contact@kq5.jp",
+    mail: "w.kq5y@outlook.jp",
   },
   interests: [
     "音声合成などのディープラーニング",
@@ -65,6 +65,17 @@ export const PERSONAL_DATA = {
     },
   ],
   certs: [
+    {
+      name: "Core NetWars Tournament 11 - NRI Tokyo 2025",
+      description: "総合2位",
+      date: "2025-11",
+      links: [
+        {
+          name: "公式ページ",
+          url: "https://www.nri-secure.co.jp/event/2025/netwars",
+        },
+      ],
+    },
     {
       name: "FFRI × NFLabs. Cybersecurity Challenge 2025",
       description: "総合2位, web部門1位",
