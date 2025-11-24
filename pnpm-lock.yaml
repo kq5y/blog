@@ -54,7 +54,7 @@ importers:
         version: 7.0.1
       rehype-mermaid-ctm:
         specifier: github:kq5y/rehype-mermaid-ctm#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed
-        version: git+https://git@github.com:kq5y/rehype-mermaid-ctm.git#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed(@babel/core@7.28.5)(@babel/template@7.27.2)(yaml@2.8.1)
+        version: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed(@babel/core@7.28.5)(@babel/template@7.27.2)(yaml@2.8.1)
       rehype-raw:
         specifier: ^7.0.0
         version: 7.0.0
@@ -3207,8 +3207,8 @@ packages:
   rehype-katex@7.0.1:
     resolution: {integrity: sha512-OiM2wrZ/wuhKkigASodFoo8wimG3H12LWQaH8qSPVJn9apWKFSH3YOCtbKpBorTVw/eI7cuT21XBbvwEswbIOA==}
 
-  rehype-mermaid-ctm@git+https://git@github.com:kq5y/rehype-mermaid-ctm.git#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed:
-    resolution: {commit: ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed, repo: git@github.com:kq5y/rehype-mermaid-ctm.git, type: git}
+  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed:
+    resolution: {tarball: https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed}
     version: 1.0.1
 
   rehype-parse@9.0.1:
@@ -7589,7 +7589,7 @@ snapshots:
       unist-util-visit-parents: 6.0.2
       vfile: 6.0.3
 
-  rehype-mermaid-ctm@git+https://git@github.com:kq5y/rehype-mermaid-ctm.git#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed(@babel/core@7.28.5)(@babel/template@7.27.2)(yaml@2.8.1):
+  rehype-mermaid-ctm@https://codeload.github.com/kq5y/rehype-mermaid-ctm/tar.gz/ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed(@babel/core@7.28.5)(@babel/template@7.27.2)(yaml@2.8.1):
     dependencies:
       '@mermaid-js/mermaid-cli': 11.12.0(@babel/core@7.28.5)(@babel/template@7.27.2)(puppeteer@24.31.0(typescript@5.9.3))(yaml@2.8.1)
       '@types/hast': 3.0.4

@@ -3,7 +3,14 @@
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/public", "!**/dist", "!**/.astro"]
+    "includes": [
+      "**",
+      "!**/public",
+      "!**/dist",
+      "!**/.astro",
+      "!**/node_modules",
+      "!pnpm-lock.yaml"
+    ]
   },
   "formatter": {
     "enabled": true,
