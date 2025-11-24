@@ -24,16 +24,6 @@ import styles from "@/styles/about.module.scss";
           </ul>
         </div>
       </section>
-      <section class={styles.skills}>
-        <div class={styles.sectionHeader}>
-          <h2 class={styles.sectionTitle}>できること</h2>
-        </div>
-        <div class={styles.sectionContent}>
-          <ul>
-            {PERSONAL_DATA.skills.map((skill) => <li>{skill}</li>)}
-          </ul>
-        </div>
-      </section>
       <section class={styles.likes}>
         <div class={styles.sectionHeader}>
           <h2 class={styles.sectionTitle}>好きなもの</h2>
@@ -61,7 +51,7 @@ import styles from "@/styles/about.module.scss";
         </div>
         <div class:list={[styles.sectionContent, styles.timeline]}>
           {
-            PERSONAL_DATA.timeline.map((item) => (
+            PERSONAL_DATA.education.map((item) => (
               <div class={styles.termTimelineItem}>
                 <div class={styles.timelineDate}>{item.date}</div>
                 <div class={styles.timelineContent}>
@@ -108,6 +98,48 @@ import styles from "@/styles/about.module.scss";
                       </div>
                     )}
                     {cert.description && <p>{cert.description}</p>}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+      <section class={styles.ctfs}>
+        <div class={styles.sectionHeader}>
+          <h2 class={styles.sectionTitle}>CTF</h2>
+        </div>
+        <div class:list={[styles.sectionContent, styles.timeline]}>
+          {
+            PERSONAL_DATA.ctfs.map((ctf) => (
+              <div class={styles.dateTimelineItem}>
+                <div class={styles.timelineDate}>{ctf.date}</div>
+                <div class={styles.timelineContent}>
+                  <h3>{ctf.name}</h3>
+                  <div class={styles.contentMeta}>
+                    {ctf.links && (
+                      <div class={styles.itemLinks}>
+                        {ctf.links.map((link) => (
+                          <a
+                            href={link.url}
+                            class={styles.itemLink}
+                            target={
+                              link.url.startsWith("http") ? "_blank" : undefined
+                            }
+                            rel={
+                              link.url.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                          >
+                            {link.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                    <p>
+                      {ctf.team} / {ctf.rank}
+                    </p>
                   </div>
                 </div>
               </div>

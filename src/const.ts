@@ -23,32 +23,17 @@ export const PERSONAL_DATA = {
     "Webページのパフォーマンスチューニング",
     "Web領域におけるCTF・セキュリティ",
   ],
-  skills: [
-    "ReactやRemix、Next.jsなどのフレームワークを使用した複雑なWebサイト構築",
-    "OpenSiv3DやUnityを使用したゲーム制作",
-    "RailsやFlaskを使用したAPI開発",
-    "WPFやElectronを使用したスタンドアロンアプリケーション開発",
-    "PyTorchを使用した既存モデルの学習や簡単なレイヤー構築",
-  ],
-  likes: ["ボーカロイド楽曲", "ボイスロイド作品", "Minecraft", "Factorio"],
+  likes: ["音楽", "Minecraft", "Factorio"],
   statsfmUsername: "kq5y",
   spotifyEmbedUrl:
     "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   music_likes: [
-    "ボカロ(DECO*27、じんなど広く)",
-    "アニソン(アイマス、ラブライブ含む)",
-    "東方アレンジ(聞き専)",
-    "米津玄師(ハチ)",
-    "SOUL'd OUT",
-    "back number",
-    "いきものがかり",
-    "他懐メロ(槇原敬之とか)",
+    "ボーカロイド",
+    "米津玄師, 星野源",
+    "RADWIMPS, back number, いきものがかり",
+    "SOUL'd OUT, nqrse",
   ],
-  timeline: [
-    {
-      date: "2025-04 ~ Now",
-      title: "Tsukuba Programming Circle",
-    },
+  education: [
     {
       date: "2025-04 ~ Now",
       title: "筑波大学 情報学群 情報科学類",
@@ -66,28 +51,6 @@ export const PERSONAL_DATA = {
   ],
   certs: [
     {
-      name: "Core NetWars Tournament 11 - NRI Tokyo 2025",
-      description: "総合2位",
-      date: "2025-11",
-      links: [
-        {
-          name: "公式ページ",
-          url: "https://www.nri-secure.co.jp/event/2025/netwars",
-        },
-      ],
-    },
-    {
-      name: "FFRI × NFLabs. Cybersecurity Challenge 2025",
-      description: "総合2位, web部門1位",
-      date: "2025-09",
-      links: [
-        {
-          name: "ポスト",
-          url: "https://x.com/kq5y__/status/1967471763383783820",
-        },
-      ],
-    },
-    {
       name: "MIXI Git Challenge #15",
       description: "優勝（Foxtrot）",
       date: "2025-08",
@@ -95,28 +58,6 @@ export const PERSONAL_DATA = {
         {
           name: "記事",
           url: "/posts/mixi-git/",
-        },
-      ],
-    },
-    {
-      name: "SECCON Beginners CTF 2025",
-      description: "優勝（TPC）",
-      date: "2025-07",
-      links: [
-        {
-          name: "記事",
-          url: "/posts/ctf/seccon4b-2025/",
-        },
-      ],
-    },
-    {
-      name: "IERAE CTF 2025",
-      description: "優勝（TPC）",
-      date: "2025-06",
-      links: [
-        {
-          name: "プレスリリース",
-          url: "https://gmo-cybersecurity.com/news/20250701/",
         },
       ],
     },
@@ -173,6 +114,56 @@ export const PERSONAL_DATA = {
       name: "基本情報技術者試験 合格",
       description: "第FE-2021-02-01828号",
       date: "2021-02",
+    },
+  ],
+  ctfs: [
+    {
+      name: "Core NetWars Tournament 11 - NRI Tokyo 2025",
+      rank: "総合2位",
+      team: "個人",
+      date: "2025-11",
+      links: [
+        {
+          name: "公式ページ",
+          url: "https://www.nri-secure.co.jp/event/2025/netwars",
+        },
+      ],
+    },
+    {
+      name: "FFRI × NFLabs. Cybersecurity Challenge 2025",
+      rank: "総合2位, web部門1位",
+      team: "個人",
+      date: "2025-09",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/1967471763383783820",
+        },
+      ],
+    },
+    {
+      name: "SECCON Beginners CTF 2025",
+      rank: "優勝",
+      team: "TPC",
+      date: "2025-07",
+      links: [
+        {
+          name: "記事",
+          url: "/posts/ctf/seccon4b-2025/",
+        },
+      ],
+    },
+    {
+      name: "IERAE CTF 2025",
+      rank: "優勝",
+      team: "TPC",
+      date: "2025-06",
+      links: [
+        {
+          name: "プレスリリース",
+          url: "https://gmo-cybersecurity.com/news/20250701/",
+        },
+      ],
     },
   ],
   works: [
