@@ -38,7 +38,15 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkCharCount,
-      [remarkLinkCardCtm, { shortenUrl: true, imgAsyncLazy: true }],
+      [
+        remarkLinkCardCtm,
+        {
+          shortenUrl: true,
+          imgAsyncLazy: true,
+          fallbackImageSrc: "/assets/linkcard-placeholder.avif",
+          fallbackImageAlt: "No Image",
+        },
+      ],
       remarkMath,
     ],
     rehypePlugins: [
