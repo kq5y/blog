@@ -118,8 +118,20 @@ export const PERSONAL_DATA = {
   ],
   ctfs: [
     {
+      name: "sknbCTF 2025",
+      rank: "2位",
+      team: "TPC",
+      date: "2025-11",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/1992440389496906082",
+        }
+      ],
+    },
+    {
       name: "Core NetWars Tournament 11 - NRI Tokyo 2025",
-      rank: "総合2位",
+      rank: "2位",
       team: "個人",
       date: "2025-11",
       links: [
