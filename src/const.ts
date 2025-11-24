@@ -126,7 +126,7 @@ export const PERSONAL_DATA = {
         {
           name: "ポスト",
           url: "https://x.com/kq5y__/status/1992440389496906082",
-        }
+        },
       ],
     },
     {
@@ -181,7 +181,8 @@ export const PERSONAL_DATA = {
   works: [
     {
       title: "kakiage",
-      description: "Honoとtanstackライブラリを用いたCTFのwriteupを投稿するためのサイト",
+      description:
+        "Honoとtanstackライブラリを用いたCTFのwriteupを投稿するためのサイト",
       links: [
         {
           name: "Link",
@@ -190,7 +191,7 @@ export const PERSONAL_DATA = {
         {
           name: "GitHub",
           url: "https://github.com/kq5y/kakiage",
-        }
+        },
       ],
       pinned: true,
     },
