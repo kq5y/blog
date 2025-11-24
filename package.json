@@ -14,32 +14,33 @@
     "install:chrome": "pnpm dlx puppeteer browsers install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/markdown-remark": "^6.3.6",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/markdown-remark": "^6.3.9",
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/solid-js": "^5.1.1",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/solid-js": "^5.1.3",
     "@expressive-code/plugin-line-numbers": "^0.41.3",
     "@playform/compress": "^0.2.0",
-    "astro": "^5.13.7",
-    "jsdom": "^26.1.0",
-    "lucide-solid": "^0.486.0",
+    "astro": "^5.16.0",
+    "jsdom": "^27.2.0",
+    "lucide-solid": "^0.554.0",
     "rehype-expressive-code": "^0.41.3",
     "rehype-external-links": "^3.0.0",
     "rehype-katex": "^7.0.1",
-    "rehype-mermaid-ctm": "github:kq5y/rehype-mermaid-ctm#18c93a36b160c6f7e7bdccf46548f2427e0f40fe",
+    "rehype-mermaid-ctm": "github:kq5y/rehype-mermaid-ctm#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed",
     "rehype-raw": "^7.0.0",
     "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm#cdb4fea8ffddcd18cdfcd2c4bb419d222711f066",
     "remark-math": "^6.0.0",
-    "sass": "^1.92.1",
-    "sharp": "^0.34.3",
-    "solid-js": "^1.9.9",
-    "typescript": "^5.9.2"
+    "sass": "^1.94.2",
+    "sharp": "^0.34.5",
+    "solid-js": "^1.9.10",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
-    "@types/jsdom": "^21.1.7",
-    "puppeteer": "^24.21.0"
+    "@biomejs/biome": "2.3.7",
+    "@types/jsdom": "^27.0.0",
+    "baseline-browser-mapping": "^2.8.31",
+    "puppeteer": "^24.31.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
