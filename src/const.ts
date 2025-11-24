@@ -35,6 +35,11 @@ export const PERSONAL_DATA = {
   ],
   education: [
     {
+      date: "2025-11",
+      title: "CODE BLUE 2025 学生スタッフ",
+      description: "セキュリティカンファレンスの運営スタッフとして参加",
+    },
+    {
       date: "2025-04 ~ Now",
       title: "筑波大学 情報学群 情報科学類",
       description: "３年次編入",
