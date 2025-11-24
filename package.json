@@ -29,7 +29,7 @@
     "rehype-katex": "^7.0.1",
     "rehype-mermaid-ctm": "github:kq5y/rehype-mermaid-ctm#ae6a2cc0f37c6d46faed13dc0b11dc8d527444ed",
     "rehype-raw": "^7.0.0",
-    "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm#cdb4fea8ffddcd18cdfcd2c4bb419d222711f066",
+    "remark-link-card-ctm": "github:kq5y/remark-link-card-ctm#a3e62b9587d39e2c299c48ca2cfb6e0400db6d7d",
     "remark-math": "^6.0.0",
     "sass": "^1.94.2",
     "sharp": "^0.34.5",
