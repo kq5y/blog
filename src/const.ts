@@ -123,6 +123,18 @@ export const PERSONAL_DATA = {
   ],
   ctfs: [
     {
+      name: "SECCON CTF 14 Quals",
+      rank: "37位(国内8位)",
+      team: "TPC2",
+      date: "2025-12",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/secconctf/status/2000074410661978277",
+        },
+      ],
+    },
+    {
       name: "sknbCTF 2025",
       rank: "2位",
       team: "TPC",
