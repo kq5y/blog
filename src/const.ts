@@ -380,5 +380,9 @@ export const PERSONAL_DATA = {
       name: "scrapbox/ctf-writeups",
       url: "https://scrapbox.io/ctf-writeups/",
     },
+    {
+      name: "CTFtime",
+      url: "https://ctftime.org/user/227190",
+    }
   ],
 };
