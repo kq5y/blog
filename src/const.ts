@@ -123,6 +123,30 @@ export const PERSONAL_DATA = {
   ],
   ctfs: [
     {
+      name: "防衛省 サイバーコンテスト 2026",
+      rank: "12位",
+      team: "個人",
+      date: "2026-02",
+    },
+    {
+      name: "Dreamhack Invitational Quals",
+      rank: "4位",
+      team: "個人",
+      date: "2026-01",
+      links: [
+        {
+          name: "公式ページ",
+          url: "https://dreamhack.io/ctf/772",
+        },
+      ],
+    },
+    {
+      name: "TSG CTF 2025",
+      rank: "24位(国内13位)",
+      team: "TPC2",
+      date: "2025-12",
+    },
+    {
       name: "SECCON CTF 14 Quals",
       rank: "37位(国内8位)",
       team: "TPC2",
@@ -383,6 +407,6 @@ export const PERSONAL_DATA = {
     {
       name: "CTFtime",
       url: "https://ctftime.org/user/227190",
-    }
+    },
   ],
 };
