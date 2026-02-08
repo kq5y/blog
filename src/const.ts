@@ -124,7 +124,7 @@ export const PERSONAL_DATA = {
   ctfs: [
     {
       name: "防衛省 サイバーコンテスト 2026",
-      rank: "12位",
+      rank: "12位(学生個人2位)",
       team: "個人",
       date: "2026-02",
     },
