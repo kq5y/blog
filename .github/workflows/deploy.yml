@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Deploy
     environment: production
     steps:
@@ -27,9 +27,8 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Install Chrome
         run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          echo "PUPPETEER_EXECUTABLE_PATH=$(which chromium-browser)" >> $GITHUB_ENV
+          CHROME_PATH=$(pnpm install:chrome 2>&1 | grep "^chrome@" | head -1 | awk '{print $2}')
+          echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_PATH" >> $GITHUB_ENV
       - name: Build
         run: pnpm build
         env:
