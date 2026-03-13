@@ -123,6 +123,18 @@ export const PERSONAL_DATA = {
   ],
   ctfs: [
     {
+      name: "SECCON CTF 14 Domestic Finals",
+      rank: "8位",
+      team: "TPC2",
+      date: "2026-03",
+      links: [
+        {
+          name: "プレスリリース",
+          url: "https://www.coins.tsukuba.ac.jp/2026/260312.php",
+        },
+      ],
+    },
+    {
       name: "防衛省 サイバーコンテスト 2026",
       rank: "12位(学生個人2位)",
       team: "個人",
