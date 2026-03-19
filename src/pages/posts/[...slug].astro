@@ -1,15 +1,5 @@
 ---
 import { getEntry, render } from "astro:content";
-import {
-  Facebook,
-  LetterText,
-  Menu,
-  Paperclip,
-  PencilLine,
-  Tag,
-  Twitter,
-  Wrench,
-} from "lucide-solid";
 
 import BackLink from "@/components/BackLink/BackLink.astro";
 import Profile from "@/components/Profile/Profile.astro";
@@ -51,25 +41,25 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
       <h1 class={styles.postTitle}>{post.title}</h1>
       <div class={styles.postMeta}>
         <div class={styles.postDate}>
-          <PencilLine />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
           <time datetime={post.createdDate}>
             {post.createdDate}
           </time>
         </div>
         <div class={styles.postDate}>
-          <Wrench />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           <time datetime={post.updatedDate}>
             {post.updatedDate}
           </time>
         </div>
         <div class={styles.postChars}>
-          <LetterText />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M9 16h6"/><rect width="14" height="14" x="5" y="4" rx="2"/><path d="M10 4v16"/></svg>
           <span>
             {frontmatter.charCount} chars
           </span>
         </div>
         <div class={styles.postTags}>
-          <Tag />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
           <div class={styles.postTagsInner}>
             {
               post.tags.map((tag) => (
@@ -97,7 +87,7 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
             aria-label="Copy URL"
             title="Copy URL"
           >
-            <Paperclip />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 4-4 4"/><path d="M20 10H9a5 5 0 0 0-5 5v1"/><path d="m8 18-4-4 4-4"/></svg>
           </a>
           <a
             href={twitterUrl}
@@ -107,7 +97,7 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
             aria-label="Twitter"
             title="Twitter"
           >
-            <Twitter />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
           </a>
           <a
             href={facebookUrl}
@@ -117,7 +107,7 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
             aria-label="Facebook"
             title="Facebook"
           >
-            <Facebook />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
         </div>
         <div class={styles.postProfile}>
@@ -129,7 +119,7 @@ const frontmatter = renderer.remarkPluginFrontmatter as {
           <input type="checkbox" id="toc-toggle" class={styles.tocToggle} />
           <label for="toc-toggle" class={styles.tocSummary}>
             <div class={styles.tocSummaryInner}>
-              <Menu />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
               <span>Table of Contents</span>
             </div>
           </label>
