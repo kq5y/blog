@@ -35,7 +35,10 @@ const {
     />
   </div>
   <div class={styles.info}>
-    <h1 class={styles.name}>{PERSONAL_DATA.name}</h1>
+    <h1 class={styles.name}>
+      {PERSONAL_DATA.name}
+      <span class={styles.pronunciation}>{PERSONAL_DATA.pronunciation}</span>
+    </h1>
     {mode === "column" && <p class={styles.bio}>{PERSONAL_DATA.bio}</p>}
     <div class={styles.links}>
       {

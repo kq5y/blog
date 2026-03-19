@@ -11,6 +11,7 @@ export const ZENN_USERNAME = "kq5y";
 
 export const PERSONAL_DATA = {
   name: "kq5y",
+  pronunciation: "/kaʃiː/",
   bio: "早寝早起き",
   links: {
     twitter: "https://x.com/kq5y__",

@@ -23,6 +23,13 @@
   color: $text-primary;
 }
 
+.pronunciation {
+  color: $text-tertiary;
+  font-weight: 400;
+  font-size: 0.6em;
+  margin-left: 0.25em;
+}
+
 .bio {
   color: $text-tertiary;
   font-size: 0.875rem;
@@ -55,6 +62,12 @@
       line-height: 2rem;
     }
 
+    .pronunciation {
+      display: block;
+      margin-left: 0;
+      margin-top: 0.25rem;
+    }
+
     .link {
       @include iconButton;
     }
@@ -81,6 +94,10 @@
       font-size: 1.5rem;
       line-height: 1.75rem;
       padding-left: 0.375rem;
+    }
+
+    .pronunciation {
+      font-size: 0.55em;
     }
 
     .links {
