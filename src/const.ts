@@ -9,6 +9,15 @@ export const POST_OGP_URL = "https://ogp.kq5.jp/blog/image.png";
 
 export const ZENN_USERNAME = "kq5y";
 
+export type HistoryType = "education" | "activity" | "internship" | "work";
+
+export interface HistoryItem {
+  date: string;
+  type: HistoryType;
+  title: string;
+  description?: string;
+}
+
 export const PERSONAL_DATA = {
   name: "kq5y",
   pronunciation: "/kaʃiː/",
@@ -34,27 +43,31 @@ export const PERSONAL_DATA = {
     "RADWIMPS, back number, いきものがかり",
     "SOUL'd OUT, nqrse",
   ],
-  education: [
+  history: [
+    {
+      date: "2025-04 ~ 現在",
+      type: "education",
+      title: "筑波大学 情報学群 情報科学類",
+      description: "3年次編入",
+    },
     {
       date: "2025-11",
+      type: "activity",
       title: "CODE BLUE 2025 学生スタッフ",
       description: "セキュリティカンファレンスの運営スタッフとして参加",
     },
     {
-      date: "2025-04 ~ Now",
-      title: "筑波大学 情報学群 情報科学類",
-      description: "３年次編入",
-    },
-    {
       date: "2023-04 ~ 2025-03",
+      type: "education",
       title: "信州大学 工学部 電子情報システム工学科",
       description: "情報プログラム",
     },
     {
       date: "2020-04 ~ 2023-03",
+      type: "education",
       title: "早稲田高等学校",
     },
-  ],
+  ] satisfies HistoryItem[],
   certs: [
     {
       name: "MIXI Git Challenge #15",

@@ -150,6 +150,25 @@
   }
 }
 
+.timelineHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $border-color;
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: $text-secondary;
+  background: color-mix(in srgb, $bg-color 94%, $accent-color 6%);
+}
+
 .contentMeta {
   color: $text-secondary;
   font-size: 0.875rem;

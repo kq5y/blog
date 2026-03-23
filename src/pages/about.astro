@@ -2,9 +2,16 @@
 import BackLink from "@/components/BackLink/BackLink.astro";
 import Profile from "@/components/Profile/Profile.astro";
 import WorksGrid from "@/components/WorksGrid/WorksGrid.astro";
-import { METADATA, PERSONAL_DATA } from "@/const";
+import { METADATA, PERSONAL_DATA, type HistoryType } from "@/const";
 import Layout from "@/layouts/Layout.astro";
 import styles from "@/styles/about.module.scss";
+
+const historyTypeLabel: Record<HistoryType, string> = {
+  education: "学歴",
+  activity: "活動",
+  internship: "インターン",
+  work: "職歴",
+} as const;
 ---
 
 <Layout title=`About - ${METADATA.title}`>
@@ -43,17 +50,22 @@ import styles from "@/styles/about.module.scss";
           </p>
         </div>
       </section>
-      <section class={styles.experience}>
+      <section class={styles.history}>
         <div class={styles.sectionHeader}>
-          <h2 class={styles.sectionTitle}>所属</h2>
+          <h2 class={styles.sectionTitle}>経歴</h2>
         </div>
         <div class:list={[styles.sectionContent, styles.timeline]}>
           {
-            PERSONAL_DATA.education.map((item) => (
+            PERSONAL_DATA.history.map((item) => (
               <div class={styles.termTimelineItem}>
                 <div class={styles.timelineDate}>{item.date}</div>
                 <div class={styles.timelineContent}>
-                  <h3>{item.title}</h3>
+                  <div class={styles.timelineHeading}>
+                    <h3>{item.title}</h3>
+                    <span class={styles.typeBadge}>
+                      {historyTypeLabel[item.type]}
+                    </span>
+                  </div>
                   <div class={styles.contentMeta}>
                     {item.description && <p>{item.description}</p>}
                   </div>
