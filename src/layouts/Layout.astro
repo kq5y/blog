@@ -79,6 +79,7 @@ const { title, post, katex = false } = Astro.props;
     {
       import.meta.env.PROD && import.meta.env.CF_BEACON_TOKEN && (
         <script
+          is:inline
           type="text/partytown"
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
@@ -87,8 +88,6 @@ const { title, post, katex = false } = Astro.props;
       )
     }
     <ClientRouter />
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-    ></script>
   </head>
   <body>
     <main>
@@ -96,10 +95,28 @@ const { title, post, katex = false } = Astro.props;
     </main>
     <Footer />
     <script is:inline>
-      document.addEventListener("astro:after-swap", () => {
+      const TWITTER_SCRIPT_SELECTOR = "script[data-twitter-widgets]";
+
+      function ensureTwitterWidgets() {
+        if (!document.querySelector("blockquote.twitter-tweet")) return;
+
         if (typeof twttr !== "undefined" && twttr.widgets) {
           twttr.widgets.load();
+          return;
         }
+
+        if (document.querySelector(TWITTER_SCRIPT_SELECTOR)) return;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.dataset.twitterWidgets = "true";
+        document.head.append(script);
+      }
+
+      ensureTwitterWidgets();
+      document.addEventListener("astro:after-swap", () => {
+        ensureTwitterWidgets();
       });
     </script>
   </body>

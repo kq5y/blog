@@ -40,13 +40,30 @@ const { headings } = Astro.props as Props;
 </div>
 
 <script>
+  const TOC_STATE_KEY = Symbol.for("blog.toc-state");
+  const tocWindow = window as Window & {
+    [TOC_STATE_KEY]?: {
+      bound: boolean;
+      cleanup?: () => void;
+    };
+  };
+  const tocState = (tocWindow[TOC_STATE_KEY] ??= { bound: false });
+
+  function cleanupHeadings() {
+    tocState.cleanup?.();
+    tocState.cleanup = undefined;
+  }
+
   function initializeHeadings() {
+    cleanupHeadings();
+
     const toc = document.querySelector("[data-toc]");
     if (!toc) return;
-    const headings = document.querySelectorAll("li[data-slug]");
+    const headings = toc.querySelectorAll("li[data-slug]");
     if (!headings.length) return;
+
     function setActive(id: string) {
-      headings.forEach((item, idx) => {
+      headings.forEach((item) => {
         if (item.getAttribute("data-slug") === id && toc) {
           item.classList.add("active");
           const tocBounds = toc.getBoundingClientRect();
@@ -82,15 +99,30 @@ const { headings } = Astro.props as Props;
       const el = document.getElementById(slug);
       if (el) observer.observe(el);
     });
+
     if (headings[0]) {
       const id = headings[0].getAttribute("data-slug") || "";
       setActive(id);
     }
+
+    tocState.cleanup = () => {
+      observer.disconnect();
+    };
   }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeHeadings);
+
+  if (!tocState.bound) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeHeadings, {
+        once: true,
+      });
+    } else {
+      initializeHeadings();
+    }
+
+    document.addEventListener("astro:before-swap", cleanupHeadings);
+    document.addEventListener("astro:page-load", initializeHeadings);
+    tocState.bound = true;
   } else {
     initializeHeadings();
   }
-  document.addEventListener("astro:page-load", initializeHeadings);
 </script>

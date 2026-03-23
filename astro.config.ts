@@ -98,13 +98,6 @@ export default defineConfig({
   },
   prefetch: true,
   vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
-    },
     build: {
       rollupOptions: {
         output: {

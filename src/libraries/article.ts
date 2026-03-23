@@ -1,10 +1,6 @@
-import { execSync } from "node:child_process";
-import {
-  type AnyEntryMap,
-  type CollectionEntry,
-  type CollectionKey,
-  getCollection,
-} from "astro:content";
+import { execFileSync } from "node:child_process";
+import { statSync } from "node:fs";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import { POST_OGP_URL } from "@/const";
 
@@ -34,41 +30,66 @@ interface ZennPost extends PostBase {
 
 export type Post = BlogPost | ZennPost;
 
-type Collection = CollectionEntry<keyof AnyEntryMap>;
+type BlogEntry = CollectionEntry<"post">;
 
-const collectionCache: { [key: string]: Collection[] } = {};
+let blogEntryCache: BlogEntry[] | null = null;
+let blogPostsCache: BlogPost[] | null = null;
+const postDateCache = new Map<string, { created: string; updated: string }>();
 
-async function getCollectionCache(
-  collection: CollectionKey
-): Promise<Collection[]> {
-  if (!collectionCache[collection]) {
-    collectionCache[collection] = await getCollection(collection);
+async function getPostCollectionCache(): Promise<BlogEntry[]> {
+  if (!blogEntryCache) {
+    blogEntryCache = await getCollection("post");
   }
-  return collectionCache[collection];
+  return blogEntryCache;
 }
 
-function formatDate(isoString: string): string {
-  const date = new Date(isoString);
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return (
-    `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ` +
-    `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`
-  );
+function formatDate(input: string): string {
+  const match = input.match(/^(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2}:\d{2})/);
+  if (match) {
+    return `${match[1]} ${match[2]}`;
+  }
+
+  const date = new Date(input);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`Invalid date: ${input}`);
+  }
+
+  return date.toISOString().slice(0, 19).replace("T", " ");
 }
 
 function getPostDate(filepath: string) {
-  const created = execSync(
-    `git log --diff-filter=A --follow --format=%aI -- "${filepath}" | tail -1`
-  )
-    .toString()
-    .trim();
-  const updated = execSync(`git log -1 --pretty="format:%cI" "${filepath}"`)
-    .toString()
-    .trim();
-  return {
-    created: formatDate(created),
-    updated: formatDate(updated),
+  const cached = postDateCache.get(filepath);
+  if (cached) return cached;
+
+  try {
+    const output = execFileSync(
+      "git",
+      ["log", "--follow", "--format=%aI|%cI", "--", filepath],
+      { encoding: "utf-8" }
+    ).trim();
+    const lines = output.split("\n").filter(Boolean);
+
+    if (lines.length > 0) {
+      const [createdRaw = ""] = lines.at(-1)?.split("|") ?? [];
+      const [, updatedRaw = createdRaw] = lines[0]?.split("|") ?? [];
+      const result = {
+        created: formatDate(createdRaw),
+        updated: formatDate(updatedRaw),
+      };
+      postDateCache.set(filepath, result);
+      return result;
+    }
+  } catch {
+    // Fall back to filesystem metadata when git history is unavailable.
+  }
+
+  const fallbackIso = statSync(filepath).mtime.toISOString();
+  const fallback = {
+    created: formatDate(fallbackIso),
+    updated: formatDate(fallbackIso),
   };
+  postDateCache.set(filepath, fallback);
+  return fallback;
 }
 
 export function convertParams(posts: BlogPost[]) {
@@ -96,7 +117,7 @@ export function makeOgpUrl(slug: string, datetime: string) {
   return `${POST_OGP_URL}?slug=${slug}&date=${date}`;
 }
 
-export function entry2post(post: AnyEntryMap["post"][string]): BlogPost {
+export function entry2post(post: BlogEntry): BlogPost {
   if (!post.filePath) throw new Error("filePath is undefined");
   const { created, updated } = getPostDate(post.filePath);
   return {
@@ -112,36 +133,40 @@ export function entry2post(post: AnyEntryMap["post"][string]): BlogPost {
 }
 
 export async function getBlogPosts(showHidden = false): Promise<BlogPost[]> {
-  const articles = await getCollectionCache("post");
-  return articles
-    .filter((article) => showHidden || !(article.data.hidden === true))
-    .map(entry2post);
+  if (!blogPostsCache) {
+    const articles = await getPostCollectionCache();
+    blogPostsCache = articles.map(entry2post);
+  }
+
+  return blogPostsCache.filter((article) => {
+    return showHidden || article.hidden !== true;
+  });
 }
 
 export async function getZennPosts(username: string): Promise<ZennPost[]> {
   const articles = await getZennArticles(username);
-  const posts: ZennPost[] = [];
-  for (const article of articles) {
-    const detail = await getZennArticleDetail(article.slug);
-    posts.push({
-      type: "Zenn",
-      title: detail.title,
-      slug: detail.slug,
-      url: `https://zenn.dev${detail.path}`,
-      tags: detail.topics.map((topic) => topic.display_name),
-      createdDate: formatDate(detail.published_at),
-      updatedDate: formatDate(detail.body_updated_at),
-      ogp: detail.og_image_url,
-    });
-  }
-  return posts;
+  return await Promise.all(
+    articles.map(async (article) => {
+      const detail = await getZennArticleDetail(article.slug);
+      return {
+        type: "Zenn",
+        title: detail.title,
+        slug: detail.slug,
+        url: `https://zenn.dev${detail.path}`,
+        tags: detail.topics.map((topic) => topic.display_name),
+        createdDate: formatDate(detail.published_at),
+        updatedDate: formatDate(detail.body_updated_at),
+        ogp: detail.og_image_url,
+      };
+    })
+  );
 }
 
 export async function getAllPosts(
   zennUsername: string | null,
   showHidden = false
 ): Promise<Post[]> {
-  const posts = [];
+  const posts: Post[] = [];
   posts.push(...(await getBlogPosts(showHidden)));
   if (zennUsername) posts.push(...(await getZennPosts(zennUsername)));
   return posts.sort((a, b) => {

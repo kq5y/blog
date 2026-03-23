@@ -80,11 +80,14 @@ export async function getZennArticles(
     return articlesCache[username];
   }
   let page: number | null = 1;
-  const articles = [];
+  const articles: ZennArticle[] = [];
   while (page !== null) {
     const response = await fetch(
       `https://zenn.dev/api/articles?username=${username}&page=${page}`
     );
+    if (!response.ok) {
+      throw new Error(`Failed to fetch Zenn articles: ${response.status}`);
+    }
     const data = (await response.json()) as {
       articles: ZennArticle[];
       next_page: number | null;
@@ -104,6 +107,11 @@ export async function getZennArticleDetail(
     return articleDetailCache[slug];
   }
   const response = await fetch(`https://zenn.dev/api/articles/${slug}`);
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch Zenn article detail (${slug}): ${response.status}`
+    );
+  }
   const data = (await response.json()) as { article: ZennArticleDetail };
   articleDetailCache[slug] = data.article;
   return data.article;
