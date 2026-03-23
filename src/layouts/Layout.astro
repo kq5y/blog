@@ -11,9 +11,10 @@ interface Props {
   title: string;
   post?: Post;
   katex?: boolean;
+  twitterEmbeds?: boolean;
 }
 
-const { title, post, katex = false } = Astro.props;
+const { title, post, katex = false, twitterEmbeds = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -94,30 +95,34 @@ const { title, post, katex = false } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <script is:inline>
-      const TWITTER_SCRIPT_SELECTOR = "script[data-twitter-widgets]";
+    {
+      twitterEmbeds && (
+        <script is:inline>
+          const TWITTER_SCRIPT_SELECTOR = "script[data-twitter-widgets]";
 
-      function ensureTwitterWidgets() {
-        if (!document.querySelector("blockquote.twitter-tweet")) return;
+          function ensureTwitterWidgets() {
+            if (!document.querySelector("blockquote.twitter-tweet")) return;
 
-        if (typeof twttr !== "undefined" && twttr.widgets) {
-          twttr.widgets.load();
-          return;
-        }
+            if (typeof twttr !== "undefined" && twttr.widgets) {
+              twttr.widgets.load();
+              return;
+            }
 
-        if (document.querySelector(TWITTER_SCRIPT_SELECTOR)) return;
+            if (document.querySelector(TWITTER_SCRIPT_SELECTOR)) return;
 
-        const script = document.createElement("script");
-        script.async = true;
-        script.src = "https://platform.twitter.com/widgets.js";
-        script.dataset.twitterWidgets = "true";
-        document.head.append(script);
-      }
+            const script = document.createElement("script");
+            script.async = true;
+            script.src = "https://platform.twitter.com/widgets.js";
+            script.dataset.twitterWidgets = "true";
+            document.head.append(script);
+          }
 
-      ensureTwitterWidgets();
-      document.addEventListener("astro:after-swap", () => {
-        ensureTwitterWidgets();
-      });
-    </script>
+          ensureTwitterWidgets();
+          document.addEventListener("astro:after-swap", () => {
+            ensureTwitterWidgets();
+          });
+        </script>
+      )
+    }
   </body>
 </html>
