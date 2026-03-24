@@ -16,6 +16,10 @@ export interface HistoryItem {
   type: HistoryType;
   title: string;
   description?: string;
+  links?: {
+    name: string;
+    url: string;
+  }[];
 }
 
 export const PERSONAL_DATA = {
@@ -44,6 +48,18 @@ export const PERSONAL_DATA = {
     "SOUL'd OUT, nqrse",
   ],
   history: [
+    {
+      date: "2026-03",
+      type: "activity",
+      title: "tkbctf5 organizer",
+      description: "運営/web作問",
+      links: [
+        {
+          name: "AlpacaHack",
+          url: "https://alpacahack.com/ctfs/tkbctf5",
+        },
+      ],
+    },
     {
       date: "2026-01 ~ 現在",
       type: "internship",
