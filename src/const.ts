@@ -28,7 +28,7 @@ export const PERSONAL_DATA = {
     mail: "w.kq5y@outlook.jp",
   },
   interests: [
-    "音声合成などのディープラーニング",
+    "マルチメディアのディープラーニング",
     "Webフロントエンド・バックエンド",
     "Webページのパフォーマンスチューニング",
     "Web領域におけるCTF・セキュリティ",
@@ -45,16 +45,28 @@ export const PERSONAL_DATA = {
   ],
   history: [
     {
-      date: "2025-04 ~ 現在",
-      type: "education",
-      title: "筑波大学 情報学群 情報科学類",
-      description: "3年次編入",
+      date: "2026-01 ~ 現在",
+      type: "internship",
+      title: "株式会社エヌ・エフ・ラボラトリーズ",
+      description: "セキュリティコンテンツ開発",
+    },
+    {
+      date: "2025-12 ~ 現在",
+      type: "internship",
+      title: "Digital Experts株式会社",
+      description: "SaaSのWebフルスタック/インフラエンジニア",
     },
     {
       date: "2025-11",
       type: "activity",
       title: "CODE BLUE 2025 学生スタッフ",
-      description: "セキュリティカンファレンスの運営スタッフとして参加",
+      description: "セキュリティカンファレンスの運営スタッフ",
+    },
+    {
+      date: "2025-04 ~ 現在",
+      type: "education",
+      title: "筑波大学 情報学群 情報科学類",
+      description: "3年次編入",
     },
     {
       date: "2023-04 ~ 2025-03",
@@ -146,6 +158,10 @@ export const PERSONAL_DATA = {
           name: "プレスリリース",
           url: "https://www.coins.tsukuba.ac.jp/2026/260312.php",
         },
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/2028154686256427496",
+        },
       ],
     },
     {
@@ -153,6 +169,12 @@ export const PERSONAL_DATA = {
       rank: "12位(学生個人2位)",
       team: "個人",
       date: "2026-02",
+      links: [
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/2017921582354817528",
+        },
+      ],
     },
     {
       name: "Dreamhack Invitational Quals",
@@ -163,6 +185,10 @@ export const PERSONAL_DATA = {
         {
           name: "公式ページ",
           url: "https://dreamhack.io/ctf/772",
+        },
+        {
+          name: "ポスト",
+          url: "https://x.com/kq5y__/status/2015246665549320531",
         },
       ],
     },
