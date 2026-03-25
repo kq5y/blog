@@ -189,7 +189,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "防衛省 サイバーコンテスト 2026",
-      rank: "12位(学生個人2位)",
+      rank: "12位(学生個人2位🥈)",
       team: "個人",
       date: "2026-02",
       links: [
@@ -235,7 +235,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "sknbCTF 2025",
-      rank: "2位",
+      rank: "2位🥈",
       team: "TPC",
       date: "2025-11",
       links: [
@@ -247,7 +247,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "Core NetWars Tournament 11 - NRI Tokyo 2025",
-      rank: "2位",
+      rank: "2位🥈",
       team: "個人",
       date: "2025-11",
       links: [
@@ -259,7 +259,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "FFRI × NFLabs. Cybersecurity Challenge 2025",
-      rank: "総合2位, web部門1位",
+      rank: "総合2位🥈, web部門1位🥇",
       team: "個人",
       date: "2025-09",
       links: [
@@ -271,7 +271,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "SECCON Beginners CTF 2025",
-      rank: "優勝",
+      rank: "優勝🥇",
       team: "TPC",
       date: "2025-07",
       links: [
@@ -283,7 +283,7 @@ export const PERSONAL_DATA = {
     },
     {
       name: "IERAE CTF 2025",
-      rank: "優勝",
+      rank: "優勝🥇",
       team: "TPC",
       date: "2025-06",
       links: [
