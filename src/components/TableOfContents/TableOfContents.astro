@@ -45,11 +45,26 @@ const { headings } = Astro.props as Props;
     [TOC_STATE_KEY]?: {
       bound: boolean;
       cleanup?: () => void;
+      initializeTimer?: number;
+      initializeFrame?: number;
     };
   };
   const tocState = (tocWindow[TOC_STATE_KEY] ??= { bound: false });
 
+  function cleanupPendingInitialize() {
+    if (tocState.initializeTimer !== undefined) {
+      window.clearTimeout(tocState.initializeTimer);
+      tocState.initializeTimer = undefined;
+    }
+
+    if (tocState.initializeFrame !== undefined) {
+      window.cancelAnimationFrame(tocState.initializeFrame);
+      tocState.initializeFrame = undefined;
+    }
+  }
+
   function cleanupHeadings() {
+    cleanupPendingInitialize();
     tocState.cleanup?.();
     tocState.cleanup = undefined;
   }
@@ -58,9 +73,9 @@ const { headings } = Astro.props as Props;
     cleanupHeadings();
 
     const toc = document.querySelector("[data-toc]");
-    if (!toc) return;
+    if (!toc) return false;
     const headings = toc.querySelectorAll("li[data-slug]");
-    if (!headings.length) return;
+    if (!headings.length) return false;
 
     function setActive(id: string) {
       headings.forEach((item) => {
@@ -108,21 +123,38 @@ const { headings } = Astro.props as Props;
     tocState.cleanup = () => {
       observer.disconnect();
     };
+
+    return true;
+  }
+
+  function queueInitializeHeadings(retries = 12) {
+    cleanupPendingInitialize();
+
+    const tryInitialize = () => {
+      if (initializeHeadings() || retries <= 0) return;
+
+      tocState.initializeTimer = window.setTimeout(() => {
+        tocState.initializeFrame = window.requestAnimationFrame(tryInitialize);
+      }, 50);
+    };
+
+    tocState.initializeFrame = window.requestAnimationFrame(tryInitialize);
   }
 
   if (!tocState.bound) {
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initializeHeadings, {
+      document.addEventListener("DOMContentLoaded", queueInitializeHeadings, {
         once: true,
       });
     } else {
-      initializeHeadings();
+      queueInitializeHeadings();
     }
 
     document.addEventListener("astro:before-swap", cleanupHeadings);
-    document.addEventListener("astro:page-load", initializeHeadings);
+    document.addEventListener("astro:after-swap", queueInitializeHeadings);
+    document.addEventListener("astro:page-load", queueInitializeHeadings);
     tocState.bound = true;
   } else {
-    initializeHeadings();
+    queueInitializeHeadings();
   }
 </script>
