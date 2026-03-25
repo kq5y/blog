@@ -12,7 +12,9 @@ export const ZENN_USERNAME = "kq5y";
 export type HistoryType = "education" | "activity" | "internship" | "work";
 
 export interface HistoryItem {
-  date: string;
+  start: string;
+  end?: string;
+  current?: boolean;
   type: HistoryType;
   title: string;
   description?: string;
@@ -49,10 +51,10 @@ export const PERSONAL_DATA = {
   ],
   history: [
     {
-      date: "2026-03",
+      start: "2026-03",
       type: "activity",
       title: "tkbctf5 organizer",
-      description: "運営/web作問",
+      description: "CTF運営 Web問題作問",
       links: [
         {
           name: "AlpacaHack",
@@ -61,37 +63,42 @@ export const PERSONAL_DATA = {
       ],
     },
     {
-      date: "2026-01 ~ 現在",
+      start: "2026-01",
+      current: true,
       type: "internship",
       title: "株式会社エヌ・エフ・ラボラトリーズ",
-      description: "セキュリティコンテンツ開発",
+      description: "長期インターン セキュリティコンテンツ開発",
     },
     {
-      date: "2025-12 ~ 現在",
+      start: "2025-12",
+      current: true,
       type: "internship",
       title: "Digital Experts株式会社",
-      description: "SaaSのWebフルスタック/インフラエンジニア",
+      description: "長期インターン SaaSのWebフルスタック/インフラエンジニア",
     },
     {
-      date: "2025-11",
+      start: "2025-11",
       type: "activity",
       title: "CODE BLUE 2025 学生スタッフ",
       description: "セキュリティカンファレンスの運営スタッフ",
     },
     {
-      date: "2025-04 ~ 現在",
+      start: "2025-04",
+      current: true,
       type: "education",
       title: "筑波大学 情報学群 情報科学類",
       description: "3年次編入",
     },
     {
-      date: "2023-04 ~ 2025-03",
+      start: "2023-04",
+      end: "2025-03",
       type: "education",
       title: "信州大学 工学部 電子情報システム工学科",
       description: "情報プログラム",
     },
     {
-      date: "2020-04 ~ 2023-03",
+      start: "2020-04",
+      end: "2023-03",
       type: "education",
       title: "早稲田高等学校",
     },
