@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 24
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Install Chrome
         run: |
           CHROME_PATH=$(pnpm install:chrome 2>&1 | grep "^chrome@" | head -1 | awk '{print $2}')
