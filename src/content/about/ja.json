@@ -1,0 +1,22 @@
+{
+  "backLinkTitle": "Home",
+  "sections": {
+    "interests": "興味のあること",
+    "likes": "好きなもの",
+    "education": "学歴",
+    "career": "経歴",
+    "certs": "資格・受賞",
+    "ctfs": "CTF",
+    "works": "制作物",
+    "extraLinks": "リンク"
+  },
+  "music": {
+    "prefix": "詳しくは",
+    "label": "好きな音楽",
+    "suffix": "へ"
+  },
+  "worksLink": {
+    "label": "制作物を全て見る",
+    "ariaLabel": "制作物を全て見る"
+  }
+}

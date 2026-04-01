@@ -1,0 +1,454 @@
+{
+  "name": "kq5y",
+  "pronunciation": "/kaʃiː/",
+  "bio": "Early to bed, early to rise",
+  "links": {
+    "twitter": "https://x.com/kq5y__",
+    "github": "https://github.com/kq5y",
+    "mail": "w.kq5y@outlook.jp"
+  },
+  "interests": [
+    "Deep learning for multimedia",
+    "Frontend and backend web development",
+    "Web performance optimization",
+    "CTFs and web security"
+  ],
+  "likes": ["Music", "Minecraft", "Factorio"],
+  "statsfmUsername": "kq5y",
+  "spotifyEmbedUrl": "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
+  "music_likes": [
+    "Vocaloid",
+    "Kenshi Yonezu, Gen Hoshino",
+    "RADWIMPS, back number, Ikimono-gakari",
+    "SOUL'd OUT, nqrse"
+  ],
+  "history": [
+    {
+      "start": "2026-03",
+      "type": "activity",
+      "title": "tkbctf5 organizer",
+      "description": "CTF operations, web challenge authoring",
+      "links": [
+        {
+          "name": "AlpacaHack",
+          "url": "https://alpacahack.com/ctfs/tkbctf5"
+        }
+      ]
+    },
+    {
+      "start": "2026-01",
+      "current": true,
+      "type": "internship",
+      "title": "N.F. Laboratories Inc.",
+      "description": "Long-term internship, security content development"
+    },
+    {
+      "start": "2025-12",
+      "current": true,
+      "type": "internship",
+      "title": "Digital Experts Inc.",
+      "description": "Long-term internship, full-stack web and infrastructure engineer for SaaS"
+    },
+    {
+      "start": "2025-11",
+      "type": "activity",
+      "title": "CODE BLUE 2025 student staff",
+      "description": "Operations staff for a security conference"
+    },
+    {
+      "start": "2025-04",
+      "current": true,
+      "type": "education",
+      "title": "University of Tsukuba, School of Informatics, College of Information Sciences",
+      "description": "Transferred in as a third-year student"
+    },
+    {
+      "start": "2023-04",
+      "end": "2025-03",
+      "type": "education",
+      "title": "Shinshu University, Faculty of Engineering, Department of Electronic and Information Systems",
+      "description": "Information program"
+    },
+    {
+      "start": "2020-04",
+      "end": "2023-03",
+      "type": "education",
+      "title": "Waseda High School"
+    }
+  ],
+  "certs": [
+    {
+      "name": "MIXI Git Challenge #15",
+      "description": "Winner (Foxtrot)",
+      "date": "2025-08",
+      "links": [
+        {
+          "name": "Article",
+          "url": "/posts/mixi-git/"
+        }
+      ]
+    },
+    {
+      "name": "Web Speed Hackathon 2025",
+      "description": "Top score (did not pass the regulation)",
+      "date": "2025-03",
+      "links": [
+        {
+          "name": "Article",
+          "url": "/posts/wsh2025/"
+        }
+      ]
+    },
+    {
+      "name": "Information Security Specialist Exam",
+      "description": "Passed",
+      "date": "2024-12"
+    },
+    {
+      "name": "TOEIC Listening & Reading 645",
+      "description": "Listening:330 Reading:315",
+      "date": "2024-04"
+    },
+    {
+      "name": "Applied Information Technology Engineer Exam",
+      "description": "Passed",
+      "date": "2023-12"
+    },
+    {
+      "name": "Japanese ordinary driver license (AT only)",
+      "date": "2023-12"
+    },
+    {
+      "name": "Technopro Design food package image analysis challenge (general and student divisions)",
+      "description": "Image competition, student division 🥈11st",
+      "date": "2023-12",
+      "links": [
+        {
+          "name": "Slide",
+          "url": "https://speakerdeck.com/kq5y/technopro-package-7th-solution"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/technopro-food-package"
+        }
+      ]
+    },
+    {
+      "name": "EIKEN Grade Pre-2",
+      "description": "Passed",
+      "date": "2021-06"
+    },
+    {
+      "name": "Fundamental Information Technology Engineer Exam",
+      "description": "Passed",
+      "date": "2021-02"
+    }
+  ],
+  "ctfs": [
+    {
+      "name": "SECCON CTF 14 Domestic Finals",
+      "rank": "8th",
+      "team": "TPC2",
+      "date": "2026-03",
+      "links": [
+        {
+          "name": "Press release",
+          "url": "https://www.coins.tsukuba.ac.jp/2026/260312.php"
+        },
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/2028154686256427496"
+        }
+      ]
+    },
+    {
+      "name": "Ministry of Defense Cyber Contest 2026",
+      "rank": "12th (2nd among individual students) 🥈",
+      "team": "Individual",
+      "date": "2026-02",
+      "links": [
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/2017921582354817528"
+        }
+      ]
+    },
+    {
+      "name": "Dreamhack Invitational Quals",
+      "rank": "4th",
+      "team": "Individual",
+      "date": "2026-01",
+      "links": [
+        {
+          "name": "Official page",
+          "url": "https://dreamhack.io/ctf/772"
+        },
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/2015246665549320531"
+        }
+      ]
+    },
+    {
+      "name": "TSG CTF 2025",
+      "rank": "24th (13th in Japan)",
+      "team": "TPC2",
+      "date": "2025-12"
+    },
+    {
+      "name": "SECCON CTF 14 Quals",
+      "rank": "37th (8th in Japan)",
+      "team": "TPC2",
+      "date": "2025-12",
+      "links": [
+        {
+          "name": "Post",
+          "url": "https://x.com/secconctf/status/2000074410661978277"
+        }
+      ]
+    },
+    {
+      "name": "sknbCTF 2025",
+      "rank": "2nd 🥈",
+      "team": "TPC",
+      "date": "2025-11",
+      "links": [
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/1992440389496906082"
+        }
+      ]
+    },
+    {
+      "name": "Core NetWars Tournament 11 - NRI Tokyo 2025",
+      "rank": "2nd 🥈",
+      "team": "Individual",
+      "date": "2025-11",
+      "links": [
+        {
+          "name": "Official page",
+          "url": "https://www.nri-secure.co.jp/event/2025/netwars"
+        }
+      ]
+    },
+    {
+      "name": "FFRI × NFLabs. Cybersecurity Challenge 2025",
+      "rank": "2nd overall 🥈, 1st in web 🥇",
+      "team": "Individual",
+      "date": "2025-09",
+      "links": [
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/1967471763383783820"
+        }
+      ]
+    },
+    {
+      "name": "SECCON Beginners CTF 2025",
+      "rank": "1st 🥇",
+      "team": "TPC",
+      "date": "2025-07",
+      "links": [
+        {
+          "name": "Article",
+          "url": "/posts/ctf/seccon4b-2025/"
+        }
+      ]
+    },
+    {
+      "name": "IERAE CTF 2025",
+      "rank": "1st 🥇",
+      "team": "TPC",
+      "date": "2025-06",
+      "links": [
+        {
+          "name": "Press release",
+          "url": "https://gmo-cybersecurity.com/news/20250701/"
+        }
+      ]
+    }
+  ],
+  "works": [
+    {
+      "title": "kakiage",
+      "description": "A site for posting CTF writeups built with Hono and TanStack libraries",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://w.kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/kakiage"
+        }
+      ],
+      "pinned": true
+    },
+    {
+      "title": "nicoarch",
+      "description": "A tool for archiving Niconico video content, metadata, and comments with Remix and Redis",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/nicoarch"
+        },
+        {
+          "name": "GitHub(App)",
+          "url": "https://github.com/kq5y/nicoarch-app"
+        },
+        {
+          "name": "GitHub(Worker)",
+          "url": "https://github.com/kq5y/nicoarch-worker"
+        }
+      ],
+      "pinned": true
+    },
+    {
+      "title": "tools",
+      "description": "A collection of various tools, including custom tools and tools I wanted to have, implemented with Remix",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://tools.kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/tools"
+        }
+      ]
+    },
+    {
+      "title": "paw-app",
+      "description": "An experimental Python script execution site built with Flask and Traefik",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/paw-app"
+        }
+      ]
+    },
+    {
+      "title": "blog",
+      "description": "My website built with Astro. It includes a portfolio and a blog",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/blog"
+        }
+      ]
+    },
+    {
+      "title": "stats-embeds",
+      "description": "An API that fetches Spotify listening history through stats.fm and generates embeds with Hono",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://stats-embeds.kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/stats-embeds"
+        }
+      ]
+    },
+    {
+      "title": "ogp-worker",
+      "description": "An API built with Hono that generates OGP images for blog and tools",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://ogp.kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/ogp-worker"
+        }
+      ]
+    },
+    {
+      "title": "finix",
+      "description": "A household accounting app built with React and Rails",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://finix.kq5.jp"
+        },
+        {
+          "name": "GitHub(App)",
+          "url": "https://github.com/kq5y/finix-app"
+        },
+        {
+          "name": "GitHub(API)",
+          "url": "https://github.com/kq5y/finix-api"
+        }
+      ]
+    },
+    {
+      "title": "next-note",
+      "description": "A note-taking service built with Next.js",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://note.kq5.jp"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/next-note"
+        }
+      ]
+    },
+    {
+      "title": "Titanic Checker",
+      "description": "A web app for checking the accuracy of machine learning models using the Titanic dataset",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://titanic-checker.pages.dev"
+        },
+        {
+          "name": "GitHub(Front)",
+          "url": "https://github.com/kq5y/titanic-checker-front"
+        },
+        {
+          "name": "GitHub(API)",
+          "url": "https://github.com/kq5y/titanic-checker-api"
+        }
+      ]
+    },
+    {
+      "title": "W-Judge",
+      "description": "A programming contest site used inside a high school club, built with Flask and Redis. I handled feature development and maintenance",
+      "links": []
+    }
+  ],
+  "extraLinks": [
+    {
+      "name": "AtCoder",
+      "url": "https://atcoder.jp/users/kq5y"
+    },
+    {
+      "name": "Kaggle",
+      "url": "https://www.kaggle.com/kq5yyy"
+    },
+    {
+      "name": "SIGNATE",
+      "url": "https://user.competition.signate.jp/ja/user/?user=bb75df2cb66d41f88f1d76be0846d80a"
+    },
+    {
+      "name": "Dreamhack",
+      "url": "https://dreamhack.io/users/78015"
+    },
+    {
+      "name": "scrapbox/ctf-writeups",
+      "url": "https://scrapbox.io/ctf-writeups/"
+    },
+    {
+      "name": "CTFtime",
+      "url": "https://ctftime.org/user/227190"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+---
+import BackLink from "@/components/BackLink/BackLink.astro";
+import Profile from "@/components/Profile/Profile.astro";
+import TimelineEntry from "@/components/AboutPage/TimelineEntry.astro";
+import WorksGrid from "@/components/WorksGrid/WorksGrid.astro";
+import { type PersonalData } from "@/data/personal";
+import {
+  formatHistoryDate,
+  sortByDateDesc,
+  sortHistory,
+  type AboutCopy,
+} from "@/libraries/about";
+import styles from "@/styles/about.module.scss";
+
+interface Props {
+  copy: AboutCopy;
+  personalData: PersonalData;
+  supplementalLink?: {
+    href: string;
+    label: string;
+    ariaLabel?: string;
+  };
+}
+
+const { copy, personalData, supplementalLink } = Astro.props as Props;
+
+const sortedHistory = sortHistory(personalData.history);
+const educationHistory = sortedHistory.filter(
+  (item) => item.type === "education"
+);
+const careerHistory = sortedHistory.filter((item) => item.type !== "education");
+const sortedCerts = sortByDateDesc(personalData.certs);
+const sortedCtfs = sortByDateDesc(personalData.ctfs);
+---
+
+<div class={styles.container}>
+  <BackLink title={copy.backLinkTitle} supplementalLink={supplementalLink} />
+  <Profile mode="row" hideAbout class={styles.header} priority data={personalData} />
+  <div class={styles.content}>
+    <section class={styles.interests}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.interests}</h2>
+      </div>
+      <div class={styles.sectionContent}>
+        <ul>
+          {personalData.interests.map((interest) => <li>{interest}</li>)}
+        </ul>
+      </div>
+    </section>
+    <section class={styles.likes}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.likes}</h2>
+      </div>
+      <div class={styles.sectionContent}>
+        <ul>
+          {personalData.likes.map((like) => <li>{like}</li>)}
+        </ul>
+        <div class={styles.spotifyEmbed}>
+          <iframe
+            title="Top Tracks"
+            src={`https://stats-embeds.kq5.jp/embed/top?user=${personalData.statsfmUsername}`}
+            width="100%"
+            height="160"
+            loading="lazy"></iframe>
+        </div>
+        <p>
+          {copy.music.prefix}
+          <a href="/music/" class={styles.itemLink}>{copy.music.label}</a>
+          {copy.music.suffix}
+        </p>
+      </div>
+    </section>
+    <section class={styles.history}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.education}</h2>
+      </div>
+      <div class:list={[styles.sectionContent, styles.timeline]}>
+        {
+          educationHistory.map((item) => (
+            <TimelineEntry
+              date={formatHistoryDate(item)}
+              title={item.title}
+              links={item.links}
+              layout="term"
+            >
+              {item.description && <p>{item.description}</p>}
+            </TimelineEntry>
+          ))
+        }
+      </div>
+    </section>
+    <section class={styles.history}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.career}</h2>
+      </div>
+      <div class:list={[styles.sectionContent, styles.timeline]}>
+        {
+          careerHistory.map((item) => (
+            <TimelineEntry
+              date={formatHistoryDate(item)}
+              title={item.title}
+              links={item.links}
+              layout="term"
+            >
+              {item.description && <p>{item.description}</p>}
+            </TimelineEntry>
+          ))
+        }
+      </div>
+    </section>
+    <section class={styles.certs}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.certs}</h2>
+      </div>
+      <div class:list={[styles.sectionContent, styles.timeline]}>
+        {
+          sortedCerts.map((cert) => (
+            <TimelineEntry
+              date={cert.date}
+              title={cert.name}
+              links={cert.links}
+              layout="date"
+            >
+              {cert.description && <p>{cert.description}</p>}
+            </TimelineEntry>
+          ))
+        }
+      </div>
+    </section>
+    <section class={styles.ctfs}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.ctfs}</h2>
+      </div>
+      <div class:list={[styles.sectionContent, styles.timeline]}>
+        {
+          sortedCtfs.map((ctf) => (
+            <TimelineEntry
+              date={ctf.date}
+              title={ctf.name}
+              links={ctf.links}
+              layout="date"
+            >
+              <p>
+                {ctf.team} / {ctf.rank}
+              </p>
+            </TimelineEntry>
+          ))
+        }
+      </div>
+    </section>
+    <section class={styles.works}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.works}</h2>
+        <a
+          href="/works/"
+          class={styles.sectionHeaderLink}
+          aria-label={copy.worksLink.ariaLabel}
+        >
+          {copy.worksLink.label}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <WorksGrid onlyPinned={true} works={personalData.works} />
+    </section>
+    <section class={styles.extraLinks}>
+      <div class={styles.sectionHeader}>
+        <h2 class={styles.sectionTitle}>{copy.sections.extraLinks}</h2>
+      </div>
+      <div class={styles.sectionContent}>
+        <ul>
+          {
+            personalData.extraLinks.map((link) => (
+              <li>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

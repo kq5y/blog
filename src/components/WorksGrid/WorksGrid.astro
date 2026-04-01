@@ -1,15 +1,17 @@
 ---
-import { PERSONAL_DATA } from "@/const";
+import { PERSONAL_DATA, type PersonalData } from "@/data/personal";
 
 import styles from "./WorksGrid.module.scss";
 
 interface Props {
   onlyPinned?: boolean;
+  works?: PersonalData["works"];
 }
 
-const { onlyPinned = false } = Astro.props;
+const { onlyPinned = false, works = PERSONAL_DATA.works } =
+  Astro.props as Props;
 
-const works = PERSONAL_DATA.works
+const visibleWorks = works
   .filter((work) => !onlyPinned || work.pinned)
   .sort((a, b) => {
     if (a.pinned && !b.pinned) return -1;
@@ -20,7 +22,7 @@ const works = PERSONAL_DATA.works
 
 <div class={styles.worksGrid}>
   {
-    works.map((work) => (
+    visibleWorks.map((work) => (
       <div class={styles.workItem}>
         <h3 class={styles.workTitle}>{work.title}</h3>
         <p class={styles.workDescription}>{work.description}</p>

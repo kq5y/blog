@@ -1,12 +1,19 @@
 @use "../../styles/global.scss" as *;
 
+.backLinkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: $text-secondary;
   font-size: 0.875rem;
-  margin-bottom: 1rem;
   transition: color 0.2s;
 
   &:hover {
@@ -21,5 +28,15 @@
     width: 1rem;
     height: 1rem;
     transition: transform 0.2s;
+  }
+}
+
+.supplementalLink {
+  color: $text-secondary;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $text-primary;
   }
 }

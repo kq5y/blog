@@ -5,18 +5,18 @@ import Layout from "@/layouts/Layout.astro";
 import { getPersonalData } from "@/data/personal";
 import { getAboutCopy } from "@/libraries/about";
 
-const copy = await getAboutCopy("ja");
-const personalData = getPersonalData("ja");
+const copy = await getAboutCopy("en");
+const personalData = getPersonalData("en");
 ---
 
-<Layout title={`About - ${METADATA.title}`} lang="ja">
+<Layout title={`About - ${METADATA.title}`} lang="en">
   <AboutPage
     copy={copy}
     personalData={personalData}
     supplementalLink={{
-      href: "/en/about/",
+      href: "/about/",
       label: "ja/en",
-      ariaLabel: "Switch to English",
+      ariaLabel: "日本語に切り替える",
     }}
   />
 </Layout>

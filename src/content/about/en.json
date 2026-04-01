@@ -1,0 +1,22 @@
+{
+  "backLinkTitle": "Home",
+  "sections": {
+    "interests": "Interests",
+    "likes": "Likes",
+    "education": "Education",
+    "career": "Career",
+    "certs": "Certifications and Awards",
+    "ctfs": "CTF",
+    "works": "Works",
+    "extraLinks": "Links"
+  },
+  "music": {
+    "prefix": "See more in ",
+    "label": "Music",
+    "suffix": "."
+  },
+  "worksLink": {
+    "label": "View all works",
+    "ariaLabel": "View all works"
+  }
+}
