@@ -145,6 +145,22 @@
   ],
   "ctfs": [
     {
+      "name": "Dreamhack Invitational 2026",
+      "rank": "8位",
+      "team": "個人",
+      "date": "2026-04",
+      "links": [
+        {
+          "name": "公式ページ",
+          "url": "https://dreamhack.io/ctf/812"
+        },
+        {
+          "name": "ポスト",
+          "url": "https://x.com/kq5y__/status/2041549151025189195"
+        }
+      ]
+    },
+    {
       "name": "SECCON CTF 14 Domestic Finals",
       "rank": "8位",
       "team": "TPC2",
@@ -173,7 +189,7 @@
       ]
     },
     {
-      "name": "Dreamhack Invitational Quals",
+      "name": "Dreamhack Invitational Quals 2026",
       "rank": "4位",
       "team": "個人",
       "date": "2026-01",

@@ -146,6 +146,22 @@
   ],
   "ctfs": [
     {
+      "name": "Dreamhack Invitational 2026",
+      "rank": "8th",
+      "team": "Individual",
+      "date": "2026-04",
+      "links": [
+        {
+          "name": "Official page",
+          "url": "https://dreamhack.io/ctf/812"
+        },
+        {
+          "name": "Post",
+          "url": "https://x.com/kq5y__/status/2041549151025189195"
+        }
+      ]
+    },
+    {
       "name": "SECCON CTF 14 Domestic Finals",
       "rank": "8th",
       "team": "TPC2",
@@ -174,7 +190,7 @@
       ]
     },
     {
-      "name": "Dreamhack Invitational Quals",
+      "name": "Dreamhack Invitational Quals 2026",
       "rank": "4th",
       "team": "Individual",
       "date": "2026-01",
