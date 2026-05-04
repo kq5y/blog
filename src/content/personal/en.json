@@ -8,12 +8,12 @@
     "mail": "w.kq5y@outlook.jp"
   },
   "interests": [
-    "Deep learning for multimedia",
+    "Deep learning for multimedia such as audio",
     "Frontend and backend web development",
-    "Web performance optimization",
-    "CTFs and web security"
+    "Web application performance optimization",
+    "Web security (CTFs and bug bounty)"
   ],
-  "likes": ["Music", "Minecraft", "Factorio"],
+  "likes": ["Listening to music", "Sandbox games (Factorio, Minecraft)", "Walking"],
   "statsfmUsername": "kq5y",
   "spotifyEmbedUrl": "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   "music_likes": [
@@ -78,6 +78,17 @@
   ],
   "certs": [
     {
+      "name": "NeurIPS 2025 - Google Code Golf Championship",
+      "description": "5th",
+      "date": "2025-12",
+      "links": [
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/google-code-golf-2025/overview"
+        }
+      ]
+    },
+    {
       "name": "MIXI Git Challenge #15",
       "description": "Winner (Foxtrot)",
       "date": "2025-08",
@@ -120,7 +131,7 @@
     },
     {
       "name": "Technopro Design food package image analysis challenge (general and student divisions)",
-      "description": "Image competition, student division 🥈11st",
+      "description": "Image competition, student division 🥈11th",
       "date": "2023-12",
       "links": [
         {
@@ -473,16 +484,16 @@
       "url": "https://dreamhack.io/users/78015"
     },
     {
+      "name": "CTFtime",
+      "url": "https://ctftime.org/user/227190"
+    },
+    {
       "name": "HackerOne",
       "url": "https://hackerone.com/kq5y"
     },
     {
-      "name": "scrapbox/ctf-writeups",
-      "url": "https://scrapbox.io/ctf-writeups/"
-    },
-    {
-      "name": "CTFtime",
-      "url": "https://ctftime.org/user/227190"
+      "name": "GitHub Advisories",
+      "url": "https://github.com/advisories?query=credit%3Akq5y"
     }
   ]
 }

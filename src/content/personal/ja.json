@@ -8,12 +8,12 @@
     "mail": "w.kq5y@outlook.jp"
   },
   "interests": [
-    "マルチメディア領域の深層学習",
+    "音などのマルチメディア領域の深層学習",
     "Webフロントエンド / バックエンド開発",
-    "Webパフォーマンスの最適化",
-    "Web分野のCTFとセキュリティ"
+    "Webアプリケーションのパフォーマンス最適化",
+    "Web分野などのセキュリティ(CTFやバグハント)"
   ],
-  "likes": ["音楽", "Minecraft", "Factorio"],
+  "likes": ["音楽を聴くこと", "サンドボックス系ゲーム(FactorioやMinecraft)", "散歩"],
   "statsfmUsername": "kq5y",
   "spotifyEmbedUrl": "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   "music_likes": [
@@ -78,6 +78,17 @@
   ],
   "certs": [
     {
+      "name": "NeurIPS 2025 - Google Code Golf Championship",
+      "description": "5位",
+      "date": "2025-12",
+      "links": [
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/google-code-golf-2025/overview"
+        }
+      ]
+    },
+    {
       "name": "MIXI Git Challenge #15",
       "description": "優勝（Foxtrot）",
       "date": "2025-08",
@@ -120,7 +131,7 @@
     },
     {
       "name": "テクノプロ・デザイン社 食品パッケージ画像解析チャレンジ（一般部門・学生部門）",
-      "description": "画像コンペ 学生部門 🥈11st",
+      "description": "画像コンペ 学生部門 🥈11位",
       "date": "2023-12",
       "links": [
         {
@@ -472,16 +483,16 @@
       "url": "https://dreamhack.io/users/78015"
     },
     {
+      "name": "CTFtime",
+      "url": "https://ctftime.org/user/227190"
+    },
+    {
       "name": "HackerOne",
       "url": "https://hackerone.com/kq5y"
     },
     {
-      "name": "scrapbox/ctf-writeups",
-      "url": "https://scrapbox.io/ctf-writeups/"
-    },
-    {
-      "name": "CTFtime",
-      "url": "https://ctftime.org/user/227190"
+      "name": "GitHub Advisories",
+      "url": "https://github.com/advisories?query=credit%3Akq5y"
     }
   ]
 }
