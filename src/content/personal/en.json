@@ -301,6 +301,21 @@
       "pinned": true
     },
     {
+      "title": "clefline",
+      "description": "A browser app for beginner piano practice with MusicXML falling-note display powered by OpenSheetMusicDisplay",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://clefline.pages.dev"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/clefline"
+        }
+      ],
+      "pinned": true
+    },
+    {
       "title": "nicoarch",
       "description": "A tool for archiving Niconico video content, metadata, and comments with Remix and Redis",
       "links": [
@@ -316,8 +331,7 @@
           "name": "GitHub(Worker)",
           "url": "https://github.com/kq5y/nicoarch-worker"
         }
-      ],
-      "pinned": true
+      ]
     },
     {
       "title": "tools",

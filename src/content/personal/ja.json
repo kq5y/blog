@@ -300,6 +300,21 @@
       "pinned": true
     },
     {
+      "title": "clefline",
+      "description": "MusicXML楽譜をノーツやスコア形式で表示できるピアノ練習のためのブラウザアプリ",
+      "links": [
+        {
+          "name": "Link",
+          "url": "https://clefline.pages.dev"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/kq5y/clefline"
+        }
+      ],
+      "pinned": true
+    },
+    {
       "title": "nicoarch",
       "description": "RemixやRedisを用いたニコニコ動画の動画やメタデータ、コメントをアーカイブするツール",
       "links": [
@@ -315,8 +330,7 @@
           "name": "GitHub(Worker)",
           "url": "https://github.com/kq5y/nicoarch-worker"
         }
-      ],
-      "pinned": true
+      ]
     },
     {
       "title": "tools",
