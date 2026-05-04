@@ -13,7 +13,11 @@
     "Web application performance optimization",
     "Web security (CTFs and bug bounty)"
   ],
-  "likes": ["Listening to music", "Sandbox games (Factorio, Minecraft)", "Walking"],
+  "likes": [
+    "Listening to music",
+    "Sandbox games (Factorio, Minecraft)",
+    "Walking"
+  ],
   "statsfmUsername": "kq5y",
   "spotifyEmbedUrl": "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   "music_likes": [

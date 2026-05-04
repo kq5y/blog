@@ -11,9 +11,13 @@
     "音などのマルチメディア領域の深層学習",
     "Webフロントエンド / バックエンド開発",
     "Webアプリケーションのパフォーマンス最適化",
-    "Web分野などのセキュリティ(CTFやバグハント)"
+    "Web分野などのセキュリティ(CTF / バグハント)"
   ],
-  "likes": ["音楽を聴くこと", "サンドボックス系ゲーム(FactorioやMinecraft)", "散歩"],
+  "likes": [
+    "音楽を聴くこと",
+    "サンドボックス系ゲーム(Factorio / Minecraft)",
+    "散歩"
+  ],
   "statsfmUsername": "kq5y",
   "spotifyEmbedUrl": "https://open.spotify.com/embed/playlist/3imIdntxGUw14OodIFmAvc?utm_source=generator",
   "music_likes": [
