@@ -162,6 +162,18 @@
   ],
   "ctfs": [
     {
+      "name": "DEF CON CTF Qualifiers 2026",
+      "rank": "7th",
+      "team": "The Seoul Sauna Shogunate",
+      "date": "2026-05",
+      "links": [
+        {
+          "name": "Post",
+          "url": "https://x.com/rubiyalab/status/2059273403568447716"
+        }
+      ]
+    },
+    {
       "name": "From Dusk Till Dawn 2026 CTF Quals",
       "rank": "2nd 🥈",
       "team": "TPC",
