@@ -84,7 +84,7 @@
   "certs": [
     {
       "name": "NeurIPS 2025 - Google Code Golf Championship",
-      "description": "5th",
+      "description": "5th 🥇",
       "date": "2025-12",
       "links": [
         {
@@ -136,9 +136,13 @@
     },
     {
       "name": "Technopro Design food package image analysis challenge (general and student divisions)",
-      "description": "Image competition, student division 🥈11th",
+      "description": "Image competition, student division 11th 🥈",
       "date": "2023-12",
       "links": [
+        {
+          "name": "SIGNATE",
+          "url": "https://user.competition.signate.jp/ja/competition/detail/?competition=4aa425ed209d400585c46548ea60e24c&task=956fa268342c4400b5bfd6c32fea415a&tab=leaderboard&leaderboard=private#:~:text=11-,kq5y,-0.899760765550239"
+        },
         {
           "name": "Slide",
           "url": "https://speakerdeck.com/kq5y/technopro-package-7th-solution"
@@ -219,7 +223,7 @@
     },
     {
       "name": "Ministry of Defense Cyber Contest 2026",
-      "rank": "12th (2nd among individual students) 🥈",
+      "rank": "12th (2nd among individual students 🥈)",
       "team": "Individual",
       "date": "2026-02",
       "links": [

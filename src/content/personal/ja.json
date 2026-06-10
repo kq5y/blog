@@ -84,7 +84,7 @@
   "certs": [
     {
       "name": "NeurIPS 2025 - Google Code Golf Championship",
-      "description": "5位",
+      "description": "5位🥇",
       "date": "2025-12",
       "links": [
         {
@@ -136,9 +136,13 @@
     },
     {
       "name": "テクノプロ・デザイン社 食品パッケージ画像解析チャレンジ（一般部門・学生部門）",
-      "description": "画像コンペ 学生部門 🥈11位",
+      "description": "画像コンペ 学生部門 11位🥈",
       "date": "2023-12",
       "links": [
+        {
+          "name": "SIGNATE",
+          "url": "https://user.competition.signate.jp/ja/competition/detail/?competition=4aa425ed209d400585c46548ea60e24c&task=956fa268342c4400b5bfd6c32fea415a&tab=leaderboard&leaderboard=private#:~:text=11-,kq5y,-0.899760765550239"
+        },
         {
           "name": "Slide",
           "url": "https://speakerdeck.com/kq5y/technopro-package-7th-solution"
