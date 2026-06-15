@@ -360,24 +360,6 @@
       "pinned": true
     },
     {
-      "title": "nicoarch",
-      "description": "A tool for archiving Niconico video content, metadata, and comments with Remix and Redis",
-      "links": [
-        {
-          "name": "GitHub",
-          "url": "https://github.com/kq5y/nicoarch"
-        },
-        {
-          "name": "GitHub(App)",
-          "url": "https://github.com/kq5y/nicoarch-app"
-        },
-        {
-          "name": "GitHub(Worker)",
-          "url": "https://github.com/kq5y/nicoarch-worker"
-        }
-      ]
-    },
-    {
       "title": "tools",
       "description": "A collection of various tools, including custom tools and tools I wanted to have, implemented with Remix",
       "links": [

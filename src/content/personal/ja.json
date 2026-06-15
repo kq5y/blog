@@ -359,24 +359,6 @@
       "pinned": true
     },
     {
-      "title": "nicoarch",
-      "description": "RemixやRedisを用いたニコニコ動画の動画やメタデータ、コメントをアーカイブするツール",
-      "links": [
-        {
-          "name": "GitHub",
-          "url": "https://github.com/kq5y/nicoarch"
-        },
-        {
-          "name": "GitHub(App)",
-          "url": "https://github.com/kq5y/nicoarch-app"
-        },
-        {
-          "name": "GitHub(Worker)",
-          "url": "https://github.com/kq5y/nicoarch-worker"
-        }
-      ]
-    },
-    {
       "title": "tools",
       "description": "Remixで実装した調べたツールの独自実装や欲しいツールなど色々なツールをまとめたもの",
       "links": [
