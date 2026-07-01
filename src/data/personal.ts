@@ -54,6 +54,7 @@ const personalSchema = z.object({
       description: z.string().min(1).optional(),
       date: z.string().min(1),
       links: z.array(linkSchema).optional(),
+      hidden: z.boolean().optional(),
     })
   ),
   ctfs: z.array(

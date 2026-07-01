@@ -122,7 +122,8 @@
     {
       "name": "TOEIC Listening & Reading 645",
       "description": "Listening:330 Reading:315",
-      "date": "2024-04"
+      "date": "2024-04",
+      "hidden": true
     },
     {
       "name": "Applied Information Technology Engineer Exam",
@@ -131,7 +132,8 @@
     },
     {
       "name": "Japanese ordinary driver license (AT only)",
-      "date": "2023-12"
+      "date": "2023-12",
+      "hidden": true
     },
     {
       "name": "Technopro Design food package image analysis challenge (general and student divisions)",
@@ -155,7 +157,8 @@
     {
       "name": "EIKEN Grade Pre-2",
       "description": "Passed",
-      "date": "2021-06"
+      "date": "2021-06",
+      "hidden": true
     },
     {
       "name": "Fundamental Information Technology Engineer Exam",
