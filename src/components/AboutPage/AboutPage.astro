@@ -37,13 +37,13 @@ const sortedCtfs = sortByDateDesc(personalData.ctfs);
   <BackLink title={copy.backLinkTitle} supplementalLink={supplementalLink} />
   <Profile mode="row" hideAbout class={styles.header} priority data={personalData} />
   <div class={styles.content}>
-    <section class={styles.interests}>
+    <section class={styles.tldr}>
       <div class={styles.sectionHeader}>
-        <h2 class={styles.sectionTitle}>{copy.sections.interests}</h2>
+        <h2 class={styles.sectionTitle}>{copy.sections.tldr}</h2>
       </div>
       <div class={styles.sectionContent}>
         <ul>
-          {personalData.interests.map((interest) => <li>{interest}</li>)}
+          {personalData.tldr.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </section>
@@ -72,11 +72,11 @@ const sortedCtfs = sortByDateDesc(personalData.ctfs);
     </section>
     <section class={styles.history}>
       <div class={styles.sectionHeader}>
-        <h2 class={styles.sectionTitle}>{copy.sections.education}</h2>
+        <h2 class={styles.sectionTitle}>{copy.sections.career}</h2>
       </div>
       <div class:list={[styles.sectionContent, styles.timeline]}>
         {
-          educationHistory.map((item) => (
+          careerHistory.map((item) => (
             <TimelineEntry
               date={formatHistoryDate(item)}
               title={item.title}
@@ -91,11 +91,11 @@ const sortedCtfs = sortByDateDesc(personalData.ctfs);
     </section>
     <section class={styles.history}>
       <div class={styles.sectionHeader}>
-        <h2 class={styles.sectionTitle}>{copy.sections.career}</h2>
+        <h2 class={styles.sectionTitle}>{copy.sections.education}</h2>
       </div>
       <div class:list={[styles.sectionContent, styles.timeline]}>
         {
-          careerHistory.map((item) => (
+          educationHistory.map((item) => (
             <TimelineEntry
               date={formatHistoryDate(item)}
               title={item.title}
