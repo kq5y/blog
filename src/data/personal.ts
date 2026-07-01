@@ -42,7 +42,7 @@ const personalSchema = z.object({
     github: z.string().min(1),
     mail: z.string().min(1),
   }),
-  interests: z.array(z.string().min(1)),
+  tldr: z.array(z.string().min(1)),
   likes: z.array(z.string().min(1)),
   statsfmUsername: z.string().min(1),
   spotifyEmbedUrl: z.string().min(1),

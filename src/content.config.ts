@@ -7,7 +7,7 @@ const aboutCollection = defineCollection({
   schema: z.object({
     backLinkTitle: z.string().min(1),
     sections: z.object({
-      interests: z.string().min(1),
+      tldr: z.string().min(1),
       likes: z.string().min(1),
       education: z.string().min(1),
       career: z.string().min(1),
