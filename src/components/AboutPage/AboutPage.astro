@@ -30,6 +30,7 @@ const educationHistory = sortedHistory.filter(
 );
 const careerHistory = sortedHistory.filter((item) => item.type !== "education");
 const sortedCerts = sortByDateDesc(personalData.certs);
+const visibleCerts = sortedCerts.filter((cert) => !cert.hidden);
 const sortedCtfs = sortByDateDesc(personalData.ctfs);
 ---
 
@@ -114,7 +115,7 @@ const sortedCtfs = sortByDateDesc(personalData.ctfs);
       </div>
       <div class:list={[styles.sectionContent, styles.timeline]}>
         {
-          sortedCerts.map((cert) => (
+          visibleCerts.map((cert) => (
             <TimelineEntry
               date={cert.date}
               title={cert.name}
