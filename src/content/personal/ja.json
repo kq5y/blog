@@ -28,6 +28,18 @@
   ],
   "history": [
     {
+      "start": "2026-11",
+      "type": "activity",
+      "title": "CODE BLUE 2026 学生スタッフ",
+      "description": "セキュリティカンファレンスの運営スタッフ"
+    },
+    {
+      "start": "2026-09",
+      "type": "internship",
+      "title": "株式会社Flatt Security",
+      "description": "サマーインターン セキュリティエンジニア"
+    },
+    {
       "start": "2026-03",
       "type": "activity",
       "title": "tkbctf5 organizer",
@@ -48,7 +60,7 @@
     },
     {
       "start": "2025-12",
-      "current": true,
+      "end": "2026-09",
       "type": "internship",
       "title": "Digital Experts株式会社",
       "description": "長期インターン SaaSのWebフルスタック/インフラエンジニア"
@@ -60,8 +72,14 @@
       "description": "セキュリティカンファレンスの運営スタッフ"
     },
     {
+      "start": "2027-04",
+      "type": "education",
+      "title": "筑波大学大学院 理工情報生命学術院 システム情報工学研究群 情報理工学位プログラム",
+      "description": "進学予定, マルチメディア研究室"
+    },
+    {
       "start": "2025-04",
-      "current": true,
+      "end": "2027-03",
       "type": "education",
       "title": "筑波大学 情報学群 情報科学類",
       "description": "3年次編入, マルチメディア研究室"

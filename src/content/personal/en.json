@@ -28,6 +28,18 @@
   ],
   "history": [
     {
+      "start": "2026-11",
+      "type": "activity",
+      "title": "CODE BLUE 2026 student staff",
+      "description": "Operations staff for a security conference"
+    },
+    {
+      "start": "2026-09",
+      "type": "internship",
+      "title": "Flatt Security Inc.",
+      "description": "Summer internship, security engineer"
+    },
+    {
       "start": "2026-03",
       "type": "activity",
       "title": "tkbctf5 organizer",
@@ -48,7 +60,7 @@
     },
     {
       "start": "2025-12",
-      "current": true,
+      "end": "2026-09",
       "type": "internship",
       "title": "Digital Experts Inc.",
       "description": "Long-term internship, full-stack web and infrastructure engineer for SaaS"
@@ -60,8 +72,14 @@
       "description": "Operations staff for a security conference"
     },
     {
+      "start": "2027-04",
+      "type": "education",
+      "title": "University of Tsukuba, Degree Programs in Systems and Information Engineering, Master's Program in Computer Science",
+      "description": "Expected enrollment, Multimedia Laboratory"
+    },
+    {
       "start": "2025-04",
-      "current": true,
+      "end": "2027-03",
       "type": "education",
       "title": "University of Tsukuba, School of Informatics, College of Information Sciences",
       "description": "Transferred in as a third-year student, Multimedia Laboratory"
