@@ -23,6 +23,23 @@ const linkSchema = z.object({
   url: z.string().min(1),
 });
 
+export interface TldrItem {
+  text: string;
+  children?: string[];
+}
+
+const tldrItemSchema = z
+  .union([
+    z.string().min(1),
+    z.object({
+      text: z.string().min(1),
+      children: z.array(z.string().min(1)).min(1).optional(),
+    }),
+  ])
+  .transform(
+    (value): TldrItem => (typeof value === "string" ? { text: value } : value)
+  );
+
 const historyItemSchema: z.ZodType<HistoryItem> = z.object({
   start: z.string().min(1),
   end: z.string().min(1).optional(),
@@ -42,7 +59,7 @@ const personalSchema = z.object({
     github: z.string().min(1),
     mail: z.string().min(1),
   }),
-  tldr: z.array(z.string().min(1)),
+  tldr: z.array(tldrItemSchema),
   likes: z.array(z.string().min(1)),
   statsfmUsername: z.string().min(1),
   spotifyEmbedUrl: z.string().min(1),

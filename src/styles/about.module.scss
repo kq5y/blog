@@ -98,6 +98,21 @@
   }
 }
 
+.tldr {
+  .sectionContent {
+    > ul > li > ul {
+      list-style: circle;
+      padding-left: 1.25rem;
+      margin-top: 0.125rem;
+
+      li {
+        font-size: 0.875rem;
+        color: $text-tertiary;
+      }
+    }
+  }
+}
+
 .spotifyEmbed {
   margin: 1rem 0;
   width: 100%;

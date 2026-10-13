@@ -44,7 +44,20 @@ const sortedCtfs = sortByDateDesc(personalData.ctfs);
       </div>
       <div class={styles.sectionContent}>
         <ul>
-          {personalData.tldr.map((item) => <li>{item}</li>)}
+          {
+            personalData.tldr.map((item) => (
+              <li>
+                {item.text}
+                {item.children && (
+                  <ul>
+                    {item.children.map((child) => (
+                      <li>{child}</li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))
+          }
         </ul>
       </div>
     </section>
