@@ -8,7 +8,13 @@
     "mail": "w.kq5y@outlook.jp"
   },
   "tldr": [
-    "Web Engineer & Security Researcher",
+    "Web Engineer",
+    {
+      "text": "Security Researcher",
+      "children": [
+        "Cloudflare / Vercel / Meta / Mozilla / WordPress などで脆弱性を発見・報告"
+      ]
+    },
     "CTF Player",
     "eess.AS Researcher"
   ],
