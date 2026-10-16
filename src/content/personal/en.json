@@ -34,6 +34,20 @@
   ],
   "history": [
     {
+      "start": "2026-10",
+      "current": true,
+      "type": "work",
+      "title": "Velcore Consulting Inc.",
+      "description": "Contract work, security researcher"
+    },
+    {
+      "start": "2026-10",
+      "current": true,
+      "type": "work",
+      "title": "Undisclosed company",
+      "description": "Contract work, AI-Native Product Engineer"
+    },
+    {
       "start": "2026-11",
       "type": "activity",
       "title": "CODE BLUE 2026 student staff",

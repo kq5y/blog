@@ -34,6 +34,20 @@
   ],
   "history": [
     {
+      "start": "2026-10",
+      "current": true,
+      "type": "work",
+      "title": "Velcore Consulting Inc.",
+      "description": "業務委託 Security Researcher"
+    },
+    {
+      "start": "2026-10",
+      "current": true,
+      "type": "work",
+      "title": "非公開企業",
+      "description": "業務委託 AI-Native Product Engineer"
+    },
+    {
       "start": "2026-11",
       "type": "activity",
       "title": "CODE BLUE 2026 学生スタッフ",
